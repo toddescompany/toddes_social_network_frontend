@@ -1,0 +1,17 @@
+.botao-postar{
+    width: 150px;
+    height: 40px;
+    background: #d148bb;
+    border-radius: 30px;
+    border-color: #d148bb;
+
+    margin-top: 10px;
+
+    color: #FFFFFF;
+}
+
+li{
+    list-style: none;
+}
+
+
