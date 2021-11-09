@@ -15,16 +15,78 @@
 
   <h3 id="paginaAtual" hidden>Página inicial</h3>
     sem angular -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary" hidden>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+          <ul class="navbar-nav mr-auto d-flex align-items-center">
+            <li class="nav-item active">
+              <img src="https://avatars.githubusercontent.com/u/91612577?v=4" alt="Imagem do usuario" width="50px" height="50px" class="img-fluid rounded-circle">
+            </li>
+            <li class="nav-item pl-3">
+              <p class="m-0 font-weight-bold text-white fs-16">Nome do usuario</p>
+            </li>
+            <li class="nav-item pl-3">
+                <a href="">
+                    <p class="text-white fs-16 m-0"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></p>
+                </a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ml-auto d-flex align-items-center">
+            <li class="nav-item pl-3">
+                <a class="m-0 font-weight-bold text-white fs-16"  routerLink='/entrar'>Sair <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+              </li>
+          </ul>
+
+        </div>
+      </nav>
+
+
+    <nav class="row pt-1 pb-1 border-bottom" id="menuSuperior">
+        <div class="col-12">
+        <div class="row menuSuperiorCenter">
+            <div class="col-2">
+
+                    <div id="btnMenuSuperior">
+                        <img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil"  />
+                    </div>
+
+            </div>
+            <div class="col-8 text-center">
+                <img src="../../assets/toddes_img/blackhand.png" class="mainLogo align-middle" alt="">
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    </nav>
+
+
+
+
 <div class="container-fluid">
+
     <div class="row">
-        <aside id="leftMenu" class="col-2 col-lg-1 col-xl-2 border-right">
+        <aside id="leftMenu" class="col-2 col-lg-1 col-xl-2">
             <div class="row">
                 <div class="col-12">
-                    <ul class="mb-20 navbar-nav text-center align-middle p-0">
-                        <li class="navbar-item"><i class="fas fa-home"></i><a href="#" class="d-none d-xl-inline"> Home</a></li>
-                        <li class="navbar-item"><i class="fas fa-hashtag"></i><a href="#" class="d-none d-xl-inline"> Temas</a></li>
-                        <li class="navbar-item"><i class="far fa-user"></i><a href="#" class="d-none d-xl-inline"> Profile</a></li>
-                    </ul>
+                    <!--
+                    <div class="row d-flex justify-content-center mb-3 mt-1" hidden>
+                        <img src="../../assets/toddes_img/blackhand.png" class="mainLogo align-middle" alt="">
+                    </div>
+                    -->
+                    <div class="row">
+                        <ul class="mb-20 navbar-nav p-0 d-flex justify-content-center text-center">
+                            <li class="navbar-item"><i class="fas fa-home"></i><a href="#" class="d-none d-xl-inline active"> Home</a></li>
+                            <li class="navbar-item"><i class="fas fa-hashtag"></i><a href="#" class="d-none d-xl-inline"> Temas</a></li>
+                            <li class="navbar-item"><i class="far fa-user"></i><a href="#" class="d-none d-xl-inline"> Profile</a></li>
+                        </ul>
+                    </div>
+
+
                 </div>
 
                 <div class="col-12 mt-3">
@@ -35,16 +97,13 @@
             </div>
         </aside>
 
-        <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right">
+        <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
             <div id="postar" class="row">
                 <div class="col-12 mt-2">
                     <div class="row text-center " >
-                        <div class="col-3 col-sm-2" >
-                            <div class="row">
-                            <img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil"  />
-                        </div></div>
 
-                        <div class="col-8 col-sm-9">
+                        <div class="col-1"></div>
+                        <div class="col-10">
                             <div class="row">
                                 <textarea  id="txtPost" placeholder="O que você está sentindo?"></textarea>
                             </div>
@@ -54,31 +113,33 @@
                 </div>
                 <div class="col-12 mt-2">
                     <div class="row">
-                        <div class="col-3 col-sm-2 "></div>
-                        <div class="col-9 col-sm-10 text-left">
+                        <div class="col-1  "></div>
+                        <div class="col-10  text-left">
                             <div class="row">
-                                <div class="col-8">
-                                    <ul>
+                                <div class="col-6">
+                                    <div class="row">
+                                    <ul class="p-0">
                                         <li><a href="#"><i class="far fa-image"></i></a></li>
                                         <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
                                     </ul>
+                                    </div>
                                 </div>
-                                <div class="col-3">
+                                <div class="col-6">
 
                                         <div class="row d-flex justify-content-end">
                                             <button type="button" class="btnPostarBase ">Postar</button>
                                         </div>
-
                                 </div>
-                                <div class="col-1"></div>
                             </div>
                         </div>
+                        <div class="col-1"></div>
 
 
                     </div>
                 </div>
             </div>
             <div id="posts" class="row">
+
                 <article class="col-12 pt-2 pb-2">
                     <div class="row">
                         <div class="col-3 col-sm-2 ">
@@ -102,7 +163,7 @@
                                                 <button type="button" class="btnConfigPost"><i class="fas fa-ellipsis-h"></i></button>
 
 
-
+                                            <!-- END DROPDOWN - CONFIG POST -->
                                             </div>
                                         </div>
                                     </div>
@@ -124,11 +185,67 @@
                         <div class="col-1"></div>
                     </div>
                 </article>
+                <article class="col-12 pt-2 pb-2">
+                    <div class="row">
+                        <div class="col-3 col-sm-2 ">
+                            <div class="row">
+                                <img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" />
+                            </div>
+                        </div>
+
+                        <div class="col-8 col-sm-9 ">
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="row text-left">
+                                            <span class="lblPostNomeCompleto">CaptainAmerican</span><a href="" class="lblPostNomeUsuario">@CaptainAmerican</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row d-flex justify-content-end">
+                                            <!-- DROPDOWN - CONFIG POST -->
+                                                <button type="button" class="btnConfigPost"><i class="fas fa-ellipsis-h"></i></button>
+
+
+                                            <!-- END DROPDOWN - CONFIG POST -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2"><p id="textoPost">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti ratione repellendus omnis doloremque necessitatibus? Doloribus ipsam eos deserunt, earum ex voluptatum officiis necessitatibus voluptates voluptatem dolorum officia? Quaerat, laudantium nemo!</p></div>
+
+                            <div class="row"><img src="../../assets/posts_img/lorem.jpeg" alt="" id="imgPost"></div>
+
+                            <div class="row mt-2">
+                                <div class="Comentarios">
+                                    <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
+                                    <span class="lblQtdComentarios">10</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                </article>
+
+
+
+
+
             </div>
         </section>
 
         <aside class="d-none d-lg-block col-lg-3 col-xl-3">
             <div class="row d-flex justify-content-center">
+
+
+
+                
+
+
                 <div id="oqueEstaAcontecendo" class="col-10 mt-3">
                     <div class="row p-3">
                         <div class="col-12">
@@ -145,8 +262,8 @@
                                         <div class="tendenciaPedacoPost resumirTextoPost pr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nihil labore incidunt. Reprehenderit esse, quibusdam porro minima hic consequuntur repudiandae quas recusandae amet aut velit incidunt ab nisi sapiente laudantium?</div>
                                     </div>
                                     <div class="row">
-                                        <b>Tema</b>
-                                        <a href="#">@QuemPostou</a>
+                                        <b class="tendenciaTemaPost">Tema</b>
+                                        <a href="#" class="tendenciaDonoPost">@QuemPostou</a>
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -155,6 +272,47 @@
                                     </div>
                                 </div>
                             </article>
+                            <article class="row">
+                                <div class="col-9">
+                                    <div class="row">
+                                        <b class="tendenciaDataPost">3 hrs ago</b>
+                                    </div>
+                                    <div class="row">
+                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nihil labore incidunt. Reprehenderit esse, quibusdam porro minima hic consequuntur repudiandae quas recusandae amet aut velit incidunt ab nisi sapiente laudantium?</div>
+                                    </div>
+                                    <div class="row">
+                                        <b class="tendenciaTemaPost">Tema</b>
+                                        <a href="#" class="tendenciaDonoPost">@QuemPostou</a>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                    <a href="#"><img src="../../assets/posts_img/lorem.jpeg" class="tendenciaImgPost" alt=""></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="row">
+                                <div class="col-9">
+                                    <div class="row">
+                                        <b class="tendenciaDataPost">3 hrs ago</b>
+                                    </div>
+                                    <div class="row">
+                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nihil labore incidunt. Reprehenderit esse, quibusdam porro minima hic consequuntur repudiandae quas recusandae amet aut velit incidunt ab nisi sapiente laudantium?</div>
+                                    </div>
+                                    <div class="row">
+                                        <b class="tendenciaTemaPost">Tema</b>
+                                        <a href="#" class="tendenciaDonoPost">@QuemPostou</a>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                    <a href="#"><img src="../../assets/posts_img/lorem.jpeg" class="tendenciaImgPost" alt=""></a>
+                                    </div>
+                                </div>
+                            </article>
+
+
+
                         </div>
                     </div>
                 </div>
