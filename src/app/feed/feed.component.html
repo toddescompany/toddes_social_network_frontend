@@ -17,7 +17,7 @@
     sem angular -->
 <div class="container-fluid">
     <div class="row">
-        <aside id="leftMenu" class="col-2 col-sm-1 col-xl-2 border">
+        <aside id="leftMenu" class="col-2 col-lg-1 col-xl-2 border-right">
             <div class="row">
                 <div class="col-12">
                     <ul class="mb-20 navbar-nav text-center align-middle p-0">
@@ -35,52 +35,126 @@
             </div>
         </aside>
 
-        <section id="feed" class="col-10 col-md-8 border">
+        <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right">
             <div id="postar" class="row">
                 <div class="col-12 mt-2">
-                    <div class="row text-center">
-                        <div class="col-3 col-md-1"><img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" /></div>
+                    <div class="row text-center " >
+                        <div class="col-3 col-sm-2" >
+                            <div class="row">
+                            <img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil"  />
+                        </div></div>
 
-                        <div class="col-9 col-md-11"><textarea  id="txtPost" placeholder="O que você está sentindo?"></textarea></div>
+                        <div class="col-8 col-sm-9">
+                            <div class="row">
+                                <textarea  id="txtPost" placeholder="O que você está sentindo?"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
                     </div>
                 </div>
                 <div class="col-12 mt-2">
                     <div class="row">
-                        <div class="col-3 col-md-1"></div>
-                        <div class="col-4 col-md-5 text-left">
-                            <ul id="">
-                                <li><a href="#"><i class="far fa-image"></i></a></li>
-                                <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
-                            </ul>
+                        <div class="col-3 col-sm-2 "></div>
+                        <div class="col-9 col-sm-10 text-left">
+                            <div class="row">
+                                <div class="col-8">
+                                    <ul>
+                                        <li><a href="#"><i class="far fa-image"></i></a></li>
+                                        <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-3">
+
+                                        <div class="row d-flex justify-content-end">
+                                            <button type="button" class="btnPostarBase ">Postar</button>
+                                        </div>
+
+                                </div>
+                                <div class="col-1"></div>
+                            </div>
                         </div>
-                        <div class="col-5 col-md-6 text-right">
-                                <button type="button" class="btnPostarBase ">Postar</button>
-                             </div>
+
 
                     </div>
                 </div>
             </div>
             <div id="posts" class="row">
-                <article class="col-12 pt-3 pb-2">
+                <article class="col-12 pt-2 pb-2">
                     <div class="row">
-                        <div class="col-12 text-md-center col-md-2"><img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" /></div>
-                        <div class="col-12 col-md-10">
+                        <div class="col-3 col-sm-2 ">
                             <div class="row">
-                                <div class="col-10 "><h3>CaptainAmerican</h3><h4>@CaptainAmerican</h4></div>
-
-                                <div class="col-2 text-right"><button type="button" class="btnConfigPost"><i class="fas fa-ellipsis-h"></i></button></div>
+                                <img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" />
                             </div>
-                            <div class="row mt-2"><div class="col-12"><p id="textoPost">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti ratione repellendus omnis doloremque necessitatibus? Doloribus ipsam eos deserunt, earum ex voluptatum officiis necessitatibus voluptates voluptatem dolorum officia? Quaerat, laudantium nemo!</p></div></div>
-                            <div class="row"><div class="col-12"><img src="../../assets/posts_img/lorem.jpeg" alt="" id="imgPost"></div></div>
-                            <div class="row mt-2"><div class="col-12"><button type="button" class="btnComentario"><i class="far fa-comment"></i></button></div></div>
                         </div>
+
+                        <div class="col-8 col-sm-9 ">
+                            <div class="row">
+                                <div class="col-12 ">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <div class="row text-left">
+                                            <span class="lblPostNomeCompleto">CaptainAmerican</span><a href="" class="lblPostNomeUsuario">@CaptainAmerican</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="row d-flex justify-content-end">
+                                            <button type="button" class="btnConfigPost"><i class="fas fa-ellipsis-h"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-2"><p id="textoPost">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti ratione repellendus omnis doloremque necessitatibus? Doloribus ipsam eos deserunt, earum ex voluptatum officiis necessitatibus voluptates voluptatem dolorum officia? Quaerat, laudantium nemo!</p></div>
+
+                            <div class="row"><img src="../../assets/posts_img/lorem.jpeg" alt="" id="imgPost"></div>
+
+                            <div class="row mt-2">
+                                <div class="Comentarios">
+                                    <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
+                                    <span class="lblQtdComentarios">10</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <aside class="d-none col-md-2 border">
-            <h3>Tendências</h3>
+        <aside class="d-none d-lg-block col-lg-3 col-xl-3">
+            <div class="row d-flex justify-content-center">
+                <div id="oqueEstaAcontecendo" class="col-10 mt-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <div class="row pb-4">
+                                <h3>O que as pessoas tem sentido?</h3>
+                            </div>
+
+                            <article class="row">
+                                <div class="col-9">
+                                    <div class="row">
+                                        <b class="tendenciaDataPost">3 hrs ago</b>
+                                    </div>
+                                    <div class="row">
+                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nihil labore incidunt. Reprehenderit esse, quibusdam porro minima hic consequuntur repudiandae quas recusandae amet aut velit incidunt ab nisi sapiente laudantium?</div>
+                                    </div>
+                                    <div class="row">
+                                        <b>Tema</b>
+                                        <a href="#">@QuemPostou</a>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="row">
+                                    <a href="#"><img src="../../assets/posts_img/lorem.jpeg" class="tendenciaImgPost" alt=""></a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </aside>
     </div>
 </div>

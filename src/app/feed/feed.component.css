@@ -1,5 +1,24 @@
 /* GENERAL */
+        *{
+            word-wrap: break-word;
+        }
 
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+
+        }
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+            .container-fluid{width:80%;margin:auto;}
+        }
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+            .container-fluid{width:100%;}
+        }
+        /* Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+
+        }
 
 /* LEFT "menu lateral" */
     /* leftMenu*/
@@ -33,28 +52,90 @@
         margin:auto;
     }
 
-    @media screen and (min-width: 1200px)
-    {
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+
+    }
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {
+
+    }
+    /* Large devices (desktops, 992px and up)*/
+    @media (min-width: 992px) {
+
+    }
+    /* Extra large devices (large desktops, 1200px and up)*/
+    @media (min-width: 1200px) {
         #leftMenu li.navbar-item{text-align:left;width:60%;text-align:center;}
         #btnPostar{width:90%;border-radius:30px;}
     }
 
+
 /* CENTER "feed" */
     /* POSTAR */
         #feed #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
-        #feed .imgPerfil {height:50px;height:50px;border-radius:100%;}
-        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100%;color:gray;font-size:14px;border-bottom:1px solid #eee;}
+        #feed .imgPerfil {height:50px;height:50px;border-radius:100%;margin:auto;}
+        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100%;color:gray;font-size:20px;font-weight:bold;border-bottom:1px solid #eee;}
         #feed .row .col-12:nth-child(2) ul{list-style:none;padding:0;}
         #feed .row .col-12:nth-child(2) ul li{display:inline;padding-right:10px;}
         #feed .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:20px;}
+
     /* POSTS */
+        #posts article{border-top:1px solid #eee;border-bottom:1px solid #eee;}
         #posts article h1{font-size:20px;}
         #posts article #imgPost{width:100%;}
         #posts article #imgPost{width:100%;}
         #posts article button{border:none;background:white;}
         .btnComentario i{color:#d148bb;font-size:25px;}
         .btnConfigPost i{color:gray;font-size:25px;}
-        #posts article h3{font-size:140%;}
-        #posts article h4{font-size:100%;color:#d148bb;}
+        #posts article .lblPostNomeCompleto{font-size:100%; margin-right:5px;font-weight:bold;}
+        #posts article .lblPostNomeUsuario{font-size:100%;color:#d148bb;}
+        #posts .lblQtdComentarios {position:relative;top:-5px;color:gray;}
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+
+        }
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+
+        }
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+
+        }
+        /* Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+
+        }
 
 /* RIGHT "tendências"*/
+        /* O que está acontecendo? */
+            #oqueEstaAcontecendo{background-color:#eee;border-radius:10px;}
+            #oqueEstaAcontecendo h3{font-size:20px;}
+
+            .tendenciaImgPost{width:100%;height:60px;border-radius:10px;}
+            .resumirTextoPost{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+
+        }
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+
+        }
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+
+        }
+        /* Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+
+        }
