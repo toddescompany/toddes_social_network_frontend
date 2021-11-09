@@ -12,59 +12,77 @@
 <body>
 
 
-  sem angular -->
 
+  <h3 id="paginaAtual" hidden>Página inicial</h3>
+    sem angular -->
 <div class="container-fluid">
-
     <div class="row">
-
-        <aside id="leftMenu" class="col-2 border">
+        <aside id="leftMenu" class="col-2 col-sm-1 col-xl-2 border">
             <div class="row">
                 <div class="col-12">
-                    <ul class="mb-20 navbar-nav text-center align-middle">
-                        <li class="navbar-item"><i class="fab">@</i><a href="#" class="d-none d-lg-inline"> Home</a></li>
-                        <li class="navbar-item"><i class="fab">@</i><a href="#" class="d-none d-lg-inline"> Temas</a></li>
-                        <li class="navbar-item"><i class="fab">@</i><a href="#" class="d-none d-lg-inline"> Profile</a></li>
+                    <ul class="mb-20 navbar-nav text-center align-middle p-0">
+                        <li class="navbar-item"><i class="fas fa-home"></i><a href="#" class="d-none d-xl-inline"> Home</a></li>
+                        <li class="navbar-item"><i class="fas fa-hashtag"></i><a href="#" class="d-none d-xl-inline"> Temas</a></li>
+                        <li class="navbar-item"><i class="far fa-user"></i><a href="#" class="d-none d-xl-inline"> Profile</a></li>
                     </ul>
                 </div>
 
                 <div class="col-12 mt-3">
                     <div class="row">
-                        <button id="botaoPostar"><i class="fab d-inline d-lg-none">@</i><span class="d-none d-lg-inline">Postar</span></button>
+                        <button id="btnPostar"><i class="fas fa-paper-plane d-inline d-xl-none"></i><span class="d-none d-xl-inline">Postar</span></button>
                     </div>
                 </div>
             </div>
         </aside>
 
-        <h3 id="paginaAtual" hidden>Página inicial</h3>
-        <section class="col-10 col-md-8 border">
-            <div class="row">
-                <div class="row">
-                    <div class="col-2"><img src="../../assets/camerican.png" /></div>
-                    <div class="col-10"><textarea id="txtPost"></textarea></div>
-                </div>
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-8">
-                        <ul id="">
-                            <li><a href="#"><img src="#" /></a></li>
-                            <li><a href="#"><img src="#" /></a></li>
-                            <li><a href="#"><img src="#" /></a></li>
-                        </ul>
-                    </div>
-                    <div class="col-2">
-                        <button type="button">Postar</button>
+        <section id="feed" class="col-10 col-md-8 border">
+            <div id="postar" class="row">
+                <div class="col-12 mt-2">
+                    <div class="row text-center">
+                        <div class="col-3 col-md-1"><img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" /></div>
+
+                        <div class="col-9 col-md-11"><textarea  id="txtPost" placeholder="O que você está sentindo?"></textarea></div>
                     </div>
                 </div>
+                <div class="col-12 mt-2">
+                    <div class="row">
+                        <div class="col-3 col-md-1"></div>
+                        <div class="col-4 col-md-5 text-left">
+                            <ul id="">
+                                <li><a href="#"><i class="far fa-image"></i></a></li>
+                                <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-5 col-md-6 text-right">
+                                <button type="button" class="btnPostarBase ">Postar</button>
+                             </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="posts" class="row">
+                <article class="col-12 pt-3 pb-2">
+                    <div class="row">
+                        <div class="col-12 text-md-center col-md-2"><img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" /></div>
+                        <div class="col-12 col-md-10">
+                            <div class="row">
+                                <div class="col-10 "><h3>CaptainAmerican</h3><h4>@CaptainAmerican</h4></div>
+
+                                <div class="col-2 text-right"><button type="button" class="btnConfigPost"><i class="fas fa-ellipsis-h"></i></button></div>
+                            </div>
+                            <div class="row mt-2"><div class="col-12"><p id="textoPost">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti ratione repellendus omnis doloremque necessitatibus? Doloribus ipsam eos deserunt, earum ex voluptatum officiis necessitatibus voluptates voluptatem dolorum officia? Quaerat, laudantium nemo!</p></div></div>
+                            <div class="row"><div class="col-12"><img src="../../assets/posts_img/lorem.jpeg" alt="" id="imgPost"></div></div>
+                            <div class="row mt-2"><div class="col-12"><button type="button" class="btnComentario"><i class="far fa-comment"></i></button></div></div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
         <aside class="d-none col-md-2 border">
             <h3>Tendências</h3>
         </aside>
-
     </div>
-
 </div>
 <!--  sem angular
 </body>
