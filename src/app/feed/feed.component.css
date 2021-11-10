@@ -1,0 +1,60 @@
+/* GENERAL */
+
+
+/* LEFT "menu lateral" */
+    /* leftMenu*/
+    #leftMenu{height:500px;}
+    #leftMenu li.navbar-item{font-size:25px; border-radius: 30px;vertical-align:middle;display:inline;}
+    #leftMenu li.navbar-item a{text-decoration:none;color:black;}
+    #leftMenu li.navbar-item i{display:inline;}
+    #leftMenu li.navbar-item:hover{background-color:#eee;cursor:pointer;}
+    /* btnPostar */
+    .btnPostarBase
+    {
+        background: #d148bb;
+        border-radius:30px;
+        color: #FFFFFF;
+        border:none;
+        font-weight:bold;
+        padding:7px 15px;
+        font-size:20px;
+    }
+
+    #btnPostar{
+        width:55px;
+        background: #d148bb;
+        border-radius: 100%;
+        border-color: #d148bb;
+        color: #FFFFFF;
+        border:none;
+        font-weight:bold;
+        padding:10px 15px;
+        font-size:20px;
+        margin:auto;
+    }
+
+    @media screen and (min-width: 1200px)
+    {
+        #leftMenu li.navbar-item{text-align:left;width:60%;text-align:center;}
+        #btnPostar{width:90%;border-radius:30px;}
+    }
+
+/* CENTER "feed" */
+    /* POSTAR */
+        #feed #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
+        #feed .imgPerfil {height:50px;height:50px;border-radius:100%;}
+        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100%;color:gray;font-size:14px;border-bottom:1px solid #eee;}
+        #feed .row .col-12:nth-child(2) ul{list-style:none;padding:0;}
+        #feed .row .col-12:nth-child(2) ul li{display:inline;padding-right:10px;}
+        #feed .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:20px;}
+    /* POSTS */
+        #posts article h1{font-size:20px;}
+        #posts article #imgPost{width:100%;}
+        #posts article #imgPost{width:100%;}
+        #posts article button{border:none;background:white;}
+        .btnComentario i{color:#d148bb;font-size:25px;}
+        .btnConfigPost i{color:gray;font-size:25px;}
+        #posts article h3{font-size:140%;}
+        #posts article h4{font-size:100%;color:#d148bb;}
+
+/* RIGHT "tendências"*/
