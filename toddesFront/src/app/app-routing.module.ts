@@ -9,6 +9,7 @@ const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 {path:'cadastrar', component: CadastrarComponent},
 {path:'feed', component: FeedComponent}
 
+
 ];
 
 @NgModule({

@@ -1,27 +1,86 @@
-# ToddesFront
+<div align="center" style="font-size:30px;"><img style="width:250px;height:250px;" src="https://github.com/toddescompany/toddes_social_network_backend/blob/main/blackhand.png" alt="logo_toddes">
+    <h1>Toddes</h1>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
+<div align="center">Rede social voltada para empresas disponibilizarem para seus funcionaries relatar experiências desconfortáveis que vão contra a diversidade, fazendo assim, uma concientização entre os colaboradores.</div>
+<br>
+<br>
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## :books: Funcionalidades
+<b> :see_no_evil: Em desenvolvimento</b>
+<br>
+<br>
 
-## Code scaffolding
+## :wrench: Tecnologias Utilizadas
+<div style="display: inline_block"><br>
+    <img align="center" alt="gel-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+    <img align="center" alt="gel-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+    <img align="center" alt="gel-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+    <img align="center" alt="gel-java" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
+    <img align="center" alt="gel-spring" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original-wordmark.svg">
+    <img align="center" alt="gel-spring" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/angularjs/angularjs-original.svg">
+</div>
+<br>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ <!--
+## :rocket: Rodando o projeto
+Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando para iniciar o projeto:
+```
+<linha de comando>
+```
 
-## Build
+## :soon: Implementação futura
+* O que será implementado na próxima sprint?
+-->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## :handshake: Colaboradores
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/argelcapela">
+        <img src="https://avatars.githubusercontent.com/u/79276276?s=400&u=055b803f4708d59eaf50208ba601f85844125757&v=4" width="100px;" alt="Foto de Argel Capela no GitHub"/><br>
+        <sub>
+          <b>Argel Capela</b>
+        </sub>
+      </a>
+    </td>
+     <td align="center">
+      <a href="https://github.com/renanimpacta">
+        <img src="https://avatars.githubusercontent.com/u/79484696?v=4" width="100px;" alt="Foto de Renam no GitHub"/><br>
+        <sub>
+          <b>Renan</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/guilhermem0101">
+        <img src="https://avatars.githubusercontent.com/u/89137460?v=4" width="100px;" alt="Foto de Guilherme Matheus no GitHub"/><br>
+        <sub>
+          <b>Guilherme Matheus</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/aleffqs">
+        <img src="https://avatars.githubusercontent.com/u/89137498?v=4" width="100px;" alt="Foto de Aleff no GitHub"/><br>
+        <sub>
+          <b>Aleff</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/marzocca99">
+        <img src="https://avatars.githubusercontent.com/u/89137508?v=4" width="100px;" alt="Foto de Lucas Marzocca no GitHub"/><br>
+        <sub>
+          <b>Lucas Marzocca</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-## Running unit tests
+<br>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## :dart: Status do projeto
+:technologist: Em Desenvolvimento (Task 7)
