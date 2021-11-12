@@ -17,6 +17,7 @@ export class EntrarComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   entrar(){
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=> {
       this.userLogin = resp
@@ -29,6 +30,7 @@ export class EntrarComponent implements OnInit {
       console.log(environment.nomeUsuario)
       console.log(environment.foto)
       console.log(environment.id)
+      console.table(this.userLogin)
 
       
       

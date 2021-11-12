@@ -40,10 +40,18 @@
                         <div class="col-1"></div>
                         <div class="col-10">
                             <div class="row">
-                                <textarea  id="txtPost" placeholder="O que você está sentindo?"></textarea>
+                                <input  [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo">
+                                <textarea [(ngModel)]='postagem.texto_postagem'  id="txtPost" placeholder="O que você está sentindo?"></textarea>
                             </div>
                         </div>
+                        <!--SELECIONAR TEMA-->
                         <div class="col-1"></div>
+                        <select name="tema" id="nomeTema" class="form-control" [ngModel]='idTema' (change)='findByIdTema'>
+                            <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
+                                {{item.nomeTema}}
+                            </option>
+                        </select>
+                        <!---->
                     </div>
                 </div>
                 <div class="col-12 mt-2">
@@ -62,7 +70,7 @@
                                 <div class="col-6">
 
                                         <div class="row d-flex justify-content-end">
-                                            <button type="button" class="btnPostarBase ">Postar</button>
+                                            <button type="button" class="btnPostarBase" (click)='publicar()'>Postar</button>
                                         </div>
                                 </div>
                             </div>
