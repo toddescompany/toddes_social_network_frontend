@@ -23,23 +23,23 @@ export class FeedComponent implements OnInit {
   listaPostagens: Postagem[]
   listaTemas: Tema[]
 
-  
+
 
   constructor(
-    private router: Router, 
-    private postagemService: PostagemService, 
-    private temaService: TemaService, 
+    private router: Router,
+    private postagemService: PostagemService,
+    private temaService: TemaService,
     private authservice: AuthService
   ) { }
 
   ngOnInit() {
     if(environment.token ==''){
-      //alert('sua sessão expirou.')
+      alert('sua sessão expirou.')
       this.router.navigate(['/entrar'])
     }
     this.getAllTemas()
     this.getAllPostagens()
-    //this.findByIdUser()
+    this.findByIdUser()
   }
 
   getAllTemas(){
@@ -60,11 +60,11 @@ export class FeedComponent implements OnInit {
 
   }
 
-  /*findByIdUser(){
+  findByIdUser(){
     this.authservice.getByIdUser(this.idUsuario).subscribe((resp: User)=>{
       this.user = resp
     })
-  }*/
+  }
 
   publicar(){
     this.postagem.anonimo_postagem = false

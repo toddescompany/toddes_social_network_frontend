@@ -18,7 +18,7 @@ export class TemaComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token ==''){
-      //alert('sua sessão expirou.')
+      alert('sua sessão expirou.')
       this.router.navigate(['/entrar'])
     }
 

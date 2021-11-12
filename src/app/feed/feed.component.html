@@ -83,11 +83,11 @@
             </div>
             <div id="posts" class="row">
 
-                <article class="col-12 pt-2 pb-2">
+                <article  *ngFor='let post of listaPostagens' class="col-12 pt-2 pb-2">
                     <div class="row">
                         <div class="col-3 col-sm-2 ">
                             <div class="row">
-                                <img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" />
+                                <img src="{{post.fk_usuario.foto}}" class="imgPerfil" />
                             </div>
                         </div>
 
@@ -97,7 +97,8 @@
                                     <div class="row">
                                         <div class="col-8">
                                             <div class="row text-left">
-                                            <span class="lblPostNomeCompleto">CaptainAmerican</span><a href="" class="lblPostNomeUsuario">@CaptainAmerican</a>
+                                            <span class="lblPostNomeCompleto">
+                                                {{post.fk_usuario.nomeUsuario}}</span><a href="" class="lblPostNomeUsuario">{{post.fk_usuario.emailUsuario}}</a>
                                             </div>
                                         </div>
                                         <div class="col-4">
@@ -112,57 +113,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-2"><p id="textoPost">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti ratione repellendus omnis doloremque necessitatibus? Doloribus ipsam eos deserunt, earum ex voluptatum officiis necessitatibus voluptates voluptatem dolorum officia? Quaerat, laudantium nemo!</p></div>
+                            <div class="row mt-2"><p id="textoPost">{{post.texto_postagem}}</p></div>
 
-                            <div class="row"><img src="../../assets/posts_img/lorem.jpeg" alt="" id="imgPost"></div>
-
-                            <div class="row mt-2">
-                                <div class="Comentarios">
-                                    <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
-                                    <span class="lblQtdComentarios">10</span>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="col-1"></div>
-                    </div>
-                </article>
-                <article class="col-12 pt-2 pb-2">
-                    <div class="row">
-                        <div class="col-3 col-sm-2 ">
-                            <div class="row">
-                                <img src="../../assets/users_img_profile/captanamerican_profile.png" class="imgPerfil" />
-                            </div>
-                        </div>
-
-                        <div class="col-8 col-sm-9 ">
-                            <div class="row">
-                                <div class="col-12 ">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <div class="row text-left">
-                                            <span class="lblPostNomeCompleto">CaptainAmerican</span><a href="" class="lblPostNomeUsuario">@CaptainAmerican</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="row d-flex justify-content-end">
-                                            <!-- DROPDOWN - CONFIG POST -->
-                                                <button type="button" class="btnConfigPost"><i class="fas fa-ellipsis-h"></i></button>
-
-
-                                            <!-- END DROPDOWN - CONFIG POST -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row mt-2"><p id="textoPost">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti ratione repellendus omnis doloremque necessitatibus? Doloribus ipsam eos deserunt, earum ex voluptatum officiis necessitatibus voluptates voluptatem dolorum officia? Quaerat, laudantium nemo!</p></div>
-
-                            <div class="row"><img src="../../assets/posts_img/lorem.jpeg" alt="" id="imgPost"></div>
+                            <div class="row" hidden><img src="" alt="" id="imgPost"></div>
 
                             <div class="row mt-2">
-                                <div class="Comentarios">
+                                <div class="Comentarios" hidden>
                                     <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
                                     <span class="lblQtdComentarios">10</span>
                                 </div>

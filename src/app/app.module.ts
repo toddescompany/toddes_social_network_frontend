@@ -11,6 +11,8 @@ import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { TemaComponent } from './tema/tema.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 
 
 
@@ -22,7 +24,9 @@ import { TemaComponent } from './tema/tema.component';
     RodapeComponent,
     EntrarComponent,
     FeedComponent,
-    TemaComponent
+    TemaComponent,
+    TemaDeleteComponent,
+    TemaEditComponent
  
   ],
   imports: [
