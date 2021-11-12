@@ -1,33 +1,3 @@
-
-/* MENU DE CIMA */
-    .mainLogo{width:40px;height:40px;}
-    #btnMenuSuperior img{width:40px;height:40px;}
-    .menuSuperiorCenter{width:100%;margin:auto;}
-    /* Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) {
-
-    }
-    /* Medium devices (tablets, 768px and up)*/
-    @media (min-width: 768px) {
-        .container-fluid{width:80%;margin:auto;}
-         .menuSuperiorCenter{width:75%;margin:auto;}
-    }
-    /* Large devices (desktops, 992px and up)*/
-    @media (min-width: 992px) {
-        .container-fluid{width:100%;}
-        .menuSuperiorCenter{width:100%;margin:auto;}
-    }
-    /* Extra large devices (large desktops, 1200px and up)*/
-    @media (min-width: 1200px) {
-        .menuSuperiorCenter{width:70%;margin:auto;}
-    }
-
-
-
-
-
-
-
 /* GENERAL */
         *{
             word-wrap: break-word;

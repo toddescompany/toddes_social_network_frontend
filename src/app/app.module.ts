@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
+import { TemaComponent } from './tema/tema.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FeedComponent } from './feed/feed.component';
     MenuComponent,
     RodapeComponent,
     EntrarComponent,
-    FeedComponent
+    FeedComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
