@@ -46,7 +46,7 @@
                         </div>
                         <!--SELECIONAR TEMA-->
                         <div class="col-1"></div>
-                        <select name="tema" id="nomeTema" class="form-control" [ngModel]='idTema' (change)='findByIdTema'>
+                        <select name="tema" id="nomeTema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema'>
                             <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
                                 {{item.nomeTema}}
                             </option>

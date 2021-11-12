@@ -39,7 +39,7 @@ export class FeedComponent implements OnInit {
     }
     this.getAllTemas()
     this.getAllPostagens()
-    this.findByIdUser()
+    //this.findByIdUser()
   }
 
   getAllTemas(){
@@ -59,17 +59,20 @@ export class FeedComponent implements OnInit {
     })
 
   }
-  findByIdUser(){
+
+  /*findByIdUser(){
     this.authservice.getByIdUser(this.idUsuario).subscribe((resp: User)=>{
       this.user = resp
     })
-  }
+  }*/
 
   publicar(){
+    this.postagem.anonimo_postagem = false
     this.tema.idTema = this.idTema
     this.postagem.fk_tema = this.tema
     this.user.id = this.idUsuario
     this.postagem.fk_usuario = this.user
+
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
