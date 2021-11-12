@@ -13,6 +13,7 @@ import { FeedComponent } from './feed/feed.component';
 import { TemaComponent } from './tema/tema.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { TemaComponent } from './tema/tema.component';
     EntrarComponent,
     FeedComponent,
     TemaComponent
+ 
   ],
   imports: [
     BrowserModule,
