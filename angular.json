@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "3947b747-576d-44b4-9c74-ba8eff3ad2d2"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "toddesFront": {
+    "genBlogPessoalFrontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/toddesFront",
+            "outputPath": "dist/genBlogPessoalFrontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,12 +28,13 @@
             ],
             "styles": [
               "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.js",
-              "./node_modules/popper.js/dist/umd/popper.min.js"]
+            "./node_modules/popper.js/dist/umd/popper.js",
+            "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -75,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "toddesFront:build:production"
+              "browserTarget": "genBlogPessoalFrontend:build:production"
             },
             "development": {
-              "browserTarget": "toddesFront:build:development"
+              "browserTarget": "genBlogPessoalFrontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "toddesFront:build"
+            "browserTarget": "genBlogPessoalFrontend:build"
           }
         },
         "test": {
@@ -101,13 +99,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.js",
+            "./node_modules/popper.js/dist/umd/popper.js",
+            "./node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         }
       }
     }
   },
-  "defaultProject": "toddesFront"
+  "defaultProject": "genBlogPessoalFrontend"
 }

@@ -1,13 +1,64 @@
-/* GENERAL */
 
+/* MENU DE CIMA */
+    .mainLogo{width:40px;height:40px;}
+    #btnMenuSuperior img{width:40px;height:40px;}
+    .menuSuperiorCenter{width:100%;margin:auto;}
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+
+    }
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {
+        .container-fluid{width:80%;margin:auto;}
+         .menuSuperiorCenter{width:75%;margin:auto;}
+    }
+    /* Large devices (desktops, 992px and up)*/
+    @media (min-width: 992px) {
+        .container-fluid{width:100%;}
+        .menuSuperiorCenter{width:100%;margin:auto;}
+    }
+    /* Extra large devices (large desktops, 1200px and up)*/
+    @media (min-width: 1200px) {
+        .menuSuperiorCenter{width:70%;margin:auto;}
+    }
+
+
+
+
+
+
+
+/* GENERAL */
+        *{
+            word-wrap: break-word;
+        }
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+
+        }
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+            .container-fluid{width:80%;margin:auto;}
+        }
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+            .container-fluid{width:100%;}
+        }
+        /* Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+            .container-fluid{width:70%;margin:auto;}
+        }
 
 /* LEFT "menu lateral" */
     /* leftMenu*/
     #leftMenu{height:500px;}
-    #leftMenu li.navbar-item{font-size:25px; border-radius: 30px;vertical-align:middle;display:inline;}
+    #leftMenu ul{width:100%;}
+    #leftMenu li.navbar-item{font-size:25px; border-radius: 30px;margin:5px 0;}
     #leftMenu li.navbar-item a{text-decoration:none;color:black;}
     #leftMenu li.navbar-item i{display:inline;}
     #leftMenu li.navbar-item:hover{background-color:#eee;cursor:pointer;}
+
     /* btnPostar */
     .btnPostarBase
     {
@@ -32,29 +83,117 @@
         font-size:20px;
         margin:auto;
     }
+    .active{font-weight:bold;}
 
-    @media screen and (min-width: 1200px)
-    {
-        #leftMenu li.navbar-item{text-align:left;width:60%;text-align:center;}
-        #btnPostar{width:90%;border-radius:30px;}
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+
     }
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {
+
+    }
+    /* Large devices (desktops, 992px and up)*/
+    @media (min-width: 992px) {
+
+    }
+    /* Extra large devices (large desktops, 1200px and up)*/
+    @media (min-width: 1200px) {
+        #leftMenu li.navbar-item{font-size:20px;text-align:left;width:70%;text-align:center;padding:5px 0;}
+        #btnPostar{width:90%;border-radius:30px;padding:5px 0px;}
+    }
+
 
 /* CENTER "feed" */
     /* POSTAR */
         #feed #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
-        #feed .imgPerfil {height:50px;height:50px;border-radius:100%;}
-        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100%;color:gray;font-size:14px;border-bottom:1px solid #eee;}
+        #feed .imgPerfil {height:50px;height:50px;border-radius:100%;margin:auto;}
+        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100%;color:gray;font-size:20px;font-weight:bold;border-bottom:1px solid #eee;}
         #feed .row .col-12:nth-child(2) ul{list-style:none;padding:0;}
         #feed .row .col-12:nth-child(2) ul li{display:inline;padding-right:10px;}
         #feed .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:20px;}
+
     /* POSTS */
+        #posts article{border-top:1px solid #eee;border-bottom:1px solid #eee;}
         #posts article h1{font-size:20px;}
         #posts article #imgPost{width:100%;}
         #posts article #imgPost{width:100%;}
         #posts article button{border:none;background:white;}
         .btnComentario i{color:#d148bb;font-size:25px;}
         .btnConfigPost i{color:gray;font-size:25px;}
-        #posts article h3{font-size:140%;}
-        #posts article h4{font-size:100%;color:#d148bb;}
+        #posts article .lblPostNomeCompleto{font-size:100%; margin-right:5px;font-weight:bold;}
+        #posts article .lblPostNomeUsuario{font-size:100%;color:#d148bb;}
+        #posts .lblQtdComentarios {position:relative;top:-5px;color:gray;}
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+
+        }
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+
+        }
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+
+        }
+        /* Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+
+        }
 
 /* RIGHT "tendências"*/
+        /* O que está acontecendo? */
+            #oqueEstaAcontecendo{background-color:#eee;border-radius:10px;}
+            #oqueEstaAcontecendo h3{font-size:20px;}
+
+            .tendenciaImgPost{width:100%;height:60px;border-radius:10px;}
+            .resumirTextoPost{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+            .tendenciaTemaPost{margin-right:5px;}
+            .tendenciaDonoPost{color:#d148bb;}
+
+            /* txtSearch */
+            #oqueEstaAcontecendo article{margin-bottom:10px;}
+
+            .has-search .form-control {
+                padding-left: 2.375rem;
+                background:#eee;
+                border-radius:30px;
+            }
+
+            .has-search .form-control-feedback {
+                position: absolute;
+                z-index: 2;
+                display: block;
+                width: 2.375rem;
+                height: 2.375rem;
+                line-height: 2.375rem;
+                text-align: center;
+                pointer-events: none;
+                color: #aaa;
+                background:#eee;
+                border-radius:30px;
+            }
+
+        /* Small devices (landscape phones, 576px and up) */
+        @media (min-width: 576px) {
+
+        }
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+
+        }
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+
+        }
+        /* Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+
+        }
