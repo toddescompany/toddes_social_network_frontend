@@ -101,9 +101,12 @@
                                                     {{post.fk_usuario.nomeUsuario}}</span><a href=""
                                                     class="lblPostNomeUsuario">@{{post.fk_usuario.emailUsuario}}</a>
 
+
                                             </div>
                                         </div>
                                         <div class="col-4" >
+
+
                                             <div class="row d-flex justify-content-end">
 
                            <!-- START - DROPDOWN CONFIG POST -->
@@ -130,8 +133,13 @@ aria-haspopup="true" aria-expanded="false">
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
+
                                 <p id="textoPost">{{post.texto_postagem}}</p>
+                            </div>
+                            <div class="row mt-2 d-flex justify-content-end">
+                                <p class="card-text "><small class="text-muted">{{post.data_postagem}} às {{post.data_postagem | date: 'HH:mm'}}</small></p>
                             </div>
 
                             <div class="row" hidden><img src="" alt="" id="imgPost"></div>
@@ -176,7 +184,7 @@ aria-haspopup="true" aria-expanded="false">
                             <article class="row" *ngFor='let trend of listaPostagens | slice:0:3 ; index as i'>
                                 <div class="col-9">
                                     <div class="row">
-                                        <b class="tendenciaDataPost">{{trend.date}}</b>
+                                        <b class="tendenciaDataPost">{{trend.data_postagem}}</b>
                                     </div>
                                     <div class="row">
                                         <div class="tendenciaPedacoPost resumirTextoPost pr-3">{{trend.texto_postagem}}</div>
