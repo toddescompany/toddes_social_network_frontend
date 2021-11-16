@@ -47,6 +47,14 @@
 
   });
 
+  // menu fixo muda cor dps do scroll
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $(".navbar-fixed-top");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+  });
+
 
 
 

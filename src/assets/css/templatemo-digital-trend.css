@@ -31,7 +31,7 @@ https://templatemo.com/tm-538-digital-trend
   }
 
   :root {
-    --primary-color:        #057a8d; /* lugar do slogan*/
+    --primary-color:        #d148bb; /* lugar do slogan*/
     --secondary-color:      #d148bb;
     --white-color:          #ffffff;
     --dark-color:           #171819;
@@ -68,6 +68,8 @@ https://templatemo.com/tm-538-digital-trend
   /*---------------------------------------
      TYPOGRAPHY
   -----------------------------------------*/
+
+
 
   h1,h2,h3,h4,h5,h6 {
     font-family: var(--title-font-family);
@@ -109,6 +111,7 @@ https://templatemo.com/tm-538-digital-trend
     letter-spacing: 0;
     color: var(--secondary-color);
   }
+
 
 
   /*  BLOCKQUOTES */
@@ -349,6 +352,7 @@ https://templatemo.com/tm-538-digital-trend
 
   .hero-bg {
     background: linear-gradient(170deg, var(--primary-color) 64%, var(--white-color) 30%);
+
   }
 
   .hero-image {
@@ -711,3 +715,4 @@ https://templatemo.com/tm-538-digital-trend
   }
 
 
+  .standup1{color:yellow;}
