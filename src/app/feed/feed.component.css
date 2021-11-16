@@ -94,6 +94,7 @@
         #posts article .lblPostNomeCompleto{font-size:100%; margin-right:5px;font-weight:bold;}
         #posts article .lblPostNomeUsuario{font-size:100%;color:#d148bb;}
         #posts .lblQtdComentarios {position:relative;top:-5px;color:gray;}
+        #dropdown-post .dropdown-menu i{color:#d148bb;}
 
         /* Small devices (landscape phones, 576px and up) */
         @media (min-width: 576px) {
