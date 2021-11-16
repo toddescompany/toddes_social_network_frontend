@@ -111,8 +111,8 @@
         <i class="fas fa-ellipsis-h"></i>
     </button>
     <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
-      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editPostModal"><i class="fas fa-edit"></i> Editar</a>
-      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal"><i class="far fa-trash-alt"></i> Remover</a>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editPostModal" [routerLink]="['/postagem-edit', post.id_postagem]"><i class="fas fa-edit"></i> Editar</a>
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal" [routerLink]="['/postagem-delete', post.id_postagem]"><i class="far fa-trash-alt"></i> Remover</a>
     </div>
   </div>
 <!-- END - DROPDOWN CONFIG POST -->
@@ -232,7 +232,9 @@
     </div>
 </div>
 
-<!-- MODAL DELETE POST -->
+
+
+<!-- MODAL DELETE POST 
   <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -252,9 +254,12 @@
       </div>
     </div>
   </div>
+
+-->
+
 <!-- END MODAL DELETE POST -->
 
-<!-- START - MODAL EDITAR POST -->
+<!-- START - MODAL EDITAR POST 
   <div class="modal fade" id="editPostModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -276,14 +281,16 @@
                             <textarea [(ngModel)]='postagem.texto_postagem'  id="txtPost" placeholder="O que você está sentindo?"></textarea>
                         </div>
                     </div>
-                    <!--SELECIONAR TEMA-->
+                -->
+                    <!--SELECIONAR TEMA
 
                     <select name="tema" id="nomeTema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema'>
                         <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
                             {{item.nomeTema}}
                         </option>
                     </select>
-                    <!---->
+                -->
+                    <!---
                 </div>
             </div>
             <div class="col-12 mt-2">
@@ -298,12 +305,6 @@
                                     <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
                                 </ul>
                                 </div>
-                            </div>
-                            <div class="col-6">
-
-                                    <div class="row d-flex justify-content-end">
-                                        <button type="button" class="btnPostarBase" (click)='publicar()'>Postar</button>
-                                    </div>
                             </div>
                         </div>
                     </div>
@@ -321,4 +322,4 @@
       </div>
     </div>
   </div>
-<!-- END - MODAL EDITAR POST -->
+ END - MODAL EDITAR POST -->
