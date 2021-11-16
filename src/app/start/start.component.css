@@ -1,0 +1,40 @@
+/* MENU FIXO MUDA A COR*/
+.navbar-fixed-top{
+	position:fixed;
+}
+
+.navbar-fixed-top.scrolled {
+	background-color: #d148bb !important;
+	transition: background-color 200ms linear;
+  }
+
+  .navbar-fixed-top.scrolled .nav-link,  .navbar-fixed-top.scrolled a {
+	color:white !important;
+  }
+
+  .navbar-fixed-top.scrolled .contact
+  {
+	  border-color:white !important;
+  }
+
+  .navbar-fixed-top.scrolled .contact:hover{
+	background-color:white !important;
+	color:#d148bb !important;
+  }
+
+/* TECNOLOGIAS UTILIZADAS */
+.tecnologiasUtilizadas{
+	padding:0;
+	list-style-type:none;
+	margin-bottom:50px;
+}
+
+.tecnologiasUtilizadas img{
+	width:60px;
+	margin-right:10px;
+}
+
+
+
+/* COLABORADORES */
+.colaboradores .card{margin-right:10px;margin-bottom:10px;}
