@@ -24,7 +24,7 @@
           }, 1000);
             event.preventDefault();
       });
-    });  
+    });
 
 
     // PROJECT SLIDE
@@ -48,5 +48,5 @@
   });
 
 
-    
+
 
