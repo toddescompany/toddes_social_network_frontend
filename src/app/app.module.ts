@@ -13,6 +13,7 @@ import { FeedComponent } from './feed/feed.component';
 import { TemaComponent } from './tema/tema.component';
 import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
 import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
+import { StartComponent } from './start/start.component';
 
 
 
@@ -26,7 +27,8 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
     FeedComponent,
     TemaComponent,
     TemaDeleteComponent,
-    TemaEditComponent
+    TemaEditComponent,
+    StartComponent
  
   ],
   imports: [
