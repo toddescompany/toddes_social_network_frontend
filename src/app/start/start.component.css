@@ -38,3 +38,5 @@
 
 /* COLABORADORES */
 .colaboradores .card{margin-right:10px;margin-bottom:10px;}
+.colaboradores .card ul{text-align:center;}
+.colaboradores .card ul a{color:#d148bb;font-size:25px;}

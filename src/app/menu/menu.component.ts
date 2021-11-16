@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 
 @Component({
@@ -9,10 +10,21 @@ import { environment } from 'src/environments/environment.prod';
 export class MenuComponent implements OnInit {
   foto = environment.foto
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
 
   }
 
+
+  sair (){
+    //alert("Usuário atualizado com sucesso, faça o login novamente!")
+    environment.token=''
+    //environment.=''
+    environment.foto=''
+   // environment.idUsuario=0
+    this.router.navigate(['/entrar'])
+  }
 }

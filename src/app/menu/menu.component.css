@@ -9,8 +9,31 @@ a{
 
 /* MENU DE CIMA */
 .mainLogo{width:40px;height:40px;}
-#btnMenuSuperior img{width:40px;height:40px;}
+#btnMenuSuperior{padding-left:10px;}
+#btnMenuSuperior img{width:40px;height:40px;transition:1s ease;}
 .menuSuperiorCenter{width:100%;margin:auto;}
+#btnMenuSuperior:hover{cursor:pointer;}
+.dropdown-item i{color:#d148bb;}
+
+ /* Small devices (landscape phones, 576px and up) */
+ @media (min-width: 576px) {
+    #btnMenuSuperior:hover{background:#eee;border-radius:30px;transition:1s ease;}
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
+}
+
+
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 

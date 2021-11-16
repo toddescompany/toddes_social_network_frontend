@@ -37,53 +37,47 @@
 
         <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
             <div id="postar" class="row">
-                <div class="col-12 mt-2">
-                    <div class="row text-center ">
-
-
-                        <div class="col-12">
+                <div class="col-12 pt-3 pb-3" >
+                    <div class="row form-group" >
+                        <div class="col-1"></div>
+                        <div class="col-10">
                             <div class="row">
-                                <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text"
-                                    placeholder="Titulo" class="col-12 b-0">
-                                <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost"
-                                    placeholder="O que você está sentindo?"></textarea>
-                            </div>
-                        </div>
-                        <!--SELECIONAR TEMA-->
 
-                        <select name="tema" id="nomeTema" class="form-control" [(ngModel)]='idTema'
-                            (change)='findByIdTema'>
+                      <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text"
+                                    placeholder="Titulo" class="col-12 b-0 form-control" value="" hidden >
+                       <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost"  placeholder="O que você está sentindo?" class="form-control" autofocus required></textarea>
+
+                        <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;">Tema da Postagem:</label>
+                        <select name="tema" id="nomeTema" class="form-select form-control" [(ngModel)]='idTema'
+                            (change)='findByIdTema' required>
                             <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
                                 {{item.nomeTema}}
                             </option>
                         </select>
-                        <!---->
+                    </div>
+                    <div class="col-1"></div>
+                </div>
                     </div>
                 </div>
                 <div class="col-12 mt-2">
                     <div class="row">
-                        <div class="col-1  "></div>
-                        <div class="col-10  text-left">
+                            <div class="col-1"></div>
+                        <div class="col-5">
                             <div class="row">
-                                <div class="col-6">
-                                    <div class="row">
-                                        <ul class="p-0">
-                                            <li><a href="#"><i class="far fa-image"></i></a></li>
-                                            <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-6">
 
-                                    <div class="row d-flex justify-content-end">
-                                        <button type="button" class="btnPostarBase" (click)='publicar()'>Postar</button>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <ul class="p-0">
+                                <li><a href="#"><i class="far fa-image"></i></a></li>
+                                <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
+                            </ul>
                         </div>
+                        </div>
+                        <div class="col-5">
+                            <div class="row d-flex justify-content-end">
+                                <button type="button" class="btnPostar2 fas fa-paper-plane"  (click)='publicar()'></button>
+                            </div>
                         <div class="col-1"></div>
-
-
+                    </div>
                     </div>
                 </div>
             </div>
@@ -97,7 +91,7 @@
                             </div>
                         </div>
 
-                        <div class="col-8 col-sm-9 ">
+                        <div class="col-9 col-sm-9 ">
                             <div class="row">
                                 <div class="col-12 ">
                                     <div class="row">
@@ -105,40 +99,38 @@
                                             <div class="row text-left">
                                                 <span class="lblPostNomeCompleto">
                                                     {{post.fk_usuario.nomeUsuario}}</span><a href=""
-                                                    class="lblPostNomeUsuario">{{post.fk_usuario.emailUsuario}}</a>
+                                                    class="lblPostNomeUsuario">@{{post.fk_usuario.emailUsuario}}</a>
 
                                             </div>
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-4" >
                                             <div class="row d-flex justify-content-end">
-                                                <!-- START BTN CONFIG POST -->
 
-                                                <!-- START - DROPDOWN CONFIG POST -->
-                                                <div class="dropdown" id="dropdown-post">
-                                                    <button class="btn btn-secondary dropdown-toggle btnConfigPost"
-                                                        type="button" id="btn-dropdown-post" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fas fa-ellipsis-h"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
-                                                        <a class="dropdown-item" href="#" data-toggle="modal"
-                                                            data-target="#editPostModal"
-                                                            [routerLink]="['/postagem-edit', post.id_postagem]"><i
-                                                                class="fas fa-edit"></i> Editar</a>
-                                                        <a class="dropdown-item" href="#" data-toggle="modal"
-                                                            data-target="#deletePostModal"
-                                                            [routerLink]="['/postagem-delete', post.id_postagem]"><i
-                                                                class="far fa-trash-alt"></i> Remover</a>
-                                                    </div>
-                                                </div>
-                                                <!-- END - DROPDOWN CONFIG POST -->
-                                                <!-- END BTN CONFIG POST -->
+                           <!-- START - DROPDOWN CONFIG POST -->
+<div class="dropdown" id="dropdown-post">
+<button class="btn btn-secondary dropdown-toggle btnConfigPost"
+type="button" id="btn-dropdown-post" data-toggle="dropdown"
+aria-haspopup="true" aria-expanded="false">
+<i class="fas fa-ellipsis-h"></i>
+</button>
+<div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
+<a class="dropdown-item" href="#" data-toggle="modal"
+    data-target="#editPostModal"
+    [routerLink]="['/postagem-edit', post.id_postagem]"><i
+        class="fas fa-edit"></i> Editar</a>
+<a class="dropdown-item" href="#" data-toggle="modal"
+    data-target="#deletePostModal"
+    [routerLink]="['/postagem-delete', post.id_postagem]"><i
+        class="far fa-trash-alt"></i> Remover</a></div>
+</div>
+                          <!-- END - DROPDOWN CONFIG POST -->
+
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-2">
+                            <div class="row">
                                 <p id="textoPost">{{post.texto_postagem}}</p>
                             </div>
 
@@ -153,7 +145,6 @@
 
                             </div>
                         </div>
-                        <div class="col-1"></div>
                     </div>
                 </article>
 
@@ -179,23 +170,20 @@
                     <div class="row p-3">
                         <div class="col-12">
                             <div class="row pb-4">
-                                <h3>O que as pessoas tem sentido?</h3>
+                                <h3>O que as pessoas estão sentindo?</h3>
                             </div>
 
-                            <article class="row">
+                            <article class="row" *ngFor='let trend of listaPostagens | slice:0:3 ; index as i'>
                                 <div class="col-9">
                                     <div class="row">
-                                        <b class="tendenciaDataPost">3 hrs ago</b>
+                                        <b class="tendenciaDataPost">{{trend.date}}</b>
                                     </div>
                                     <div class="row">
-                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">Lorem ipsum dolor sit
-                                            amet consectetur adipisicing elit. Nesciunt nihil labore incidunt.
-                                            Reprehenderit esse, quibusdam porro minima hic consequuntur repudiandae quas
-                                            recusandae amet aut velit incidunt ab nisi sapiente laudantium?</div>
+                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">{{trend.texto_postagem}}</div>
                                     </div>
                                     <div class="row">
-                                        <b class="tendenciaTemaPost">Tema</b>
-                                        <a href="#" class="tendenciaDonoPost">@QuemPostou</a>
+                                        <b class="tendenciaTemaPost">{{trend.fk_tema.nomeTema}}</b>
+                                        <a href="#" class="tendenciaDonoPost">@{{trend.fk_usuario.nomeUsuario}}</a>
                                     </div>
                                 </div>
                                 <div class="col-3">
@@ -205,54 +193,6 @@
                                     </div>
                                 </div>
                             </article>
-                            <article class="row">
-                                <div class="col-9">
-                                    <div class="row">
-                                        <b class="tendenciaDataPost">3 hrs ago</b>
-                                    </div>
-                                    <div class="row">
-                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">Lorem ipsum dolor sit
-                                            amet consectetur adipisicing elit. Nesciunt nihil labore incidunt.
-                                            Reprehenderit esse, quibusdam porro minima hic consequuntur repudiandae quas
-                                            recusandae amet aut velit incidunt ab nisi sapiente laudantium?</div>
-                                    </div>
-                                    <div class="row">
-                                        <b class="tendenciaTemaPost">Tema</b>
-                                        <a href="#" class="tendenciaDonoPost">@QuemPostou</a>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="row">
-                                        <a href="#"><img src="../../assets/posts_img/lorem.jpeg"
-                                                class="tendenciaImgPost" alt=""></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="row">
-                                <div class="col-9">
-                                    <div class="row">
-                                        <b class="tendenciaDataPost">3 hrs ago</b>
-                                    </div>
-                                    <div class="row">
-                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">Lorem ipsum dolor sit
-                                            amet consectetur adipisicing elit. Nesciunt nihil labore incidunt.
-                                            Reprehenderit esse, quibusdam porro minima hic consequuntur repudiandae quas
-                                            recusandae amet aut velit incidunt ab nisi sapiente laudantium?</div>
-                                    </div>
-                                    <div class="row">
-                                        <b class="tendenciaTemaPost">Tema</b>
-                                        <a href="#" class="tendenciaDonoPost">@QuemPostou</a>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="row">
-                                        <a href="#"><img src="../../assets/posts_img/lorem.jpeg"
-                                                class="tendenciaImgPost" alt=""></a>
-                                    </div>
-                                </div>
-                            </article>
-
-
 
                         </div>
                     </div>

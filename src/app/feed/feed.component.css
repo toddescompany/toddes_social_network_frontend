@@ -30,16 +30,6 @@
     #leftMenu li.navbar-item:hover{background-color:#eee;cursor:pointer;}
 
     /* btnPostar */
-    .btnPostarBase
-    {
-        background: #d148bb;
-        border-radius:30px;
-        color: #FFFFFF;
-        border:none;
-        font-weight:bold;
-        padding:7px 15px;
-        font-size:20px;
-    }
 
     #btnPostar{
         width:55px;
@@ -77,16 +67,26 @@
 /* CENTER "feed" */
     /* POSTAR */
         #feed #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
-        #feed .imgPerfil {height:50px;height:50px;border-radius:100%;margin:auto;}
-        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100%;color:gray;font-size:20px;font-weight:bold;border-bottom:1px solid #eee;}
+        /* caixa para postar algo*/
+        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100px;color:gray;font-size:20px;border-bottom:2px solid #eee;}
         #feed .row .col-12:nth-child(2) ul{list-style:none;padding:0;}
         #feed .row .col-12:nth-child(2) ul li{display:inline;padding-right:10px;}
-        #feed .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:20px;}
+        #feed .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:30px;}
 
+        .btnPostar2 /* dentro do postar */
+        {
+            background: #d148bb;
+            border-radius:100%;
+            color: #FFFFFF;
+            border:none;
+            font-weight:bold;
+            padding:15px 15px;
+            font-size:20px;
+        }
     /* POSTS */
+    #feed .imgPerfil {width:75px;height:70px;border-radius:100%;margin:auto;}
         #posts article{border-top:1px solid #eee;border-bottom:1px solid #eee;}
         #posts article h1{font-size:20px;}
-        #posts article #imgPost{width:100%;}
         #posts article #imgPost{width:100%;}
         #posts article button{border:none;background:white;}
         .btnComentario i{color:#d148bb;font-size:25px;}

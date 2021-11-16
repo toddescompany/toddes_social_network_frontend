@@ -1,11 +1,30 @@
-    <nav class="row pt-1 pb-1 border-bottom" id="menuSuperior">
+   <div class="container-fluid">
+
+
+   <nav class="row pt-1 pb-1 border-bottom" id="menuSuperior">
         <div class="col-12">
         <div class="row menuSuperiorCenter">
             <div class="col-2">
 
-                    <div id="btnMenuSuperior">
-                        <img src="{{foto}}" class="imgPerfil rounded-circle"  />
+                    <div id="btnMenuSuperior" class="row"  data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                        <div class="col-4"> <img src="{{foto}}" class="imgPerfil rounded-circle"  /></div>
+                        <div class="col-6 d-none d-lg-block">
+                            <div class="row"><span>Argel Capela</span></div>
+                            <div class="row"><span class="color-login">@ArgelCapela</span></div>
+                        </div>
+
                     </div>
+ <!-- START - DROPDOWN BTN PERFIL -->
+<div class="dropdown" id="dropdown-btnperfil" style="position:relative;top:-45px;">
+    <div class="dropdown-menu" aria-labelledby="btn-dropdown-btnperfil">
+<a class="dropdown-item" href="#" data-toggle="modal"         data-target="#editPostModal"><i class="fas fa-edit"></i> Editar Perfil</a>
+<a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal" ><i class="far fa-trash-alt"></i> Remover conta</a>
+<hr>
+<a (click)='sair()' class="dropdown-item"  data-toggle="modal" data-target="#deletePostModal" ><i class="fas fa-sign-out-alt"></i> Sair</a>
+</div>
+    </div>
+    <!-- END - DROPDOWN BTN PERFIL -->
 
             </div>
             <div class="col-8 text-center">
@@ -15,3 +34,5 @@
         </div>
     </div>
     </nav>
+</div>
+
