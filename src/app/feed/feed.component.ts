@@ -69,7 +69,7 @@ export class FeedComponent implements OnInit {
   publicar(){
 
     this.postagem.anonimo_postagem = false
-    this.postagem.tituloPostagem =' '
+    //this.postagem.tituloPostagem =' '
     this.tema.idTema = this.idTema
     this.postagem.fk_tema = this.tema
     this.user.id = this.idUsuario
