@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -19,6 +19,8 @@ import { StartComponent } from './start/start.component';
 import { MenuEsquerdoComponent } from './menu-esquerdo/menu-esquerdo.component';
 import { TendenciasComponent } from './tendencias/tendencias.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
+import { ModalModule} from 'ngx-bootstrap/modal'
+import { OrderModule} from 'ngx-order-pipe'
 
 
 
@@ -45,7 +47,9 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

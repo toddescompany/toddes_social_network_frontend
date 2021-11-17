@@ -23,6 +23,8 @@ export class FeedComponent implements OnInit {
   listaPostagens: Postagem[]
   listaTemas: Tema[]
 
+  key = 'data'
+  reverse = true
 
 
   constructor(
