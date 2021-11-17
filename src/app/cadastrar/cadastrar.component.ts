@@ -22,8 +22,8 @@ export class CadastrarComponent implements OnInit {
   ngOnInit() {
     window.scroll (0,0)
 
-    
-    
+
+
   }
   confirmeSenha(event: any){
     this.confirmSenha = event.target.value
@@ -37,6 +37,8 @@ export class CadastrarComponent implements OnInit {
   cadastrar(){
     this.user.tipo = this.tipoUsuario
 
+    if(this.user.foto=='')
+      this.user.foto='../../assets/toddes_icon/sem_imagem.jpg';
 
     if(this.user.senhaUsuario != this.confirmSenha){
       alert('senhas diferentes')
@@ -50,6 +52,6 @@ export class CadastrarComponent implements OnInit {
     }
   }
 
-  
-  
+
+
 }
