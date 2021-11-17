@@ -1,1 +1,44 @@
-<p>tendencias works!</p>
+<aside id="tendencias" class="d-none d-lg-block col-lg-3 col-xl-3">
+	<div class="row d-flex justify-content-center">
+
+
+		<div class="form-group has-search col-11 mt-2">
+			<span class="fa fa-search form-control-feedback"></span>
+			<input type="text" class="form-control" placeholder="Busque no Toddes">
+		</div>
+
+
+
+		<div id="oqueEstaAcontecendo" class="col-10">
+			<div class="row p-3">
+				<div class="col-12">
+					<div class="row pb-4">
+						<h3>O que as pessoas estão sentindo?</h3>
+					</div>
+
+					<article class="row" *ngFor='let trend of listaPostagens | slice:0:3 ; index as i'>
+						<div class="col-9">
+							<div class="row">
+								<b class="tendenciaDataPost">{{trend.data_postagem}}</b>
+							</div>
+							<div class="row">
+								<div class="tendenciaPedacoPost resumirTextoPost pr-3">{{trend.texto_postagem}}</div>
+							</div>
+							<div class="row">
+								<b class="tendenciaTemaPost">{{trend.fk_tema.nomeTema}}</b>
+								<a href="#" class="tendenciaDonoPost">@{{trend.fk_usuario.nomeUsuario}}</a>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="row">
+								<a href="#"><img src="../../assets/posts_img/lorem.jpeg"
+										class="tendenciaImgPost" alt=""></a>
+							</div>
+						</div>
+					</article>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</aside>

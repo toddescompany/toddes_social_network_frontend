@@ -21,21 +21,18 @@ export class EntrarComponent implements OnInit {
   entrar(){
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=> {
       this.userLogin = resp
-      environment.token = this.userLogin.token
-      environment.nomeUsuario = this.userLogin.nomeUsuario
-      environment.foto = this.userLogin.foto
-      environment.id = this.userLogin.id
+      // definindo variáveis globais
+        environment.token = this.userLogin.token
+        environment.nomeUsuario = this.userLogin.nomeUsuario
+        environment.login = this.userLogin.emailUsuario
+        environment.emailUsuario = this.userLogin.emailUsuario
+        environment.foto = this.userLogin.foto
+        environment.id = this.userLogin.id
 
-      //console.log(environment.token)
-      //console.log(environment.nomeUsuario)
-      //console.log(environment.foto)
-      //console.log(environment.id)
-      //console.table(this.userLogin)
-
+      // mudando o layout depois de logar, para deixar as barras fixas
 
 
       this.router.navigate(['/feed'])
-
     }, erro=>{
       if(erro.status == 500){
         alert('Usuario ou senha incorretos')

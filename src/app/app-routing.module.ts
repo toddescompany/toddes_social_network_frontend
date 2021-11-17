@@ -22,6 +22,7 @@ const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
 {path: 'start', component: StartComponent},
 {path: 'perfil-usuario/:id', component: PerfilUsuarioComponent} 
+
 ];
 
 @NgModule({

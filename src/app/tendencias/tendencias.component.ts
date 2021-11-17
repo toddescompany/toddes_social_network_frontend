@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Postagem } from '../model/Postagem';
 
 @Component({
   selector: 'app-tendencias',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TendenciasComponent implements OnInit {
 
+  @Input() listaPostagens: Postagem[]
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+
 
 }
