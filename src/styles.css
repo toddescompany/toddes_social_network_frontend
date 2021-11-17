@@ -2,8 +2,12 @@
 
 /* DESIGN LAYOUT */
 #container-master{
-	
+
 }
+
+.beforeLogin{position:absolute;width:80%;left:40%;margin-left:-40%;}
+.afterLogin{}
+
 
 /* BASE */
 .img-100{width:100%;}

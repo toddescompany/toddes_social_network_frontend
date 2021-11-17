@@ -1,7 +1,9 @@
 /* RIGHT "tendências"*/
 		#tendencias{
 			position:fixed;
-			top:20px;right:0;
+			width:20%;
+			top:6%;
+			right:0;
 		}
         /* O que está acontecendo? */
 		#oqueEstaAcontecendo{background-color:#eee;border-radius:10px;}
