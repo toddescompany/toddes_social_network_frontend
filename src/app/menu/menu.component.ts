@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuComponent implements OnInit {
   foto = environment.foto
+  nomeUsuario = environment.nomeUsuario
 
   constructor(
     private router: Router
