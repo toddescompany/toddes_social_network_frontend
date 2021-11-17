@@ -20,7 +20,9 @@ import { MenuEsquerdoComponent } from './menu-esquerdo/menu-esquerdo.component';
 import { TendenciasComponent } from './tendencias/tendencias.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { ModalModule} from 'ngx-bootstrap/modal'
-import { OrderModule} from 'ngx-order-pipe'
+import { OrderModule} from 'ngx-order-pipe';
+import { TesteComponent } from './teste/teste.component'
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 
@@ -41,6 +43,7 @@ import { OrderModule} from 'ngx-order-pipe'
     MenuEsquerdoComponent,
     TendenciasComponent,
     PerfilUsuarioComponent,
+    TesteComponent,
 
   ],
   imports: [
@@ -51,7 +54,10 @@ import { OrderModule} from 'ngx-order-pipe'
     ModalModule.forRoot(),
     OrderModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

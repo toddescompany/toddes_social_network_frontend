@@ -10,6 +10,7 @@ import { FeedComponent } from './feed/feed.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { StartComponent } from './start/start.component';
 import { TemaComponent } from './tema/tema.component';
+import { TesteComponent } from './teste/teste.component';
 
 const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 {path:'entrar', component: EntrarComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 {path: 'postagem-edit/:id', component: PostagemEditComponent},
 {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
 {path: 'start', component: StartComponent},
-{path: 'perfil-usuario/:id', component: PerfilUsuarioComponent} 
+{path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
+{path: 'teste', component: TesteComponent}
 
 ];
 
