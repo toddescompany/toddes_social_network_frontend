@@ -1,0 +1,59 @@
+/* RIGHT "tendências"*/
+		#tendencias{
+			position:fixed;
+			top:20px;right:0;
+		}
+        /* O que está acontecendo? */
+		#oqueEstaAcontecendo{background-color:#eee;border-radius:10px;}
+		#oqueEstaAcontecendo h3{font-size:20px;}
+
+		.tendenciaImgPost{width:100%;height:60px;border-radius:10px;}
+		.resumirTextoPost{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+		.tendenciaTemaPost{margin-right:5px;}
+		.tendenciaDonoPost{color:#d148bb;}
+
+		/* txtSearch */
+		#oqueEstaAcontecendo article{margin-bottom:10px;}
+
+		.has-search .form-control {
+			padding-left: 2.375rem;
+			background:#eee;
+			border-radius:30px;
+		}
+
+		.has-search .form-control-feedback {
+			position: absolute;
+			z-index: 2;
+			display: block;
+			width: 2.375rem;
+			height: 2.375rem;
+			line-height: 2.375rem;
+			text-align: center;
+			pointer-events: none;
+			color: #aaa;
+			background:#eee;
+			border-radius:30px;
+		}
+
+	/* Small devices (landscape phones, 576px and up) */
+	@media (min-width: 576px) {
+
+	}
+	/* Medium devices (tablets, 768px and up)*/
+	@media (min-width: 768px) {
+
+	}
+	/* Large devices (desktops, 992px and up)*/
+	@media (min-width: 992px) {
+
+	}
+	/* Extra large devices (large desktops, 1200px and up)*/
+	@media (min-width: 1200px) {
+
+	}

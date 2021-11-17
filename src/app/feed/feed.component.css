@@ -20,48 +20,6 @@
             .container-fluid{width:70%;margin:auto;}
         }
 
-/* LEFT "menu lateral" */
-    /* leftMenu*/
-    #leftMenu{height:500px;}
-    #leftMenu ul{width:100%;}
-    #leftMenu li.navbar-item{font-size:25px; border-radius: 30px;margin:5px 0;}
-    #leftMenu li.navbar-item a{text-decoration:none;color:black;}
-    #leftMenu li.navbar-item i{display:inline;}
-    #leftMenu li.navbar-item:hover{background-color:#eee;cursor:pointer;}
-
-    /* btnPostar */
-
-    #btnPostar{
-        width:55px;
-        background: #d148bb;
-        border-radius: 100%;
-        border-color: #d148bb;
-        color: #FFFFFF;
-        border:none;
-        font-weight:bold;
-        padding:10px 15px;
-        font-size:20px;
-        margin:auto;
-    }
-    .active{font-weight:bold;}
-
-    /* Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) {
-
-    }
-    /* Medium devices (tablets, 768px and up)*/
-    @media (min-width: 768px) {
-
-    }
-    /* Large devices (desktops, 992px and up)*/
-    @media (min-width: 992px) {
-
-    }
-    /* Extra large devices (large desktops, 1200px and up)*/
-    @media (min-width: 1200px) {
-        #leftMenu li.navbar-item{font-size:20px;text-align:left;width:70%;text-align:center;padding:5px 0;}
-        #btnPostar{width:90%;border-radius:30px;padding:5px 0px;}
-    }
 
 
 /* CENTER "feed" */
@@ -113,58 +71,3 @@
 
         }
 
-/* RIGHT "tendências"*/
-        /* O que está acontecendo? */
-            #oqueEstaAcontecendo{background-color:#eee;border-radius:10px;}
-            #oqueEstaAcontecendo h3{font-size:20px;}
-
-            .tendenciaImgPost{width:100%;height:60px;border-radius:10px;}
-            .resumirTextoPost{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-            }
-            .tendenciaTemaPost{margin-right:5px;}
-            .tendenciaDonoPost{color:#d148bb;}
-
-            /* txtSearch */
-            #oqueEstaAcontecendo article{margin-bottom:10px;}
-
-            .has-search .form-control {
-                padding-left: 2.375rem;
-                background:#eee;
-                border-radius:30px;
-            }
-
-            .has-search .form-control-feedback {
-                position: absolute;
-                z-index: 2;
-                display: block;
-                width: 2.375rem;
-                height: 2.375rem;
-                line-height: 2.375rem;
-                text-align: center;
-                pointer-events: none;
-                color: #aaa;
-                background:#eee;
-                border-radius:30px;
-            }
-
-        /* Small devices (landscape phones, 576px and up) */
-        @media (min-width: 576px) {
-
-        }
-        /* Medium devices (tablets, 768px and up)*/
-        @media (min-width: 768px) {
-
-        }
-        /* Large devices (desktops, 992px and up)*/
-        @media (min-width: 992px) {
-
-        }
-        /* Extra large devices (large desktops, 1200px and up)*/
-        @media (min-width: 1200px) {
-
-        }

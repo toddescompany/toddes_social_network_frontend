@@ -1,0 +1,46 @@
+/* LEFT "menu lateral" */
+    /* leftMenu*/
+    #leftMenu{
+        position:fixed;
+        left:0;
+        top:20px;
+    }
+    #leftMenu ul{width:100%;}
+    #leftMenu li.navbar-item{font-size:25px; border-radius: 30px;margin:5px 0;}
+    #leftMenu li.navbar-item a{text-decoration:none;color:black;}
+    #leftMenu li.navbar-item i{display:inline;}
+    #leftMenu li.navbar-item:hover{background-color:#eee;cursor:pointer;}
+
+    /* btnPostar */
+
+    #btnPostar{
+        width:55px;
+        background: #d148bb;
+        border-radius: 100%;
+        border-color: #d148bb;
+        color: #FFFFFF;
+        border:none;
+        font-weight:bold;
+        padding:10px 15px;
+        font-size:20px;
+        margin:auto;
+    }
+    .active{font-weight:bold;}
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+
+    }
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {
+
+    }
+    /* Large devices (desktops, 992px and up)*/
+    @media (min-width: 992px) {
+
+    }
+    /* Extra large devices (large desktops, 1200px and up)*/
+    @media (min-width: 1200px) {
+        #leftMenu li.navbar-item{font-size:20px;text-align:left;width:70%;text-align:center;padding:5px 0;}
+        #btnPostar{width:90%;border-radius:30px;padding:5px 0px;}
+    }
