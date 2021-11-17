@@ -25,7 +25,7 @@
                                         </div>
 
                                 <hr>
-                                <a class="dropdown-item" href="#" data-toggle="modal"         data-target="#editPostModal"><i class="fas fa-edit"></i> Editar Perfil</a>
+                                <a class="dropdown-item" [routerLink]="['/user-edit', id]" data-toggle="modal"         data-target="#editPostModal"><i class="fas fa-edit"></i> Editar Perfil</a>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal" ><i class="far fa-trash-alt"></i> Remover conta</a>
                                 <hr>
                                 <a (click)='sair()' class="dropdown-item"  data-toggle="modal" data-target="#deletePostModal" ><i class="fas fa-sign-out-alt"></i> Sair</a>

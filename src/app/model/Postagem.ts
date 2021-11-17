@@ -9,4 +9,6 @@ export class Postagem{
     public anonimo_postagem: boolean
     public fk_tema: Tema
     public fk_usuario: User
+    public imagem: string
+
 }
