@@ -52,7 +52,7 @@
             <div id="posts" class="row">
 
 
-                <article *ngFor='let post of listaPostagens'  class="col-12 pt-2 pb-2">
+                <article *ngFor='let post of listaPostagens | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
                     <div class="bg-white border mt-2">
                         <div>
                             <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">

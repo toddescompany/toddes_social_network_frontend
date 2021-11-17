@@ -19,7 +19,8 @@ import { StartComponent } from './start/start.component';
 import { MenuEsquerdoComponent } from './menu-esquerdo/menu-esquerdo.component';
 import { TendenciasComponent } from './tendencias/tendencias.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
-
+import { ModalModule} from 'ngx-bootstrap/modal'
+import { OrderModule} from 'ngx-order-pipe'
 
 
 
@@ -39,13 +40,16 @@ import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.componen
     StartComponent,
     MenuEsquerdoComponent,
     TendenciasComponent,
-    PerfilUsuarioComponent
+    PerfilUsuarioComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
