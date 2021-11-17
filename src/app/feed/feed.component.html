@@ -15,8 +15,8 @@
                                     class="d-none d-xl-inline active"> Home</a></li>
                             <li class="navbar-item"><i class="fas fa-hashtag"></i><a routerLink='/tema'
                                     class="d-none d-xl-inline"> Temas</a></li>
-                            <li class="navbar-item"><i class="far fa-user"></i><a href="#" class="d-none d-xl-inline">
-                                    Profile</a></li>
+                            <li class="navbar-item"><i class="far fa-user"></i><a [routerLink]="['/perfil-usuario', user.id]" class="d-none d-xl-inline" (click)='findByIdUser()'>
+                                    Perfil</a></li>
                         </ul>
                     </div>
 
