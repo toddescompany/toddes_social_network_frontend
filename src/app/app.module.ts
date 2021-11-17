@@ -16,6 +16,9 @@ import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { PostagemEditComponent } from './edit/postagem-edit/postagem-edit.component';
 import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delete.component';
 import { StartComponent } from './start/start.component';
+import { MenuEsquerdoComponent } from './menu-esquerdo/menu-esquerdo.component';
+import { TendenciasComponent } from './tendencias/tendencias.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 
 
@@ -33,7 +36,10 @@ import { StartComponent } from './start/start.component';
     TemaEditComponent,
     PostagemEditComponent,
     PostagemDeleteComponent,
-    StartComponent
+    StartComponent,
+    MenuEsquerdoComponent,
+    TendenciasComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,
