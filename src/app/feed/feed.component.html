@@ -139,7 +139,7 @@
                                 <p id="textoPost">{{post.texto_postagem}}</p>
                             </div>
                             <div class="row mt-2 d-flex justify-content-end">
-                                <p class="card-text "><small class="text-muted">{{post.data_postagem}} às {{post.data_postagem | date: 'HH:mm'}}</small></p>
+                                <p class="card-text "><small class="text-muted">{{post.data_postagem | date: 'dd/MM/yyyy'}} às {{post.data_postagem | date: 'HH:mm'}}</small></p>
                             </div>
 
                             <div class="row" hidden><img src="" alt="" id="imgPost"></div>
