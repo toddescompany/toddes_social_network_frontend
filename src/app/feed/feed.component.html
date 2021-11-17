@@ -52,23 +52,39 @@
             <div id="posts" class="row">
 
 
-
-
-
-
-
-                <article *ngFor='let post of listaPostagens' class="col-12 pt-2 pb-2">
+                <article *ngFor='let post of listaPostagens'  class="col-12 pt-2 pb-2">
                     <div class="bg-white border mt-2">
                         <div>
                             <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
                                 <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="{{post.fk_usuario.foto}}" width="45">
-                                    <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span><span class="text-black-50 time">{{post.data_postagem}}</span></div>
+                                    <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span>
+                                        <span class="text-black-50 time">{{post.data_postagem}}</span>
+                                        <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
+                                        <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
+
+                                    </div>
                                 </div>
-                                <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
+                                <div class="dropdown" id="dropdown-post">
+                                    <button class="btn btn-secondary feed-icon px-2 dropdown-toggle"
+                                    type="button" id="btn-dropdown-post" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    <i class="fa fa-ellipsis-v text-black-50" style="position:relative;left:7px;"></i>
+                                    </button>
+
+
+                                    <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
+                                    <a class="dropdown-item" href="#" data-toggle="modal"
+                                        data-target="#editPostModal"
+                                        [routerLink]="['/postagem-edit', post.id_postagem]"><i
+                                            class="fas fa-edit"></i> Editar</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal"
+                                        data-target="#deletePostModal"
+                                        [routerLink]="['/postagem-delete', post.id_postagem]"><i
+                                            class="far fa-trash-alt"></i> Remover</a></div>
+                                    </div>
                             </div>
                         </div>
                         <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
-
                         <!--<div class="row mt-2">
                              <div class="Comentarios">
                                  <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
@@ -76,86 +92,6 @@
                              </div>
                          </div>-->
                     </div>
-
-<!--
-
-
-
-
-
-
-                    <div class="row">
-                        <div class="col-3 col-sm-2 ">
-
-                               <img src="{{post.fk_usuario.foto}}" class="imgPerfil" />
-
-                        </div>
-
-                        <div class="col-7 col-sm-9 ">
-                                <div class="col-12 ">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <div class="row text-left">
-                                                <span class="lblPostNomeCompleto">
-                                                    {{post.fk_usuario.nomeUsuario}}</span><a href=""
-                                                    class="lblPostNomeUsuario">@{{post.fk_usuario.emailUsuario}}</a>
-
-
-                                            </div>
-                                        </div>
-
-
-                                        <div class="col-4" >
-                                            <div class="row d-flex justify-content-end">
-
-                                                                     START - DROPDOWN CONFIG POST
-                                            <div class="dropdown" id="dropdown-post">
-                                            <button class="btn btn-secondary dropdown-toggle btnConfigPost"
-                                            type="button" id="btn-dropdown-post" data-toggle="dropdown"
-                                            aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-h"></i>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
-                                            <a class="dropdown-item" href="#" data-toggle="modal"
-                                                data-target="#editPostModal"
-                                                [routerLink]="['/postagem-edit', post.id_postagem]"><i
-                                                    class="fas fa-edit"></i> Editar</a>
-                                            <a class="dropdown-item" href="#" data-toggle="modal"
-                                                data-target="#deletePostModal"
-                                                [routerLink]="['/postagem-delete', post.id_postagem]"><i
-                                                    class="far fa-trash-alt"></i> Remover</a></div>
-                                            </div>
-                                                                    END - DROPDOWN CONFIG POST
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                            </div>
-                        </div>
-
-
-                            <div class="row">
-
-                                <p id="textoPost">{{post.texto_postagem}}</p>
-                            </div>
-                            <div class="row mt-2 d-flex justify-content-end">
-                                <p class="card-text "><small class="text-muted">{{post.data_postagem | date: 'dd/MM/yyyy'}} às {{post.data_postagem | date: 'HH:mm'}}</small></p>
-                            </div>
-
-                            <div class="row" hidden><img src="" alt="" id="imgPost"></div>
-
-                            <div class="row mt-2">
-                                <div class="Comentarios" hidden>
-                                    <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
-                                    <span class="lblQtdComentarios">10</span>
-                                </div>
-
-
-                            </div>
-
-                    </div>
-                -->
                 </article>
 
 

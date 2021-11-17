@@ -56,7 +56,7 @@
         #posts article #imgPost{width:100%;}
         #posts article button{border:none;background:white;}
         .btnComentario i{color:#d148bb;font-size:25px;}
-        .btnConfigPost i{color:gray;font-size:25px;}
+        
         #posts article .lblPostNomeCompleto{font-size:100%; margin-right:5px;font-weight:bold;}
         #posts article .lblPostNomeUsuario{font-size:100%;color:#d148bb;}
         #posts .lblQtdComentarios {position:relative;top:-5px;color:gray;}
