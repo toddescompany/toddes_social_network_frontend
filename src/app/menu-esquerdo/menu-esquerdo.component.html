@@ -1,1 +1,25 @@
-<p>menu-esquerdo works!</p>
+<aside id="leftMenu" class="container-fluid">
+	<div class="row ml-md-5">
+		<div class="col-12">
+			<div class="row">
+				<ul class="mb-20 navbar-nav p-0 text-center">
+					<li class="navbar-item"><i class="fas fa-home"></i><a href="#"
+							class="d-none d-xl-inline active" routerLink='/feed'> Home</a></li>
+					<li class="navbar-item"><i class="fas fa-hashtag"></i><a routerLink='/tema'
+							class="d-none d-xl-inline"> Temas</a></li>
+					<li class="navbar-item"><i class="far fa-user"></i><a href="#" class="d-none d-xl-inline" routerLink='/perfil'>
+							Profile</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="col-12 mt-3">
+			<div class="row">
+				<a id="btnPostar" href="#" onclick=""><i class="fas fa-paper-plane d-inline d-xl-none"></i>
+					<span
+						class="d-none d-xl-inline">Postar</span></a>
+
+			</div>
+		</div>
+	</div>
+</aside>

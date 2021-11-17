@@ -33,6 +33,7 @@ export class FeedComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     if(environment.token ==''){
       alert('sua sessão expirou.')
       this.router.navigate(['/entrar'])

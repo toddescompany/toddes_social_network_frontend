@@ -1,3 +1,7 @@
 <app-menu *ngIf="auth.logado()"></app-menu>
-<router-outlet></router-outlet>
+<div id="container-master">
+	<app-menu-esquerdo *ngIf="auth.logado()"></app-menu-esquerdo>
+	<router-outlet></router-outlet>
+	<app-tendencias *ngIf="auth.logado()"></app-tendencias>
+</div>
 <app-rodape *ngIf="!auth.logado()"></app-rodape>

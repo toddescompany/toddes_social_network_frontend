@@ -1,40 +1,3 @@
-<div class="container-fluid">
-
-    <div class="row">
-        <aside id="leftMenu" class="col-2 col-lg-1 col-xl-2">
-            <div class="row">
-                <div class="col-12">
-                    <!--
-                    <div class="row d-flex justify-content-center mb-3 mt-1" hidden>
-                        <img src="../../assets/toddes_img/blackhand.png" class="mainLogo align-middle" alt="">
-                    </div>
-                    -->
-                    <div class="row">
-                        <ul class="mb-20 navbar-nav p-0 d-flex justify-content-center text-center">
-                            <li class="navbar-item"><i class="fas fa-home"></i><a href="#"
-                                    class="d-none d-xl-inline active"> Home</a></li>
-                            <li class="navbar-item"><i class="fas fa-hashtag"></i><a routerLink='/tema'
-                                    class="d-none d-xl-inline"> Temas</a></li>
-                            <li class="navbar-item"><i class="far fa-user"></i><a href="#" class="d-none d-xl-inline">
-                                    Profile</a></li>
-                        </ul>
-                    </div>
-
-
-                </div>
-
-                <div class="col-12 mt-3">
-                    <div class="row">
-                        <button id="btnPostar"><i class="fas fa-paper-plane d-inline d-xl-none"></i><span
-                                class="d-none d-xl-inline">Postar</span></button>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </aside>
-
         <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
             <div id="postar" class="row">
                 <div class="col-12 pt-3 pb-3" >
@@ -81,18 +44,53 @@
                     </div>
                 </div>
             </div>
+
+
+
+
             <div id="posts" class="row">
 
+
+
+
+
+
+
                 <article *ngFor='let post of listaPostagens' class="col-12 pt-2 pb-2">
-                    <div class="row">
-                        <div class="col-3 col-sm-2 ">
-                            <div class="row">
-                               <img src="{{post.fk_usuario.foto}}" class="imgPerfil" />
+                    <div class="bg-white border mt-2">
+                        <div>
+                            <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                                <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="{{post.fk_usuario.foto}}" width="45">
+                                    <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span><span class="text-black-50 time">{{post.data_postagem}}</span></div>
+                                </div>
+                                <div class="feed-icon px-2"><i class="fa fa-ellipsis-v text-black-50"></i></div>
                             </div>
                         </div>
+                        <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
 
-                        <div class="col-9 col-sm-9 ">
-                            <div class="row">
+                        <!--<div class="row mt-2">
+                             <div class="Comentarios">
+                                 <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
+                                 <span class="lblQtdComentarios">10</span>
+                             </div>
+                         </div>-->
+                    </div>
+
+<!--
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-3 col-sm-2 ">
+
+                               <img src="{{post.fk_usuario.foto}}" class="imgPerfil" />
+
+                        </div>
+
+                        <div class="col-7 col-sm-9 ">
                                 <div class="col-12 ">
                                     <div class="row">
                                         <div class="col-8">
@@ -104,35 +102,37 @@
 
                                             </div>
                                         </div>
+
+
                                         <div class="col-4" >
-
-
                                             <div class="row d-flex justify-content-end">
 
-                           <!-- START - DROPDOWN CONFIG POST -->
-<div class="dropdown" id="dropdown-post">
-<button class="btn btn-secondary dropdown-toggle btnConfigPost"
-type="button" id="btn-dropdown-post" data-toggle="dropdown"
-aria-haspopup="true" aria-expanded="false">
-<i class="fas fa-ellipsis-h"></i>
-</button>
-<div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
-<a class="dropdown-item" href="#" data-toggle="modal"
-    data-target="#editPostModal"
-    [routerLink]="['/postagem-edit', post.id_postagem]"><i
-        class="fas fa-edit"></i> Editar</a>
-<a class="dropdown-item" href="#" data-toggle="modal"
-    data-target="#deletePostModal"
-    [routerLink]="['/postagem-delete', post.id_postagem]"><i
-        class="far fa-trash-alt"></i> Remover</a></div>
-</div>
-                          <!-- END - DROPDOWN CONFIG POST -->
+                                                                     START - DROPDOWN CONFIG POST
+                                            <div class="dropdown" id="dropdown-post">
+                                            <button class="btn btn-secondary dropdown-toggle btnConfigPost"
+                                            type="button" id="btn-dropdown-post" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
+                                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                                data-target="#editPostModal"
+                                                [routerLink]="['/postagem-edit', post.id_postagem]"><i
+                                                    class="fas fa-edit"></i> Editar</a>
+                                            <a class="dropdown-item" href="#" data-toggle="modal"
+                                                data-target="#deletePostModal"
+                                                [routerLink]="['/postagem-delete', post.id_postagem]"><i
+                                                    class="far fa-trash-alt"></i> Remover</a></div>
+                                            </div>
+                                                                    END - DROPDOWN CONFIG POST
 
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+
                             </div>
+                        </div>
+
 
                             <div class="row">
 
@@ -152,8 +152,9 @@ aria-haspopup="true" aria-expanded="false">
 
 
                             </div>
-                        </div>
+
                     </div>
+                -->
                 </article>
 
 
@@ -162,55 +163,6 @@ aria-haspopup="true" aria-expanded="false">
 
             </div>
         </section>
-
-        <aside class="d-none d-lg-block col-lg-3 col-xl-3">
-            <div class="row d-flex justify-content-center">
-
-
-                <div class="form-group has-search col-11 mt-2">
-                    <span class="fa fa-search form-control-feedback"></span>
-                    <input type="text" class="form-control" placeholder="Busque no Toddes">
-                </div>
-
-
-
-                <div id="oqueEstaAcontecendo" class="col-10">
-                    <div class="row p-3">
-                        <div class="col-12">
-                            <div class="row pb-4">
-                                <h3>O que as pessoas estão sentindo?</h3>
-                            </div>
-
-                            <article class="row" *ngFor='let trend of listaPostagens | slice:0:3 ; index as i'>
-                                <div class="col-9">
-                                    <div class="row">
-                                        <b class="tendenciaDataPost">{{trend.data_postagem}}</b>
-                                    </div>
-                                    <div class="row">
-                                        <div class="tendenciaPedacoPost resumirTextoPost pr-3">{{trend.texto_postagem}}</div>
-                                    </div>
-                                    <div class="row">
-                                        <b class="tendenciaTemaPost">{{trend.fk_tema.nomeTema}}</b>
-                                        <a href="#" class="tendenciaDonoPost">@{{trend.fk_usuario.nomeUsuario}}</a>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="row">
-                                        <a href="#"><img src="../../assets/posts_img/lorem.jpeg"
-                                                class="tendenciaImgPost" alt=""></a>
-                                    </div>
-                                </div>
-                            </article>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </div>
-</div>
-
-
 
 <!-- MODAL DELETE POST
   <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
