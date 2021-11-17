@@ -9,7 +9,10 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class MenuComponent implements OnInit {
   foto = environment.foto
-  nomeUsuario = environment.login
+  nomeUsuario = environment.nomeUsuario
+  id = environment.id
+
+
 
   constructor(
     private router: Router

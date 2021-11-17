@@ -20,7 +20,8 @@ import { MenuEsquerdoComponent } from './menu-esquerdo/menu-esquerdo.component';
 import { TendenciasComponent } from './tendencias/tendencias.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { ModalModule} from 'ngx-bootstrap/modal'
-import { OrderModule} from 'ngx-order-pipe'
+import { OrderModule} from 'ngx-order-pipe';
+import { UserEditComponent } from './edit/user-edit/user-edit.component'
 
 
 
@@ -41,6 +42,7 @@ import { OrderModule} from 'ngx-order-pipe'
     MenuEsquerdoComponent,
     TendenciasComponent,
     PerfilUsuarioComponent,
+    UserEditComponent,
 
   ],
   imports: [
