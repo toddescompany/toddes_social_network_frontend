@@ -1,18 +1,18 @@
-
-        <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
-
+<section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
 
 
-            <div id="postar" class="row">
-                <div class="col-12 pt-3 pb-3" >
-                    <div class="row form-group" >
-                        <div class="col-1"></div>
-                        <div class="col-10">
-                            <div class="row">
 
-                      <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text"
-                                    placeholder="Titulo" class="col-12 b-0 form-control mb-4" value="">
-                       <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost"  placeholder="O que você está sentindo?" class="form-control" autofocus required></textarea>
+    <div id="postar" class="row">
+        <div class="col-12 pt-3 pb-3">
+            <div class="row form-group">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="row">
+
+                        <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo"
+                            class="col-12 b-0 form-control mb-4" value="">
+                        <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost"
+                            placeholder="O que você está sentindo?" class="form-control" autofocus required></textarea>
 
                         <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;">Tema da Postagem:</label>
                         <select name="tema" id="nomeTema" class="form-select form-control" [(ngModel)]='idTema'
@@ -24,85 +24,93 @@
                     </div>
                     <div class="col-1"></div>
                 </div>
+            </div>
+        </div>
+        <div class="col-12 mt-2">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-5">
+                    <div class="row">
+
+
+                        <ul class="p-0">
+                           
+                            <div class="input-group  ">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="inputGroup-sizing-default"><li><a href="#"><i class="far fa-image"></i></a></li></span>
+                                </div>
+                                <input [(ngModel)]= 'postagem.imagem' type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+                              </div>
+                            <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-12 mt-2">
-                    <div class="row">
-                            <div class="col-1"></div>
-                        <div class="col-5">
-                            <div class="row">
-
-
-                            <ul class="p-0">
-                                <li><a href="#"><i class="far fa-image"></i></a></li>
-                                <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
-                            </ul>
-                        </div>
-                        </div>
-                        <div class="col-5">
-                            <div class="row d-flex justify-content-end">
-                                <button type="button" class="btnPostar2 fas fa-paper-plane"  (click)='publicar()'></button>
-                            </div>
-                        <div class="col-1"></div>
+                <div class="col-5">
+                    <div class="row d-flex justify-content-end">
+                        <button type="button" class="btnPostar2 fas fa-paper-plane" (click)='publicar()'></button>
                     </div>
-                    </div>
+                    <div class="col-1"></div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 
 
-            <div id="posts" class="row">
+    <div id="posts" class="row">
 
 
-                <article *ngFor='let post of listaPostagens | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
-                    <div class="bg-white border mt-2">
-                        <div>
-                            <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
-                                <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="{{post.fk_usuario.foto}}" width="45">
-                                    <div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span>
-                                        <span class="text-black-50 time">{{post.data_postagem}}</span>
-                                        <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
-                                        <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
+        <article *ngFor='let post of listaPostagens | orderBy : key : reverse' class="col-12 pt-2 pb-2">
+            <div class="bg-white border mt-2">
+                <div>
+                    <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                        <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle"
+                                src="{{post.fk_usuario.foto}}" width="45">
+                            <div class="d-flex flex-column flex-wrap ml-2"><span
+                                    class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span>
+                                <span class="text-black-50 time">{{post.data_postagem}}</span>
+                                <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
+                                <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
 
-                                    </div>
-                                </div>
-                                <div class="dropdown" id="dropdown-post">
-                                    <button class="btn btn-secondary feed-icon px-2 dropdown-toggle"
-                                    type="button" id="btn-dropdown-post" data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                    <i class="fa fa-ellipsis-v text-black-50" style="position:relative;left:7px;"></i>
-                                    </button>
-
-
-                                    <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
-                                    <a class="dropdown-item" href="#" data-toggle="modal"
-                                        data-target="#editPostModal"
-                                        [routerLink]="['/postagem-edit', post.id_postagem]"><i
-                                            class="fas fa-edit"></i> Editar</a>
-                                    <a class="dropdown-item" href="#" data-toggle="modal"
-                                        data-target="#deletePostModal"
-                                        [routerLink]="['/postagem-delete', post.id_postagem]"><i
-                                            class="far fa-trash-alt"></i> Remover</a></div>
-                                    </div>
                             </div>
                         </div>
-                        <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
-                        <!--<div class="row mt-2">
+                        <div class="dropdown" id="dropdown-post">
+                            <button class="btn btn-secondary feed-icon px-2 dropdown-toggle" type="button"
+                                id="btn-dropdown-post" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                <i class="fa fa-ellipsis-v text-black-50" style="position:relative;left:7px;"></i>
+                            </button>
+
+
+                            <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editPostModal"
+                                    [routerLink]="['/postagem-edit', post.id_postagem]"><i class="fas fa-edit"></i>
+                                    Editar</a>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal"
+                                    [routerLink]="['/postagem-delete', post.id_postagem]"><i
+                                        class="far fa-trash-alt"></i> Remover</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
+                <div class="p-2 px-3"><span><img src="{{post.imagem}}"  height="400px" width="850px" > </span></div>
+                <!--<div class="row mt-2">
                              <div class="Comentarios">
                                  <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
                                  <span class="lblQtdComentarios">10</span>
                              </div>
                          </div>-->
-                    </div>
-                </article>
-
-
-
-
-
             </div>
-        </section>
+        </article>
+
+
+
+
+
+    </div>
+</section>
 
 <!-- MODAL DELETE POST
   <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
@@ -193,3 +201,6 @@
     </div>
   </div>
  END - MODAL EDITAR POST -->
+
+
+ 
