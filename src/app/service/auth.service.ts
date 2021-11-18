@@ -27,6 +27,10 @@ export class AuthService {
     return this.http.get<User>(`https://toddes.herokuapp.com/usuarios/${id}`)
   }
 
+  deleteUser(id: number){
+    return this.http.delete(`https://toddes.herokuapp.com/usuarios/${id}`, this.token)
+  }
+
   logado (){
     let ok :boolean = false
     if (environment.token != '')
