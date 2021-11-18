@@ -17,7 +17,7 @@ export class PostagemEditComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
-  
+
 
   constructor(
     private router: Router,

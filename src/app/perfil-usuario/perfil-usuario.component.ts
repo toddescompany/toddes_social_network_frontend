@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
@@ -15,35 +15,109 @@ import { TemaService } from '../service/tema.service';
 })
 export class PerfilUsuarioComponent implements OnInit {
 
-  user: User = new User()
-  idUsuario = environment.id
-  tema: Tema = new Tema()
-  minhaFoto = environment.foto
-  meuNome = environment.nomeUsuario
+ // exibir posts
+ user: User = new User()
+ idUsuario = environment.id
+ minhaFoto = environment.foto
+ meuNome = environment.nomeUsuario
 
-  // order by
+  // remover posts
+  idPostagemASerRemovidaOuEditada: number
+
+  // editar pots
+  listaTemas: Tema[]
+  salvarPostagem: Postagem = new Postagem()
+  idTema: number
+  tema: Tema = new Tema()
+
+  // ordenar o resultado dos posts order by
   key = 'data'
   reverse = true
 
+
+ // injeções de dependência
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private postagemService: PostagemService,
-    private authservice: AuthService
+    private authservice: AuthService,
+    private temaService: TemaService
   ) { }
 
+  // ao iniciar o código pela primeira vez
   ngOnInit(){
     if(environment.token ==''){
       alert('sua sessão expirou.')
       this.router.navigate(['/entrar'])
     }
     this.findByIdUser()
-
+     // pega id na URL
+     this.idPostagemASerRemovidaOuEditada = this.route.snapshot.params['id']
+     // atualiza os campos do modal editar sempre que a página atualizar
+     if (this.idPostagemASerRemovidaOuEditada != undefined)
+     this.atualizarCamposModal();
   }
 
+  // exibir pots
   findByIdUser(){
     this.authservice.getByIdUser(this.idUsuario).subscribe((resp: User)=>{
       this.user = resp
     })
   }
+
+  // apagar posts
+    apagarPostagem()
+    {
+      // pega id na URL
+      this.idPostagemASerRemovidaOuEditada = this.route.snapshot.params['id']
+      // deleta a postagem
+      this.postagemService.deletePostagem( this.idPostagemASerRemovidaOuEditada).subscribe(()=>{
+        alert('Postagem apagada com sucesso')
+        this.router.navigate(['/perfil-usuario'])
+      })
+    }
+
+  // editar posts
+    atualizarPostagem(){
+       // pega id na URL
+       this.idPostagemASerRemovidaOuEditada = this.route.snapshot.params['id']
+
+      this.tema.idTema = this.idTema
+      this.salvarPostagem.fk_tema = this.tema
+      this.postagemService.putPostagem(this.salvarPostagem).subscribe((resp: Postagem) => {
+        this.salvarPostagem = resp
+        alert('Postagem atualizada com sucesso')
+        this.router.navigate(['/perfil-usuario'])
+      })
+    }
+    findByIdTema(id: number) {
+      this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
+        this.tema = resp
+      })
+    }
+
+    findAllTemas(){
+      this.temaService.getAllTema().subscribe((resp: Tema[]) =>{
+        this.listaTemas = resp
+      })
+    }
+    findByIdPostagem(id: number){
+      this.postagemService.getByIdPostagem(id).subscribe((resp: Postagem) => {
+        this.salvarPostagem = resp
+       this.idTema = this.salvarPostagem.fk_tema.idTema
+
+      //this.findByIdTema(this.salvarPostagem.fk_tema.idTema)
+      //this.user.postagem[this.idPostagemASerRemovidaOuEditada].fk_tema = this.tema
+      })
+    }
+    atualizarCamposModal(){
+      this.findByIdPostagem(this.idPostagemASerRemovidaOuEditada)
+      this.findAllTemas()
+
+    }
+
+
+
+
 
 }

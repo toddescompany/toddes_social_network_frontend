@@ -3,7 +3,13 @@
     <div id="posts" class="row">
 
 
-        <article *ngFor='let post of user.postagem | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
+        <article id="postUsuario" *ngFor='let post of user.postagem | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
+
+
+
+
+
+
             <div class="bg-white border mt-2">
                 <div>
                     <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
@@ -25,26 +31,22 @@
                             </button>
 
 
-                            <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editPostModal"
-                                    [routerLink]="['/postagem-edit', post.id_postagem]"><i class="fas fa-edit"></i>
-                                    Editar</a>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal"
-                                    [routerLink]="['/postagem-delete', post.id_postagem]"><i
-                                        class="far fa-trash-alt"></i> Remover</a>
-                            </div>
+          <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
+              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editPostModal"
+              [routerLink]="['/perfil-usuario', post.id_postagem]" ><i class="fas fa-edit"  ></i>
+                  Editar</a>
+              <a id="btnRemoverPostagem" class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal" [routerLink]="['/perfil-usuario', post.id_postagem]"><i
+                      class="far fa-trash-alt"></i> Remover</a>
+
+          </div>
                         </div>
                     </div>
                 </div>
                 <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
                 <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  height="400px" width="100%" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span></div>
-                <!--<div class="row mt-2">
-                             <div class="Comentarios">
-                                 <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
-                                 <span class="lblQtdComentarios">10</span>
-                             </div>
-                         </div>-->
             </div>
+
+
         </article>
 
 
@@ -54,7 +56,10 @@
     </div>
 </section>
 
-<!-- MODAL DELETE POST
+
+
+<!-- MODAL DELETE POST  [routerLink]="['/postagem-delete', post.id_postagem]" -->
+<div class="row">
   <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -69,22 +74,21 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-success">Sim</button>
+          <button (click)="apagarPostagem()" type="button"  class="btn btn-success" data-dismiss="modal">Sim</button>
         </div>
       </div>
     </div>
   </div>
-
--->
-
+</div>
 <!-- END MODAL DELETE POST -->
 
-<!-- START - MODAL EDITAR POST
+
+<!-- START - MODAL EDITAR POST -->
   <div class="modal fade" id="editPostModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editPostModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="editPostModalLabel">Editando Postagem</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -97,51 +101,36 @@
 
                     <div class="col-12">
                         <div class="row">
-                            <input  [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo" class="col-12 b-0">
-                            <textarea [(ngModel)]='postagem.texto_postagem'  id="txtPost" placeholder="O que você está sentindo?"></textarea>
+                          <label for="tituloPost">Título: </label>
+                            <input  [(ngModel)]='salvarPostagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo" class="col-12 b-0 form-control mb-2" required>
+                            <label for="txtPost">Texto: </label>
+                            <textarea [(ngModel)]='salvarPostagem.texto_postagem'  id="txtPost" placeholder="O que você está sentindo?" class="form-control mb-2" required></textarea>
                         </div>
                     </div>
-                -->
-<!--SELECIONAR TEMA
 
-                    <select name="tema" id="nomeTema" class="form-control" [(ngModel)]='idTema' (change)='findByIdTema'>
+<!-- SELECIONAR TEMA -->
+                  <label for="nomeTema">Tema: </label>
+                    <select name="tema" id="nomeTema" class="form-control mb-2" [(ngModel)]='idTema' (change)='findByIdTema' required>
                         <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
                             {{item.nomeTema}}
                         </option>
                     </select>
-                -->
-<!---
-                </div>
-            </div>
-            <div class="col-12 mt-2">
-                <div class="row">
-                    <div class="col-1  "></div>
-                    <div class="col-10  text-left">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="row">
-                                <ul class="p-0">
-                                    <li><a href="#"><i class="far fa-image"></i></a></li>
-                                    <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
-                                </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-1"></div>
+                    <label for="imagemPost">Link de uma imagem para o Post: </label>
+                    <input  [(ngModel)]='salvarPostagem.imagem' id="imagemPost" type="text" placeholder="Sem Imagem por enquanto" class="col-12 b-0 form-control mb-2" required>
 
 
                 </div>
             </div>
+
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-success">Salvar Alterações</button>
+          <button type="submit" class="btn btn-success" data-dismiss="modal" (click)='atualizarPostagem()'>Salvar Alterações</button>
         </div>
       </div>
     </div>
   </div>
- END - MODAL EDITAR POST -->
+<!-- MODAL EDITAR POST -->
 
 
