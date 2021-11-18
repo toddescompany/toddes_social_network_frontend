@@ -1,3 +1,4 @@
+import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
@@ -10,15 +11,14 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  
+
   foto = environment.foto
   nomeUsuario = environment.nomeUsuario
-  id = environment.id
+  idUsuario = environment.id
   confirmSenha: string
+  senha: string
   tipoUsuario: string
-
-  // remover temas
-  idUserASerRemovidoOuEditado: number
+  senhaAntiga: string
 
   // editar temas
   salvarUser: User = new User()
@@ -30,39 +30,44 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    /////// MODAIS
-    // pega id na URL
-    this.idUserASerRemovidoOuEditado = this.route.snapshot.params['id']
-    // atualiza os campos do modal editar sempre que a página atualizar
-    if (this.idUserASerRemovidoOuEditado != undefined)
     this.atualizarCamposModal()
+    //this.salvarUser.senhaUsuario=''
   }
 
 //////////////////////////////////////////////////// MODAIS
 // apagar temas
 apagarUser()
 {
-  // pega id na URL
-  this.idUserASerRemovidoOuEditado = this.route.snapshot.params['id']
   // deleta a tema
-  this.authService.deleteUser( this.idUserASerRemovidoOuEditado).subscribe(()=>{
-    alert('Tema apagada com sucesso')
-    this.router.navigate(['/tema-admin'])
+  this.authService.deleteUser( this.idUsuario).subscribe(()=>{
+    alert('Conta desativada com sucesso')
+    this.sair()
   })
 }
 
 // editar user
-atualizarTema(){
-   // pega id na URL
-   this.idUserASerRemovidoOuEditado = this.route.snapshot.params['id']
+atualizarUser(){
 
-  console.log(this.idUserASerRemovidoOuEditado)
-  console.log(this.salvarUser)
-  this.authService.putUser(this.salvarUser).subscribe((resp: User) => {
-    this.salvarUser = resp
-    alert('Tema atualizado com sucesso')
-    this.router.navigate(['/tema-admin'])
-  })
+    if(this.salvarUser.foto=='')
+    this.salvarUser.foto='../../assets/toddes_icon/sem_imagem.jpg';
+
+    // verificar senha
+
+
+
+
+    if(this.salvarUser.senhaUsuario != this.confirmSenha){
+      alert('As senhas digitadas são inválidas, ou não são correspondem')
+    }
+
+  else
+  {
+    this.authService.cadastrar(this.salvarUser).subscribe((resp: User) => {
+      this.salvarUser = resp
+      alert('Usuário atualizado com sucesso! Você tem que logar novamente!')
+      this.sair()
+    })
+  }
 }
 findByIdUser(id: number){
   this.authService.getByIdUser(id).subscribe((resp: User) =>{
@@ -72,13 +77,18 @@ findByIdUser(id: number){
 
 // atualizar user
 atualizarCamposModal(){
-  this.findByIdUser(this.idUserASerRemovidoOuEditado)
-
+  this.findByIdUser(this.idUsuario)
+  //this.senhaAntiga =   this.salvarUser.senhaUsuario
+  //this.salvarUser.senhaUsuario=''
 }
 
 // extra user
 confirmeSenha(event: any){
   this.confirmSenha = event.target.value
+
+}
+senhaNormal(event: any){
+  this.senha = event.target.value
 
 }
 

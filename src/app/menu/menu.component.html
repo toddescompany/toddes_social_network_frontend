@@ -25,8 +25,8 @@
                                         </div>
 
                                 <hr>
-                                <a class="dropdown-item" [routerLink]="['/user-edit', id]" data-toggle="modal"         data-target="#editPostModal"><i class="fas fa-edit"></i> Editar Perfil</a>
-                                <a class="dropdown-item" [routerLink]="['/user-delete', id]" data-toggle="modal" data-target="#deletePostModal" ><i class="far fa-trash-alt"></i> Remover conta</a>
+                                <a (click)='atualizarCamposModal()' class="dropdown-item" [routerLink]="['/feed', idUsuario]" data-toggle="modal"         data-target="#editUserModal"><i class="fas fa-edit"></i> Editar Perfil</a>
+                                <a class="dropdown-item" [routerLink]="['/feed', idUsuario]" data-toggle="modal" data-target="#deleteUserModal" ><i class="far fa-trash-alt"></i> Remover conta</a>
                                 <hr>
                                 <a (click)='sair()' class="dropdown-item"  data-toggle="modal" data-target="#deletePostModal" ><i class="fas fa-sign-out-alt"></i> Sair</a>
                                 </div>
@@ -45,7 +45,7 @@
 
 <!-- MODAL DELETE POST  [routerLink]="['/postagem-delete', post.id_postagem]" -->
 <div class="row">
-        <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -69,7 +69,7 @@
 
 
       <!-- START - MODAL EDITAR POST -->
-        <div class="modal fade" id="editPostModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -80,44 +80,40 @@
               </div>
               <div class="modal-body">
 
-                  <div class="col-12 mt-2">
-                      <div class="row text-center " >
-
 
                           <div class="col-12">
-                              <div class="row">
 
 
-                                    <div class="form-group">
-                                        <label for="nome">Nome Completo</label>
-                                        <input [(ngModel)]='salvarUser.nomeUsuario' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome">
-                                    </div>
 
                                     <div class="form-group">
-                                        <label for="usuario">Nome de Usuário (E-mail/ou/Login)</label>
-                                        <input [(ngModel)]='salvarUser.emailUsuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário">
-                                    </div>
+                                        <label for="nome">Nome Completo: </label>
+                                        <input [(ngModel)]='salvarUser.nomeUsuario' class="form-control mb-2" type="text" name="nome" id="nome" placeholder="Seu nome" tabindex="1">
 
-                                    <div class="form-group">
-                                        <label for="foto">Link da foto</label>
-                                        <input [(ngModel)]='salvarUser.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto">
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="senha">Senha</label>
-                                        <input (input)='confirmeSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Seu senha">
-                                    </div>
 
-                                    <div class="form-group">
-                                        <label for="confirmSenha">Confirmar senha</label>
-                                        <input [(ngModel)]='salvarUser.senhaUsuario' class="form-control" type="password" name="confirmSenha" id="confirmSenha"
-                                            placeholder="Confirme sua senha">
+                                        <label for="usuario">Nome de Usuário (E-mail/ou/Login) :</label>
+                                        <input [(ngModel)]='salvarUser.emailUsuario' class="form-control mb-2" type="text" name="usuario" id="usuario" placeholder="Seu usuário" tabindex="2" >
+
+
+
+                                        <label for="foto">Link da foto:</label>
+                                        <input [(ngModel)]='salvarUser.foto' class="form-control mb-2" type="text" name="foto" id="foto" placeholder="Link da sua foto" tabindex="3" >
+
+
+
+                                        <label for="senha">Senha:</label>
+                                        <input (input)='confirmeSenha($event)' class="form-control mb-2" type="password" name="senha" id="senha" placeholder="Seu senha" tabindex="4" autofocus>
+
+
+
+                                        <label for="confirmSenha">Confirmar senha:</label>
+                                        <input [(ngModel)]='salvarUser.senhaUsuario' class="form-control mb-2" type="password" name="confirmSenha" id="confirmSenha"
+                                            placeholder="Confirme sua senha" tabindex="5" >
                                     </div>
 
                           </div>
 
-                      </div>
-                  </div>
+
 
 
               </div>
