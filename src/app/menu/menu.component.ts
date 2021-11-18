@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   foto = environment.foto
   nomeUsuario = environment.nomeUsuario
   idUsuario = environment.id
+  emailUsuario = environment.emailUsuario
   confirmSenha: string
   senha: string
   tipoUsuario: string

@@ -75,7 +75,7 @@ export class PerfilUsuarioComponent implements OnInit {
       this.idPostagemASerRemovidaOuEditada = this.route.snapshot.params['id']
       // deleta a postagem
       this.postagemService.deletePostagem( this.idPostagemASerRemovidaOuEditada).subscribe(()=>{
-        alert('Postagem apagada com sucesso')
+        this.alertas.showAlertSuccess('Postagem apagada com sucesso')
         this.router.navigate(['/perfil-usuario'])
       })
     }
@@ -89,7 +89,7 @@ export class PerfilUsuarioComponent implements OnInit {
       this.salvarPostagem.fk_tema = this.tema
       this.postagemService.putPostagem(this.salvarPostagem).subscribe((resp: Postagem) => {
         this.salvarPostagem = resp
-        alert('Postagem atualizada com sucesso')
+        this.alertas.showAlertSuccess('Postagem atualizada com sucesso!')
         this.router.navigate(['/perfil-usuario'])
       })
     }

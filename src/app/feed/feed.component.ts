@@ -38,7 +38,7 @@ export class FeedComponent implements OnInit {
 
   ngOnInit() {
     if(environment.token ==''){
-      alert('sua sessão expirou.')
+      this.alertas.showAlertDanger('sua sessão expirou.')
       this.router.navigate(['/entrar'])
     }
     this.getAllTemas()
@@ -85,6 +85,10 @@ export class FeedComponent implements OnInit {
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
+    }, erro=>{
+      if (erro.status == 500){
+        this.alertas.showAlertInfo('Existem campos vazios, verifique novamente.')
+      }
     })
   }
 
