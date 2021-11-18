@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { User } from '../model/User';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -27,7 +28,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -41,7 +43,7 @@ apagarUser()
 {
   // deleta a tema
   this.authService.deleteUser( this.idUsuario).subscribe(()=>{
-    alert('Conta desativada com sucesso')
+    this.alertas.showAlertSuccess('Conta desativada com sucesso')
     this.sair()
   })
 }
@@ -58,14 +60,14 @@ atualizarUser(){
 
 
     if(this.salvarUser.senhaUsuario != this.confirmSenha){
-      alert('As senhas digitadas são inválidas, ou não são correspondem')
+      this.alertas.showAlertDanger('As senhas digitadas são inválidas, ou não correspondem')
     }
 
   else
   {
     this.authService.cadastrar(this.salvarUser).subscribe((resp: User) => {
       this.salvarUser = resp
-      alert('Usuário atualizado com sucesso! Você tem que logar novamente!')
+      this.alertas.showAlertSuccess('Usuário atualizado com sucesso! Você tem que logar novamente!')
       this.sair()
     })
   }
