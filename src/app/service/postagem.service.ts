@@ -19,6 +19,9 @@ export class PostagemService {
     return this.http.get<Postagem>(`https://toddes.herokuapp.com/postagens/${id}`, this.token)
   }
 
+  getByTituloPostagem(tituloPostagem: string): Observable<Postagem[]>{
+    return this.http.get<Postagem[]>(`https://toddes.herokuapp.com/postagens/titulo/${tituloPostagem}`, this.token)
+  }
 
   getAllPostagem(): Observable<Postagem[]>{
     return this.http.get<Postagem[]>('https://toddes.herokuapp.com/postagens', this.token)
