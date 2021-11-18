@@ -10,9 +10,9 @@
                     <div class="row">
 
                         <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo"
-                            class="col-12 b-0 form-control mb-4" value="">
+                            class="col-12 b-0 form-control mb-4" value="" maxlength="255">
                         <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost"
-                            placeholder="O que você está sentindo?" class="form-control" autofocus required></textarea>
+                            placeholder="O que você está sentindo?" class="form-control" autofocus required maxlength="1000"></textarea>
 
                         <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;">Tema da Postagem:</label>
                         <select name="tema" id="nomeTema" class="form-select form-control" [(ngModel)]='idTema'
@@ -75,23 +75,7 @@
 
                             </div>
                         </div>
-                        <div class="dropdown" id="dropdown-post">
-                            <button class="btn btn-secondary feed-icon px-2 dropdown-toggle" type="button"
-                                id="btn-dropdown-post" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">
-                                <i class="fa fa-ellipsis-v text-black-50" style="position:relative;left:7px;"></i>
-                            </button>
 
-
-                            <div class="dropdown-menu" aria-labelledby="btn-dropdown-post">
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editPostModal"
-                                    [routerLink]="['/postagem-edit', post.id_postagem]"><i class="fas fa-edit"></i>
-                                    Editar</a>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deletePostModal"
-                                    [routerLink]="['/postagem-delete', post.id_postagem]"><i
-                                        class="far fa-trash-alt"></i> Remover</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>

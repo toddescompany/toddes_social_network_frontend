@@ -18,6 +18,8 @@ export class PerfilUsuarioComponent implements OnInit {
   user: User = new User()
   idUsuario = environment.id
   tema: Tema = new Tema()
+  minhaFoto = environment.foto
+  meuNome = environment.nomeUsuario
 
   // order by
   key = 'data'
@@ -35,7 +37,7 @@ export class PerfilUsuarioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.findByIdUser()
-   
+
   }
 
   findByIdUser(){
