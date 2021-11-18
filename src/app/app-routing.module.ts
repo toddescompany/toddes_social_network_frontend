@@ -24,12 +24,11 @@ const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 {path: 'postagem-edit/:id', component: PostagemEditComponent},
 {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
 {path: 'start', component: StartComponent},
-{path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
+{path: 'perfil-usuario', component: PerfilUsuarioComponent},
+//{path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
 {path: 'teste', component: TesteComponent},
 {path: 'user-edit/:id', component: UserEditComponent},
 {path: 'tema-admin', component: TemaAdminComponent}
-
-
 ];
 
 @NgModule({
