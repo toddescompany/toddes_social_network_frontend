@@ -1,113 +1,81 @@
-/* CENTER "feed_usuario" */
-    #feed_usuario{
-        position:absolute;
-        width:80%;
-        left:20%;
-        top:6%;
-        z-index:1;
-    }
+/* GENERAL */
+*{
+    word-wrap: break-word;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+    .container-fluid{width:80%;margin:auto;}
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .container-fluid{width:100%;}
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+    .container-fluid{width:70%;margin:auto;}
+}
 
 
-    /* POSTAR */
-        #feed_usuario #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
-        /* caixa para postar algo*/
-        #feed_usuario .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100px;color:gray;font-size:20px;border-bottom:2px solid #eee;}
-        #feed_usuario .row .col-12:nth-child(2) ul{list-style:none;padding:0;}
-        #feed_usuario .row .col-12:nth-child(2) ul li{display:inline;padding-right:10px;}
-        #feed_usuario .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:30px;}
 
-        .btnPostar2 /* dentro do postar */
-        {
-            background: #d148bb;
-            border-radius:100%;
-            color: #FFFFFF;
-            border:none;
-            font-weight:bold;
-            padding:15px 15px;
-            font-size:20px;
-        }
-    /* POSTS */
-    #feed_usuario .imgPerfil {width:75px;height:70px;border-radius:100%;margin:auto;}
-        #posts article{border-top:1px solid #eee;border-bottom:1px solid #eee;}
-        #posts article h1{font-size:20px;}
-        #posts article #imgPost{width:100%;}
-        #posts article button{border:none;background:white;}
-        .btnComentario i{color:#d148bb;font-size:25px;}
-        .btnConfigPost i{color:gray;font-size:25px;}
-        #posts article .lblPostNomeCompleto{font-size:100%; margin-right:5px;font-weight:bold;}
-        #posts article .lblPostNomeUsuario{font-size:100%;color:#d148bb;}
-        #posts .lblQtdComentarios {position:relative;top:-5px;color:gray;}
-        #dropdown-post .dropdown-menu i{color:#d148bb;}
+/* CENTER "feed" */
+/* POSTAR */
+#feed{
+    position:absolute;
+    width:80%;
+    left:20%;
+    top:6%;
+    z-index:1;
+}
 
-        /* Small devices (landscape phones, 576px and up) */
-        @media (min-width: 576px) {
+#feed #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
+/* caixa para postar algo*/
+#feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100px;color:gray;font-size:20px;border-bottom:2px solid #eee;}
+#feed .row .col-12:nth-child(2) ul{list-style:none;padding:0;}
+#feed .row .col-12:nth-child(2) ul li{display:inline;padding-right:10px;}
+#feed .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:30px;}
 
-        }
-        /* Medium devices (tablets, 768px and up)*/
-        @media (min-width: 768px) {
+.btnPostar2 /* dentro do postar */
+{
+    background: #d148bb;
+    border-radius:100%;
+    color: #FFFFFF;
+    border:none;
+    font-weight:bold;
+    padding:15px 15px;
+    font-size:20px;
+}
+/* POSTS */
+#feed .imgPerfil {width:75px;height:70px;border-radius:100%;margin:auto;}
+#posts article{border-top:1px solid #eee;border-bottom:1px solid #eee;}
+#posts article h1{font-size:20px;}
+#posts article #imgPost{width:100%;}
+#posts article button{border:none;background:white;}
+.btnComentario i{color:#d148bb;font-size:25px;}
 
-        }
-        /* Large devices (desktops, 992px and up)*/
-        @media (min-width: 992px) {
+#posts article .lblPostNomeCompleto{font-size:100%; margin-right:5px;font-weight:bold;}
+#posts article .lblPostNomeUsuario{font-size:100%;color:#d148bb;}
+#posts .lblQtdComentarios {position:relative;top:-5px;color:gray;}
+#dropdown-post .dropdown-menu i{color:#d148bb;}
 
-        }
-        /* Extra large devices (large desktops, 1200px and up)*/
-        @media (min-width: 1200px) {
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
 
-        }
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
 
-/* RIGHT "tendências"*/
-        /* O que está acontecendo? */
-            #oqueEstaAcontecendo{background-color:#eee;border-radius:10px;}
-            #oqueEstaAcontecendo h3{font-size:20px;}
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    #feed{width:60%;}
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
 
-            .tendenciaImgPost{width:100%;height:60px;border-radius:10px;}
-            .resumirTextoPost{
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 2;
-                -webkit-box-orient: vertical;
-            }
-            .tendenciaTemaPost{margin-right:5px;}
-            .tendenciaDonoPost{color:#d148bb;}
+}
 
-            /* txtSearch */
-            #oqueEstaAcontecendo article{margin-bottom:10px;}
-
-            .has-search .form-control {
-                padding-left: 2.375rem;
-                background:#eee;
-                border-radius:30px;
-            }
-
-            .has-search .form-control-feed_usuarioback {
-                position: absolute;
-                z-index: 2;
-                display: block;
-                width: 2.375rem;
-                height: 2.375rem;
-                line-height: 2.375rem;
-                text-align: center;
-                pointer-events: none;
-                color: #aaa;
-                background:#eee;
-                border-radius:30px;
-            }
-
-        /* Small devices (landscape phones, 576px and up) */
-        @media (min-width: 576px) {
-
-        }
-        /* Medium devices (tablets, 768px and up)*/
-        @media (min-width: 768px) {
-
-        }
-        /* Large devices (desktops, 992px and up)*/
-        @media (min-width: 992px) {
-
-        }
-        /* Extra large devices (large desktops, 1200px and up)*/
-        @media (min-width: 1200px) {
-
-        }

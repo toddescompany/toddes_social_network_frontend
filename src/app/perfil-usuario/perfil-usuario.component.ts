@@ -17,12 +17,15 @@ export class PerfilUsuarioComponent implements OnInit {
 
   user: User = new User()
   idUsuario = environment.id
-  listaPostagens: Postagem[]
   tema: Tema = new Tema()
+  
+
+    // order by
+    key = 'data'
+    reverse = true
+
   constructor(
     private router: Router,
-    private postagemService: PostagemService,
-   
     private authservice: AuthService
   ) { }
 
@@ -32,8 +35,7 @@ export class PerfilUsuarioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.findByIdUser()
-   
-    this.getAllPostagens()
+
   }
 
   findByIdUser(){
@@ -42,12 +44,4 @@ export class PerfilUsuarioComponent implements OnInit {
     })
   }
 
-
-
-  getAllPostagens(){
-    this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagens = resp
-    })
-
-  }
 }
