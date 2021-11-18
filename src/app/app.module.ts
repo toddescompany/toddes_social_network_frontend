@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -26,6 +26,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { TemaAdminComponent } from './tema-admin/tema-admin.component';
 import { UserDeleteComponent } from './delete/user-delete/user-delete.component'
+
 
 
 
