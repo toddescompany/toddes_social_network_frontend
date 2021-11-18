@@ -4,17 +4,47 @@
 <div id="container-master-tema" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
 
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item" role="presentation" *ngFor="let tema of listaTemas">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">{{tema.nomeTema}}</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" *ngFor='let insidetema of listaTemas'>{{insidetema.nomeTema}}</div>
+    <div class="row mt-5 mb-5">
+		<div class="col-md-12">
+			<nav>
+				<div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">2</div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">3</div>
-      </div>
+
+
+
+				</div>
+			  </nav>
+			  <div class="tab-content" id="nav-tabContent">
+
+				<div class="tab-pane fade show active" id="nav-x" role="tabpanel" aria-labelledby="nav-XX-tab">
+
+					<!--<div class="card-columns mt-5">
+						<div class="card text-center" *ngFor="let post of listaPostagens">
+							<div class="card-body">
+							  <h5 class="card-title m-0">{{post.titulo}}</h5>
+							  <p class="card-text"><small class="text-muted">{{post.fk_tema.descricao }}</small></p>
+
+							  <p class="card-text mt-3">{{post.texto}}</p>
+
+							  <p class="card-text"><small class="text-muted">{{post.data | date: 'dd/MM/yyyy'}} às {{post.data | date: 'HH:mm'}}</small></p>
+							  <p class="card-text"><small class="text-muted"> by:
+								  {{post.fk_usuario.nomeCompleto}}</small></p>
+
+							</div>
+						  </div></div>
+                        -->
+
+				</div>
+
+
+
+
+		</div>
+	</div>
+
+ </div>
+
+
 
 
 
