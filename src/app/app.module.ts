@@ -25,8 +25,8 @@ import { TesteComponent } from './teste/teste.component'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { UserEditComponent } from './edit/user-edit/user-edit.component';
 import { TemaAdminComponent } from './tema-admin/tema-admin.component';
-import { UserDeleteComponent } from './delete/user-delete/user-delete.component'
-
+import { UserDeleteComponent } from './delete/user-delete/user-delete.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 
 
@@ -51,6 +51,7 @@ import { UserDeleteComponent } from './delete/user-delete/user-delete.component'
     UserEditComponent,
     TemaAdminComponent,
     UserDeleteComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,

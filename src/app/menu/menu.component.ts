@@ -101,9 +101,9 @@ tipoUser(event: any){
   sair (){
     //alert("Usuário atualizado com sucesso, faça o login novamente!")
     environment.token=''
-    //environment.=''
+    environment.nomeUsuario=''
     environment.foto=''
-   // environment.idUsuario=0
+    environment.id=0
     this.router.navigate(['/entrar'])
   }
 }

@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Postagem } from '../model/Postagem';
+import { Tema } from '../model/Tema';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-tendencias',
@@ -12,6 +14,9 @@ import { PostagemService } from '../service/postagem.service';
 export class TendenciasComponent implements OnInit {
 
   listaPostagens: Postagem[]
+  listaTemas: Tema[]
+  tituloPost: string
+  nomeTema: string
 
     // order by
     key = 'data'
@@ -21,6 +26,7 @@ export class TendenciasComponent implements OnInit {
   constructor(
     private router: Router,
     private postagemService: PostagemService,
+    private temaService: TemaService,
     private authservice: AuthService
   ) { }
 
@@ -36,6 +42,35 @@ export class TendenciasComponent implements OnInit {
     })
 
   }
+
+  getAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: Tema[])=> {
+      this.listaTemas = resp
+    })
+  }
+
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    }else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+        this.listaPostagens = resp
+      })
+    }
+  }
+
+  findByNomeTema(){
+
+    if(this.nomeTema == ''){
+      this.getAllTemas()
+    }else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[])=>{
+        this.listaTemas = resp
+      })
+    }
+  }
+
 
 
 
