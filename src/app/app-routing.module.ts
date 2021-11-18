@@ -18,6 +18,7 @@ const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 {path:'entrar', component: EntrarComponent},
 {path:'cadastrar', component: CadastrarComponent},
 {path:'feed', component: FeedComponent},
+{path:'feed/:id', component: FeedComponent},
 {path:'tema', component: TemaComponent},
 {path: 'tema-edit/:idTema', component: TemaEditComponent},
 {path: 'tema-delete/:idTema', component: TemaDeleteComponent},
@@ -29,7 +30,8 @@ const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 //{path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
 {path: 'teste', component: TesteComponent},
 {path: 'user-edit/:id', component: UserEditComponent},
-{path: 'tema-admin', component: TemaAdminComponent}
+{path: 'tema-admin', component: TemaAdminComponent},
+{path: 'tema-admin/:id', component: TemaAdminComponent}
 ];
 
 @NgModule({

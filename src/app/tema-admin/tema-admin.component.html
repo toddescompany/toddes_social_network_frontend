@@ -25,9 +25,6 @@
 
 </div>
 
-
-
-
 <div class="container">
 <div class="row mt-5">
 	<div class="col-md-12">
@@ -51,10 +48,11 @@
 <th>{{item.idTema}}</th>
 <td>{{item.nomeTema}}</td>
 <td class="d-flex justify-content-end">
-<button class="btn btn-info mr-3" [routerLink]="['/tema-edit', item.idTema]">Editar</button>
-<button class="btn btn-danger" [routerLink]="['/tema-delete', item.idTema]">Apagar</button>
-</td>
 
+<button class="btn btn-info mr-3" [routerLink]="['/tema-admin', item.idTema]" data-toggle="modal" data-target="#editTemaModal" >Editar</button>
+
+<button class="btn btn-danger" [routerLink]="['/tema-admin', item.idTema]" data-toggle="modal" data-target="#deleteTemaModal">Apagar</button>
+</td>
 </tr>
 
 			</tbody>
@@ -62,5 +60,69 @@
 	</div>
 </div>
 </div>
-
 </section>
+
+
+
+
+<!-- MODAL DELETE TEMA  [routerLink]="['/postagem-delete', post.id_postagem]" -->
+<div class="row">
+	<div class="modal fade" id="deleteTemaModal" tabindex="-1" role="dialog" aria-labelledby="deleteTemaModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="deleteTemaModalLabel">Deletar Tema</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+			Tem certeza que deseja remover esse Tema? Todas as postagens relacionadas a ele serão removidas e essa ação não pode ser revertida.
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+			<button (click)="apagarTema()" type="button"  class="btn btn-success" data-dismiss="modal">Sim</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- END MODAL DELETE TEMA -->
+
+
+  <!-- START - MODAL EDITAR TEMA -->
+	<div class="modal fade" id="editTemaModal" tabindex="-1" role="dialog" aria-labelledby="editTemaModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="editTemaModalLabel">Editando Tema</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+
+			  <div class="col-12 mt-2">
+				  <div class="row text-center " >
+
+
+					  <div class="col-12">
+						  <div class="row">
+							<label for="nomeTema">Nome Tema: </label>
+							  <label for="txtNomeTema">Texto: </label>
+							  <input type="text" [(ngModel)]='salvarTema.nomeTema'  id="txtNomeTema" placeholder="Nome do Tema" class="form-control mb-2" required>
+						  </div>
+					  </div>
+				  </div>
+			  </div>
+
+
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+			<button type="submit" class="btn btn-success" data-dismiss="modal" (click)='atualizarTema()'>Salvar Alterações</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  <!-- MODAL EDITAR POST -->

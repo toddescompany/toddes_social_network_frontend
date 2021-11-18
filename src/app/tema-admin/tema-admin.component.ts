@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
+import { AuthService } from '../service/auth.service';
+import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -18,7 +20,18 @@ export class TemaAdminComponent implements OnInit {
   key = 'data'
   reverse = true
 
-  constructor(private router: Router, private temaService: TemaService) { }
+  // remover temas
+  idTemaASerRemovidaOuEditada: number
+
+  // editar temas
+  salvarTema: Tema = new Tema()
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private authservice: AuthService,
+    private temaService: TemaService
+    ) { }
 
   ngOnInit() {
     if(environment.token ==''){
@@ -27,13 +40,22 @@ export class TemaAdminComponent implements OnInit {
     }
 
     this.findAllTemas()
+
+/////// MODAIS
+    // pega id na URL
+    this.idTemaASerRemovidaOuEditada = this.route.snapshot.params['id']
+    // atualiza os campos do modal editar sempre que a página atualizar
+    if (this.idTemaASerRemovidaOuEditada != undefined)
+    this.atualizarCamposModal()
   }
+
+// exibir temas
   findAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[])=> {
       this.listaTemas = resp
     })
   }
-
+// cadastrar temas
   cadastrar(){
     this.tema.descricao = ' '
     this.tema.subtemaTema = ' '
@@ -44,4 +66,44 @@ export class TemaAdminComponent implements OnInit {
       this.tema = new Tema()
     })
   }
+
+//////////////////////////////////////////////////// MODAIS
+// apagar temas
+  apagarTema()
+  {
+    // pega id na URL
+    this.idTemaASerRemovidaOuEditada = this.route.snapshot.params['id']
+    // deleta a tema
+    this.temaService.deleteTema( this.idTemaASerRemovidaOuEditada).subscribe(()=>{
+      alert('Tema apagada com sucesso')
+      this.router.navigate(['/tema-admin'])
+    })
+  }
+
+// editar temas
+  atualizarTema(){
+     // pega id na URL
+     this.idTemaASerRemovidaOuEditada = this.route.snapshot.params['id']
+
+    console.log(this.idTemaASerRemovidaOuEditada)
+    console.log(this.salvarTema)
+    this.temaService.putTema(this.salvarTema).subscribe((resp: Tema) => {
+      this.salvarTema = resp
+      alert('Tema atualizado com sucesso')
+      this.router.navigate(['/tema-admin'])
+    })
+  }
+
+  findByIdTema(id: number) {
+    this.temaService.getByIdTema(id).subscribe((resp: Tema) => {
+      this.salvarTema = resp
+    })
+  }
+// atualizar temas
+  atualizarCamposModal(){
+    this.findByIdTema(this.idTemaASerRemovidaOuEditada)
+
+  }
+
+
 }
