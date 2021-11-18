@@ -19,10 +19,12 @@ export class PerfilUsuarioComponent implements OnInit {
   idUsuario = environment.id
   listaPostagens: Postagem[]
   tema: Tema = new Tema()
+  
+
   constructor(
     private router: Router,
     private postagemService: PostagemService,
-   
+
     private authservice: AuthService
   ) { }
 
@@ -32,7 +34,7 @@ export class PerfilUsuarioComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.findByIdUser()
-   
+
     this.getAllPostagens()
   }
 

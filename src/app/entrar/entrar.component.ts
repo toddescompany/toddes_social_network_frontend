@@ -28,6 +28,7 @@ export class EntrarComponent implements OnInit {
         environment.emailUsuario = this.userLogin.emailUsuario
         environment.foto = this.userLogin.foto
         environment.id = this.userLogin.id
+        environment.tipoUsuario = this.userLogin.tipo
 
       // mudando o layout depois de logar, para deixar as barras fixas
 

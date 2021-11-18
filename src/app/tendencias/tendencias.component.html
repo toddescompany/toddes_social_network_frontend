@@ -13,11 +13,12 @@
 			<div class="row p-3">
 				<div class="col-12">
 					<div class="row pb-4">
-						<h3>O que as pessoas estão sentindo?</h3>
+
+						<h3>O que as pessoas estão sentindo? <i class="far fa-smile" style="color: #d148bb;"></i></h3>
 					</div>
 
-					<article class="row" *ngFor='let trend of listaPostagens | slice:0:3 ; index as i'>
-						<div class="col-9">
+					<article class="row" *ngFor='let trend of listaPostagens | orderBy : key : reverse'>
+						<div class="col-9" [ngClass]="{'col-12':!trend.imagem}">
 							<div class="row">
 								<b class="tendenciaDataPost">{{trend.data_postagem}}</b>
 							</div>
@@ -25,14 +26,14 @@
 								<div class="tendenciaPedacoPost resumirTextoPost pr-3">{{trend.texto_postagem}}</div>
 							</div>
 							<div class="row">
-								<b class="tendenciaTemaPost">{{trend.fk_tema.nomeTema}}</b>
-								<a href="#" class="tendenciaDonoPost">@{{trend.fk_usuario.nomeUsuario}}</a>
+								<span class="tendenciaTemaPost">{{trend.fk_tema.nomeTema}}</span>
+								<span href="#" class="tendenciaDonoPost">@{{trend.fk_usuario.nomeUsuario}}</span>
 							</div>
 						</div>
-						<div class="col-3">
+						<div class="col-3" *ngIf='trend.imagem'>
 							<div class="row">
-								<a href="#"><img src="../../assets/posts_img/lorem.jpeg"
-										class="tendenciaImgPost" alt=""></a>
+								<a href="#"><img src="{{trend.imagem}}"
+										class="tendenciaImgPost" alt="" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"></a>
 							</div>
 						</div>
 					</article>
@@ -42,3 +43,4 @@
 		</div>
 	</div>
 </aside>
+

@@ -7,5 +7,6 @@ export const environment = {
   nomeUsuario:'',
   emailUsuario:'',
   login:'',
-  foto:''
+  foto:'',
+  tipoUsuario:''
 };

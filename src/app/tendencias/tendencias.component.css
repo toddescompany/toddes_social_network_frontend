@@ -3,7 +3,8 @@
 			position:fixed;
 			width:20%;
 			top:6%;
-			right:0;
+			left:80%;
+			text-align:center;
 		}
         /* O que está acontecendo? */
 		#oqueEstaAcontecendo{background-color:#eee;border-radius:10px;}

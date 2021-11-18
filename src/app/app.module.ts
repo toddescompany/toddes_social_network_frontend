@@ -23,7 +23,8 @@ import { ModalModule} from 'ngx-bootstrap/modal'
 import { OrderModule} from 'ngx-order-pipe';
 import { TesteComponent } from './teste/teste.component'
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { UserEditComponent } from './edit/user-edit/user-edit.component'
+import { UserEditComponent } from './edit/user-edit/user-edit.component';
+import { TemaAdminComponent } from './tema-admin/tema-admin.component'
 
 
 
@@ -46,6 +47,7 @@ import { UserEditComponent } from './edit/user-edit/user-edit.component'
     PerfilUsuarioComponent,
     TesteComponent,
     UserEditComponent,
+    TemaAdminComponent,
   ],
   imports: [
     BrowserModule,

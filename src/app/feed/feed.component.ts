@@ -44,7 +44,7 @@ export class FeedComponent implements OnInit {
     }
     this.getAllTemas()
     this.getAllPostagens()
-    //this.findByIdUser()
+    this.findByIdUser()
   }
 
   getAllTemas(){

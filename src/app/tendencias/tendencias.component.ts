@@ -13,6 +13,11 @@ export class TendenciasComponent implements OnInit {
 
   listaPostagens: Postagem[]
 
+    // order by
+    key = 'data'
+    reverse = true
+
+
   constructor(
     private router: Router,
     private postagemService: PostagemService,
@@ -25,7 +30,9 @@ export class TendenciasComponent implements OnInit {
 
   getAllPostagens(){
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
-      this.listaPostagens = resp
+      this.listaPostagens = resp.slice(resp.length-3,resp.length)
+     
+
     })
 
   }

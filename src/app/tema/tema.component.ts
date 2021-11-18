@@ -13,6 +13,7 @@ export class TemaComponent implements OnInit {
 
   tema: Tema = new Tema()
   listaTemas: Tema[]
+  tipoUsuario = environment.tipoUsuario
 
   // order by
   key = 'data'

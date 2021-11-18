@@ -10,6 +10,7 @@ import { EntrarComponent } from './entrar/entrar.component';
 import { FeedComponent } from './feed/feed.component';
 import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 import { StartComponent } from './start/start.component';
+import { TemaAdminComponent } from './tema-admin/tema-admin.component';
 import { TemaComponent } from './tema/tema.component';
 import { TesteComponent } from './teste/teste.component';
 
@@ -25,7 +26,8 @@ const routes: Routes = [{path:'', redirectTo: 'entrar', pathMatch:'full'},
 {path: 'start', component: StartComponent},
 {path: 'perfil-usuario/:id', component: PerfilUsuarioComponent},
 {path: 'teste', component: TesteComponent},
-{path: 'user-edit/:id', component: UserEditComponent}
+{path: 'user-edit/:id', component: UserEditComponent},
+{path: 'tema-admin', component: TemaAdminComponent}
 
 
 ];
