@@ -1,3 +1,49 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<br> 
+<br>
+<br> 
+<br>
+
+<div class="wrapper fadeInDown" id="img-bg">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+        <h1 class="text-center">Cadastro</h1>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input [(ngModel)]='user.nomeUsuario' class="fadeIn second" type="text" name="nome" id="nome" placeholder="Nome completo" tabindex="1" autofocus>
+      <input [(ngModel)]='user.emailUsuario' class="fadeIn third" type="text" name="usuario" id="usuario" placeholder="Nome de Usuário (E-mail/ou/Login)" tabindex="2">
+      <input [(ngModel)]='user.foto' class="fadeIn third" type="text" name="foto" id="foto" placeholder="Link da foto de perfil" tabindex="3">
+      <input (input)='confirmeSenha($event)' class="fadeIn third" type="password" id="senha" name="senha" placeholder="Senha" tabindex="4">
+      <input [(ngModel)]='user.senhaUsuario' class="fadeIn third" type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirmar senha" tabindex="5">
+    
+      <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-4">
+                <input type="submit" class="fadeIn fourth" value="Cancelar" routerLink="/entrar">
+            </div>
+            <div class="col-md-6">
+                <input type="reset" class="fadeIn fourth" value="Cadastrar" (click)='cadastrar()'>
+            </div>
+        </div>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+
+
+<!---
 <div class="container-fluid">
 
     <div class="row">
@@ -10,27 +56,14 @@
                 <div class="col-md-10">
                     <h1 class="text-center">Cadastro</h1>
 
-                    <div class="form-group">
                         <label for="nome">Nome Completo</label>
                         <input [(ngModel)]='user.nomeUsuario' class="form-control" type="text" name="nome" id="nome" placeholder="Seu nome" tabindex="1" autofocus>
-                    </div>
-
-                    <div class="form-group">
                         <label for="usuario">Nome de Usuário (E-mail/ou/Login)</label>
                         <input [(ngModel)]='user.emailUsuario' class="form-control" type="text" name="usuario" id="usuario" placeholder="Seu usuário" tabindex="2">
-                    </div>
-
-                    <div class="form-group">
                         <label for="foto">Link da foto</label>
                         <input [(ngModel)]='user.foto' class="form-control" type="text" name="foto" id="foto" placeholder="Link da sua foto" tabindex="3">
-                    </div>
-
-                    <div class="form-group">
                         <label for="senha">Senha</label>
                         <input (input)='confirmeSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="Seu senha" tabindex="4">
-                    </div>
-
-                    <div class="form-group">
                         <label for="confirmSenha">Confirmar senha</label>
                         <input [(ngModel)]='user.senhaUsuario' class="form-control" type="password" name="confirmSenha" id="confirmSenha"
                             placeholder="Confirme sua senha" tabindex="5">
@@ -55,3 +88,4 @@
         </div>
     </div>
 </div>
+--->
