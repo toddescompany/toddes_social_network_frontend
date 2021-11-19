@@ -60,88 +60,88 @@
 
 
               </div>
+            </div>
+            </div>
 </div>
 
 <!-- MODAL DELETE POST  [routerLink]="['/postagem-delete', post.id_postagem]" -->
 <div class="row">
-        <div class="modal fade" id="deleteUserModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="deletePostModalLabel">Deletando Usuário</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Tem certeza que deseja desativar a sua conta ? Você terá que se cadastrar novamente! Pense bem!
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
-                <button (click)="apagarUser()" type="button"  class="btn btn-success" data-dismiss="modal">Sim</button>
-              </div>
-            </div>
-          </div>
+  <div class="modal fade" id="deleteUserModal" tabindex="111" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="deletePostModalLabel">Deletando Usuário</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Tem certeza que deseja desativar a sua conta ? Você terá que se cadastrar novamente! Pense bem!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+          <button (click)="apagarUser()" type="button"  class="btn btn-success" data-dismiss="modal">Sim</button>
         </div>
       </div>
-      <!-- END MODAL DELETE POST -->
+    </div>
+  </div>
+</div>
+<!-- END MODAL DELETE POST -->
 
 
-      <!-- START - MODAL EDITAR POST -->
-        <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="editPostModalLabel">Atualizar meus dados</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-
-
-                          <div class="col-12">
-
-
-
-                                    <div class="form-group">
-                                        <label for="nome">Nome Completo: </label>
-                                        <input [(ngModel)]='salvarUser.nomeUsuario' class="form-control mb-2" type="text" name="nome" id="nome" placeholder="Seu nome" tabindex="1">
-
-
-
-                                        <label for="usuario">Nome de Usuário (E-mail/ou/Login) :</label>
-                                        <input [(ngModel)]='salvarUser.emailUsuario' class="form-control mb-2" type="text" name="usuario" id="usuario" placeholder="Seu usuário" tabindex="2" >
-
-
-
-                                        <label for="foto">Link da foto:</label>
-                                        <input [(ngModel)]='salvarUser.foto' class="form-control mb-2" type="text" name="foto" id="foto" placeholder="Link da sua foto" tabindex="3" >
-
-
-
-                                        <label for="senha">Senha:</label>
-                                        <input (input)='confirmeSenha($event)' class="form-control mb-2" type="password" name="senha" id="senha" placeholder="Seu senha" tabindex="4" autofocus>
-
-
-
-                                        <label for="confirmSenha">Confirmar senha:</label>
-                                        <input [(ngModel)]='salvarUser.senhaUsuario' class="form-control mb-2" type="password" name="confirmSenha" id="confirmSenha"
-                                            placeholder="Confirme sua senha" tabindex="5" >
-                                    </div>
-
-                          </div>
-
-
-
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-success" data-dismiss="modal" (click)='atualizarUser()'>Salvar Alterações</button>
-              </div>
-            </div>
-          </div>
+<!-- START - MODAL EDITAR POST -->
+  <div class="modal fade" id="editUserModal" tabindex="-1" role="dialog" aria-labelledby="editPostModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editPostModalLabel">Atualizar meus dados</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-      <!-- MODAL EDITAR POST -->
-<script></script>
+        <div class="modal-body">
+
+
+                    <div class="col-12">
+
+
+
+                              <div class="form-group">
+                                  <label for="nome">Nome Completo: </label>
+                                  <input [(ngModel)]='salvarUser.nomeUsuario' class="form-control mb-2" type="text" name="nome" id="nome" placeholder="Seu nome" tabindex="1">
+
+
+
+                                  <label for="usuario">Nome de Usuário (E-mail/ou/Login) :</label>
+                                  <input [(ngModel)]='salvarUser.emailUsuario' class="form-control mb-2" type="text" name="usuario" id="usuario" placeholder="Seu usuário" tabindex="2" >
+
+
+
+                                  <label for="foto">Link da foto:</label>
+                                  <input [(ngModel)]='salvarUser.foto' class="form-control mb-2" type="text" name="foto" id="foto" placeholder="Link da sua foto" tabindex="3" >
+
+
+
+                                  <label for="senha">Senha:</label>
+                                  <input (input)='confirmeSenha($event)' class="form-control mb-2" type="password" name="senha" id="senha" placeholder="Seu senha" tabindex="4" autofocus>
+
+
+
+                                  <label for="confirmSenha">Confirmar senha:</label>
+                                  <input [(ngModel)]='salvarUser.senhaUsuario' class="form-control mb-2" type="password" name="confirmSenha" id="confirmSenha"
+                                      placeholder="Confirme sua senha" tabindex="5" >
+                              </div>
+
+                    </div>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-success" data-dismiss="modal" (click)='atualizarUser()'>Salvar Alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>
