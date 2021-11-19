@@ -17,8 +17,9 @@ import { TemaService } from '../service/tema.service';
 export class FeedComponent implements OnInit {
 
   tema: Tema = new Tema()
-  postagem: Postagem = new Postagem()
   idTema: number
+  postagem: Postagem = new Postagem()
+
   user: User = new User()
   idUsuario = environment.id
   listaPostagens: Postagem[]
@@ -37,6 +38,7 @@ export class FeedComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     if(environment.token ==''){
       this.alertas.showAlertDanger('sua sessão expirou.')
       this.router.navigate(['/entrar'])

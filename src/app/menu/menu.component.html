@@ -1,46 +1,63 @@
-<div class="container-fluid">
-    <nav class="row align-middle pt-1 pb-1" id="menuSuperior">
+<div id="container-menu-master">
+  <div class="row justify-content-center">
+    <div class="col-8">
+        <div class="row">
 
-                <div class="col-2">
-                <!-- START - DROPDOWN BTN PERFIL -->
-                        <div id="" class="row"  data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                                <div class="btnMenuSuperior row text-center">
-                                    <div class="col-4"><i class="fas fa-bars"></i></div>
 
-                                    <div class="col-8"> <img src="{{foto}}" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';" class="imgPerfil rounded-circle"  /></div>
+                <div class="col-4 text-left d-flex align-items-center">
+                  <div class="row">
+                    <div class="col-2 text-center">
+                      <img src="../../assets/toddes_img/blackhand.png" class="mainLogo align-middle" alt="">
+                    </div>
+                    <div class="col-10">
+                      <div class="form-group has-search col-11 mt-2">
+                        <span class="fa fa-search form-control-feedback"></span>
+                        <input type="text" class="form-control" placeholder="Busque no Toddes" value="">
+                      </div>
+                    </div>
 
-                                </div>
-                        </div>
+                    <!-- [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()' -->
+                  </div>
+                </div>
+                <div class="col-6 "></div>
 
-                        <div class="dropdown" id="dropdown-btnperfil" style="position:relative;top:-45px;">
-                                    <div class="dropdown-menu" aria-labelledby="btn-dropdown-btnperfil">
+                <div class="col-2 d-flex align-items-center">
+                  <!-- START - DROPDOWN BTN PERFIL -->
+                          <div id="" class="row"  data-toggle="dropdown"
+                          aria-haspopup="true" aria-expanded="false">
+                                  <div class="btnMenuSuperior row text-center">
 
-                                        <div class="row pl-2 pt-1 pb-1">
-                                            <div class="col-3"> <img src="{{foto}}" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';" class="imgPerfil rounded-circle"  /></div>
+
+
+                                       <img src="{{foto}}" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';" class="imgPerfil rounded-circle"  />
+                                       <span class="" style="color:white;margin:5px 10px 5px 10px;position:relative;top:3px;">{{nomeUsuario}}</span>
+                                      <i class="fas fa-caret-down"></i>
+                                  </div>
+                          </div>
+
+                          <div class="dropdown" id="dropdown-btnperfil" style="position:relative;top:-25px;left:-100px;">
+                                      <div class="dropdown-menu" aria-labelledby="btn-dropdown-btnperfil">
 
                                     <div class="col-9 text-left"><span>{{nomeUsuario}}</span><br>
                                    <span class="color-login">@{{emailUsuario}}</span></div>
 
-                                        </div>
+                                      <div class="col-9 text-left" hidden><span>{{nomeUsuario}}</span><br>
+                                     <span class="color-login">@{{nomeUsuario}}</span></div>
 
-                                <hr>
-                                <a (click)='atualizarCamposModal()' class="dropdown-item" [routerLink]="['/feed', idUsuario]" data-toggle="modal"         data-target="#editUserModal"><i class="fas fa-edit"></i> Editar Perfil</a>
-                                <a class="dropdown-item" [routerLink]="['/feed', idUsuario]" data-toggle="modal" data-target="#deleteUserModal" ><i class="far fa-trash-alt"></i> Remover conta</a>
-                                <hr>
-                                <a (click)='sair()' class="dropdown-item"  data-toggle="modal" data-target="#deletePostModal" ><i class="fas fa-sign-out-alt"></i> Sair</a>
-                                </div>
-                        </div>
-                <!-- END - DROPDOWN BTN PERFIL -->
-                </div>
+                                          </div>
+
+                                  <hr hidden>
+                                  <a (click)='atualizarCamposModal()' class="dropdown-item" [routerLink]="['/feed', idUsuario]" data-toggle="modal"         data-target="#editUserModal"><i class="fas fa-edit"></i> Editar Perfil</a>
+                                  <a class="dropdown-item" [routerLink]="['/feed', idUsuario]" data-toggle="modal" data-target="#deleteUserModal" ><i class="far fa-trash-alt"></i> Remover conta</a>
+                                  <hr>
+                                  <a (click)='sair()' class="dropdown-item"  data-toggle="modal" data-target="#deletePostModal" ><i class="fas fa-sign-out-alt"></i> Sair</a>
+                                  </div>
+                          </div>
+                  <!-- END - DROPDOWN BTN PERFIL -->
+                  </div>
 
 
-
-                <div class="col-8 text-center">
-                    <img src="../../assets/toddes_img/blackhand.png" class="mainLogo align-middle" alt="">
-                </div>
-                <div class="col-2"></div>
-        </nav>
+              </div>
 </div>
 
 <!-- MODAL DELETE POST  [routerLink]="['/postagem-delete', post.id_postagem]" -->
@@ -125,3 +142,4 @@
           </div>
         </div>
       <!-- MODAL EDITAR POST -->
+<script></script>

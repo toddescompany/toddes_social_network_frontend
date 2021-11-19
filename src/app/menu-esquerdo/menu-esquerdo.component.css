@@ -5,29 +5,37 @@
         width:20%;
         left:0;
         top:8%;
-        text-align:center;
+        background:white;
+        border-radius:10px;
+        padding-top:10px;
+        padding-bottom:10px;
     }
-    #leftMenu ul{width:100%;}
-    #leftMenu li.navbar-item{font-size:25px; border-radius: 30px;margin:5px 0;transition:0.5s ease;}
-    #leftMenu li.navbar-item a{text-decoration:none;color:black;}
-    #leftMenu li.navbar-item i{display:inline;}
 
-    #leftMenu li.navbar-item:hover{cursor:pointer;}
-    #leftMenu li.navbar-item:hover a,#leftMenu li.navbar-item:hover i{font-size:25px;color:#d148bb;transition:0.5s ease;}
-
+    /**/
+    #btns-menu-esquerdo {padding:0;list-style-type:none;font-weight:bold;
+        color:black;}
+    #btns-menu-esquerdo li{padding:0;list-style-type:none;}
+    #btns-menu-esquerdo li a{font-weight:bold;color:black;font-size:15px;}
+    #btns-menu-esquerdo li a:hover{text-decoration:none;}
+    #btns-menu-esquerdo li i {font-size:23px;color:#b633a0;}
 
     /* btnPostar */
     #btnPostar{
-        background: #d148bb;
+        background: #b633a0;
+        border:none;
         border-radius: 100%;
-        border-color: #d148bb;
         color: #FFFFFF;
         border:none;
         font-weight:bold;
         padding:10px 15px;
         font-size:20px;
         margin:auto;
+        text-align:center;
+        outline:none;
     }
+
+    #btnPostar:hover{cursor:pointer;}
+
     .active{font-weight:bold;}
 
     /* Small devices (landscape phones, 576px and up) */
@@ -40,10 +48,17 @@
     }
     /* Large devices (desktops, 992px and up)*/
     @media (min-width: 992px) {
-
+        #leftMenu{
+            position:fixed;
+            width:10%;
+            left:18%;
+            top:10%;
+            text-align:left;
+        }
     }
     /* Extra large devices (large desktops, 1200px and up)*/
     @media (min-width: 1200px) {
-        #leftMenu li.navbar-item{font-size:20px;text-align:left;}
+        #leftMenu li.navbar-item{font-size:20px;}
         #btnPostar{border-radius:30px;padding:5px 0px;margin:0;width:100px;}
     }
+

@@ -1,45 +1,26 @@
-<aside id="tendencias" class="d-none d-lg-block col-lg-3 col-xl-3">
+<aside id="tendencias">
 	<div class="row d-flex justify-content-center">
 
-
-		<div class="form-group has-search col-11 mt-2">
-			<span class="fa fa-search form-control-feedback"></span>
-			<input type="text" class="form-control" placeholder="Busque no Toddes" [(ngModel)]='tituloPost' (keyup)='findByTituloPostagem()'>
-		</div>
+		<div id="oqueEstaAcontecendo" class="col-10 pt-2 pb-2">
+			<h4><i class="fas fa-chart-line"></i> Tendências</h4>
 
 
+			<div class="bg-white mt-2 text-left" *ngFor='let trend of listaPostagens | orderBy : key : reverse'>
+				<div>
+					<div class="d-flex flex-row justify-content-between align-items-center p-2 ">
 
-		<div id="oqueEstaAcontecendo" class="col-10">
-			<div class="row p-3">
-				<div class="col-12">
-					<div class="row pb-4">
-
-						<h3>O que as pessoas estão sentindo? <i class="far fa-smile" style="color: #d148bb;"></i></h3>
+						<div class="d-flex flex-row align-items-start feed-text">
+							<div class="d-flex flex-column flex-wrap "><span class="font-weight-bold" style="color: rgb(41, 12, 146);">#{{trend.fk_tema.nomeTema}}</span><span class="text-black-50 time">{{trend.data_postagem}}</span></div>
+						</div>
+						<div class="feed-icon">
+							<img class="" src="{{trend.imagem}}" width="45">
+						</div>
 					</div>
-
-					<article class="row" *ngFor='let trend of listaPostagens | orderBy : key : reverse'>
-						<div class="col-9" [ngClass]="{'col-12':!trend.imagem}">
-							<div class="row">
-								<b class="tendenciaDataPost">{{trend.data_postagem}}</b>
-							</div>
-							<div class="row">
-								<div class="tendenciaPedacoPost resumirTextoPost pr-3">{{trend.texto_postagem}}</div>
-							</div>
-							<div class="row">
-								<span class="tendenciaTemaPost">{{trend.fk_tema.nomeTema}}</span>
-								<span href="#" class="tendenciaDonoPost">@{{trend.fk_usuario.emailUsuario}}</span>
-							</div>
-						</div>
-						<div class="col-3" *ngIf='trend.imagem'>
-							<div class="row">
-								<a href="#"><img src="{{trend.imagem}}"
-										class="tendenciaImgPost" alt="" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"></a>
-							</div>
-						</div>
-					</article>
-
 				</div>
+				<div class="p-2 "><span>{{trend.texto_postagem}}</span></div>
 			</div>
+
+
 		</div>
 	</div>
 </aside>

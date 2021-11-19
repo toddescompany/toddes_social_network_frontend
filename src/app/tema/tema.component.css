@@ -2,6 +2,13 @@
 	position:absolute;
 	width:80%;
 	left:20%;
-	top:6%;
+	top:10%;
 	z-index:1;
+	background:white;
+	border-radius:10px;
+}
+
+  /* Large devices (desktops, 992px and up)*/
+  @media (min-width: 992px) {
+	#container-master-tema{width:40%;left:49%;margin-left:-20%;}
 }

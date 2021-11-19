@@ -1,25 +1,3 @@
-/* GENERAL */
-        *{
-            word-wrap: break-word;
-        }
-
-        /* Small devices (landscape phones, 576px and up) */
-        @media (min-width: 576px) {
-
-        }
-        /* Medium devices (tablets, 768px and up)*/
-        @media (min-width: 768px) {
-            .container-fluid{width:80%;margin:auto;}
-        }
-        /* Large devices (desktops, 992px and up)*/
-        @media (min-width: 992px) {
-            .container-fluid{width:100%;}
-        }
-        /* Extra large devices (large desktops, 1200px and up)*/
-        @media (min-width: 1200px) {
-            .container-fluid{width:70%;margin:auto;}
-        }
-
 
 
 /* CENTER "feed" */
@@ -28,13 +6,15 @@
             position:absolute;
             width:80%;
             left:20%;
-            top:6%;
+            top:10%;
             z-index:1;
+            background:white;
+            border-radius:10px;
         }
 
         #feed #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
         /* caixa para postar algo*/
-        #feed .row .col-12:nth-child(1) textarea{border:none;width:100%;height:100px;color:gray;font-size:20px;border-bottom:2px solid #eee;}
+        #feed .row .col-12:nth-child(1) textarea{width:100%;height:100px;font-size:20px;}
         #feed .row .col-12:nth-child(2) ul{list-style:none;padding:0;}
         #feed .row .col-12:nth-child(2) ul li{display:inline;padding-right:10px;}
         #feed .row .col-12:nth-child(2) ul li i{color:#d148bb;font-size:30px;}
@@ -48,7 +28,10 @@
             font-weight:bold;
             padding:15px 15px;
             font-size:20px;
+            outline:none;
         }
+        .btnPostar2:hover{cursor:pointer;}
+
     /* POSTS */
     #feed .imgPerfil {width:75px;height:70px;border-radius:100%;margin:auto;}
         #posts article{border-top:1px solid #eee;border-bottom:1px solid #eee;}
@@ -72,10 +55,9 @@
         }
         /* Large devices (desktops, 992px and up)*/
         @media (min-width: 992px) {
-            #feed{width:60%;}
+            #feed{width:40%;left:49%;margin-left:-20%;}
         }
         /* Extra large devices (large desktops, 1200px and up)*/
         @media (min-width: 1200px) {
-            #feed{width:60%;} 
         }
 
