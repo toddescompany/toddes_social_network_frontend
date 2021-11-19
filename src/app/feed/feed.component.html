@@ -1,61 +1,45 @@
 <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
-
-
-
-    <div id="postar" class="row">
-        <div class="col-12 pt-3 pb-3">
-            <div class="row form-group">
+    <div id="postar" class="">
+            <div class="row form-group pt-3 pb-3">
                 <div class="col-1"></div>
                 <div class="col-10">
                     <div class="row">
+                        <div class="col-12">
+                            <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo"
+                            class="col-12 b-0 form-control mb-4" value="" maxlength="255" tabindex="1" autofocus>
 
-                        <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo"
-                            class="col-12 b-0 form-control mb-4" value="" maxlength="255">
                         <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost"
-                            placeholder="O que você está sentindo?" class="form-control" autofocus required maxlength="1000"></textarea>
+                            placeholder="O que você está sentindo?" class="form-control" required maxlength="1000" tabindex="2"></textarea>
 
                         <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;">Tema da Postagem:</label>
                         <select name="tema" id="nomeTema" class="form-select form-control" [(ngModel)]='idTema'
-                            (change)='findByIdTema' required>
+                            (change)='findByIdTema' tabindex="3" required>
                             <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
                                 {{item.nomeTema}}
                             </option>
                         </select>
-                    </div>
-                    <div class="col-1"></div>
+
+                        <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;"><i class="far fa-image" style="color:#d148bb;"></i> Link da Imagem:</label>
+                        <input [(ngModel)]= 'postagem.imagem' type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+
+
+                        <div class="row justify-content-end">
+                            <button type="button" class="btnPostar2 fas fa-paper-plane mt-4" (click)='publicar()'></button>
+                        </div   >
+
+                        </div>
+
+
+
+
+
+
                 </div>
             </div>
-        </div>
-        <div class="col-12 mt-2">
-            <div class="row">
                 <div class="col-1"></div>
-                <div class="col-5">
-                    <div class="row">
-
-
-                        <ul class="p-0">
-
-                            <div class="input-group  ">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="inputGroup-sizing-default"><li><a href="#"><i class="far fa-image"></i></a></li></span>
-                                </div>
-                                <input [(ngModel)]= 'postagem.imagem' type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
-                              </div>
-                            <li><a href="#"><i class="far fa-grin-alt"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="row d-flex justify-content-end">
-                        <button type="button" class="btnPostar2 fas fa-paper-plane" (click)='publicar()'></button>
-                    </div>
-                    <div class="col-1"></div>
-                </div>
             </div>
 
-        </div>
     </div>
-
 
 
 
@@ -73,7 +57,7 @@
                                     class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span>
                                 <span class="text-black-50 time">{{post.data_postagem}}</span>
                                 <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
-                                <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
+                                <span class="font-weight-bold" style="color: rgb(41, 12, 146);">#{{post.fk_tema.nomeTema}}</span>
 
                             </div>
                         </div>

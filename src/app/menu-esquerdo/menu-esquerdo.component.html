@@ -1,25 +1,72 @@
 <aside id="leftMenu" class="container-fluid">
-	<div class="row ml-md-5">
-		<div class="col-12">
-			<div class="row">
-				<ul class="mb-20 navbar-nav p-0 text-center">
-					<li class="navbar-item"><i class="fas fa-home"></i><a href="#"
-							class="d-none d-xl-inline active" routerLink='/feed'> Home</a></li>
-					<li class="navbar-item"><i class="fas fa-hashtag"></i><a routerLink='/tema'
-							class="d-none d-xl-inline"> Temas</a></li>
-					<li class="navbar-item"><i class="far fa-user"></i><a href="#" class="d-none d-xl-inline" routerLink='/perfil-usuario'>
-							Profile</a></li>
+				<ul id="btns-menu-esquerdo">
+        <li class=""><i class="fas fa-home"></i><a href="#"
+        class="d-none d-xl-inline" routerLink='/feed'> Início</a></li>
+
+        <li class=""><i class="fas fa-hashtag"></i><a href="#"
+          class="d-none d-xl-inline" routerLink='/tema'>
+          Temas</a></li>
+        <li class=""><i class="far fa-user"></i><a href="#"
+        class="d-none d-xl-inline" routerLink='/perfil-usuario'>
+        Minhas Postagens</a></li>
 				</ul>
-			</div>
-		</div>
+        <div class="row d-flex justify-content-center">
+          <button id="btnPostar" class="dropdown-item"  data-toggle="modal"         data-target="#postModal">
+            <i class="fas fa-paper-plane d-inline d-xl-none"></i>
+            <span	class="d-none d-xl-inline">Postar</span>
+          </button>
+        </div>
 
-		<div class="col-12 mt-3">
-			<div class="row">
-				<a id="btnPostar" href="#" onclick=""><i class="fas fa-paper-plane d-inline d-xl-none"></i>
-					<span
-						class="d-none d-xl-inline">Postar</span></a>
-
-			</div>
-		</div>
-	</div>
 </aside>
+
+
+<!-- START - MODAL EDITAR POST -->
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="postModalLabel">O que você está sentindo?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="col-12 mt-2">
+                <div class="row text-center " >
+                    <div class="col-12">
+                        <div class="row">
+                          <label for="tituloPost">Título do Post: </label>
+                            <input  [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo" class="col-12 b-0 form-control mb-2" required>
+                            <label for="txtPost">Texto: </label>
+                            <textarea [(ngModel)]='postagem.texto_postagem'  id="txtPost" placeholder="O que você está sentindo?" class="form-control mb-2"  required></textarea>
+                        </div>
+                    </div>
+
+<!-- SELECIONAR TEMA -->
+                  <label for="nomeTema">Tema da Postagem: </label>
+                    <select name="tema" id="nomeTema" class="form-control mb-2" [(ngModel)]='idTema' (change)='findByIdTema()' required>
+                        <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
+                            {{item.nomeTema}}
+                        </option>
+                    </select>
+                    <label for="imagemPost">Link de uma imagem para o Post: </label>
+                    <input  [(ngModel)]='postagem.imagem' id="imagemPost" type="text" placeholder="Sem Imagem por enquanto" class="col-12 b-0 form-control mb-2" required>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+          <a type="submit" class="btn btn-success" data-dismiss="modal" (click)='publicarPostagem()' >Publicar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- MODAL EDITAR POST -->
+
+
+
