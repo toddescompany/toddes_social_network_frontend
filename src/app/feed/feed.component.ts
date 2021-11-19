@@ -25,6 +25,10 @@ export class FeedComponent implements OnInit {
   listaPostagens: Postagem[]
   listaTemas: Tema[]
 
+  // PESQUISAR
+  tituloPost: string
+  nomeTema: string
+
    // order by
    key = 'data'
    reverse = true
@@ -38,7 +42,7 @@ export class FeedComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
+
     if(environment.token ==''){
       this.alertas.showAlertDanger('sua sessão expirou.')
       this.router.navigate(['/entrar'])
@@ -93,5 +97,30 @@ export class FeedComponent implements OnInit {
       }
     })
   }
+
+
+
+
+findByTituloPostagem(){
+
+  if(this.tituloPost == ''){
+    this.getAllPostagens()
+  }else{
+    this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
+      this.listaPostagens = resp
+    })
+  }
+}
+
+findByNomeTema(){
+
+  if(this.nomeTema == ''){
+    this.getAllTemas()
+  }else{
+    this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[])=>{
+      this.listaTemas = resp
+    })
+  }
+}
 
 }

@@ -1,5 +1,14 @@
 <section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
+    <div class=" has-search " style="border-bottom:1px solid black;">
+        <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;"> Busque no Toddes...</label>
+        <span class="fa fa-search form-control-feedback"></span>
+        <input type="text" class="form-control " placeholder="Busque no Toddes" value="" [(ngModel)]="tituloPost" (keyup)="
+        findByTituloPostagem()">
+      </div>
+
+
     <div id="postar" class="">
+
             <div class="row form-group pt-3 pb-3">
                 <div class="col-1"></div>
                 <div class="col-10">
