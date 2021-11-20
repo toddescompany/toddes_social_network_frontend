@@ -17,7 +17,7 @@
                                 src="{{minhaFoto}}" width="45" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';">
                             <div class="d-flex flex-column flex-wrap ml-2"><span
                                     class="font-weight-bold">{{meuNome}}</span>
-                                <span class="text-black-50 time">{{post.data_postagem}}</span>
+                                <span class="text-black-50 time">{{specialfunctions.calculaADiferencaEntreDatas(post.data_postagem)}}</span>
                                 <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
                                 <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
 

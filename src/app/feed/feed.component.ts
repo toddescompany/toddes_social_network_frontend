@@ -8,6 +8,7 @@ import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
+import { SpecialFunctionsService } from '../service/special-functions.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -40,7 +41,8 @@ export class FeedComponent implements OnInit {
     private temaService: TemaService,
     private authservice: AuthService,
     private alertas: AlertasService,
-    private receptor: MainBroadcastService
+    private receptor: MainBroadcastService,
+    public specialfunctions: SpecialFunctionsService
   ) { }
 
   ngOnInit() {
@@ -91,6 +93,8 @@ export class FeedComponent implements OnInit {
     })
 
   }
+
+
 
   findByIdUser(){
     this.authservice.getByIdUser(this.idUsuario).subscribe((resp: User)=>{

@@ -5,6 +5,7 @@ import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
+import { SpecialFunctionsService } from '../service/special-functions.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -29,7 +30,8 @@ export class TendenciasComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authservice: AuthService,
-    private receptor: MainBroadcastService
+    private receptor: MainBroadcastService,
+    public specialfunctions: SpecialFunctionsService
   ) { }
 
   ngOnInit() {

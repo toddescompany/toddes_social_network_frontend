@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
+import { SpecialFunctionsService } from '../service/special-functions.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -21,9 +22,10 @@ export class TemaComponent implements OnInit {
   reverse = true
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private temaService: TemaService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    public specialfunctions: SpecialFunctionsService
     ) { }
 
   ngOnInit() {
@@ -91,7 +93,14 @@ export class TemaComponent implements OnInit {
       html+='" id="nav-tema'+this.listaTemas[i].idTema+'" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">'
       for(let p = 0;p < this.listaTemas[i].postagem.length;p++)
       {
-      html += '<article class="col-12 pt-2 pb-2"><div class="bg-white border mt-2"><div><div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom"><div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="'+this.listaTemas[i].postagem[p].fk_usuario.foto+'" width="45"><div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">'+this.listaTemas[i].postagem[p].fk_usuario.nomeUsuario+'</span><span class="text-black-50 time">'+this.listaTemas[i].postagem[p].data_postagem+'</span><span class="font-weight-bold" style="color:#d148bb;">"'+this.listaTemas[i].postagem[p].tituloPostagem+'"</span></div></div></div></div><div class="p-2 px-3"><span>'+this.listaTemas[i].postagem[p].texto_postagem+'</span></div></div></article>'
+      html += '<article class="col-12 pt-2 pb-2"><div class="bg-white border mt-2"><div><div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom"><div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="'+this.listaTemas[i].postagem[p].fk_usuario.foto+'" width="45" onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"><div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">'+this.listaTemas[i].postagem[p].fk_usuario.nomeUsuario+'</span><span class="text-black-50 time">'+ this.specialfunctions.calculaADiferencaEntreDatas(this.listaTemas[i].postagem[p].data_postagem.toString())+'</span><span class="font-weight-bold" style="color:#d148bb;">"'+this.listaTemas[i].postagem[p].tituloPostagem+'"</span></div></div></div></div><div class="p-2 px-3"><span>'+this.listaTemas[i].postagem[p].texto_postagem+'</span></div>'
+
+      if (this.listaTemas[i].postagem[p].imagem)
+      {
+      html += '<div class="p-2 px-3"><span><img src="'+this.listaTemas[i].postagem[p].imagem+'"  height="400px" width="100%" onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"> </span></div>'
+      }
+
+      html += '</div></article>'
       }
       html+="</div>"
 

@@ -57,7 +57,8 @@
                                 src="{{post.fk_usuario.foto}}" width="45" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';">
                             <div class="d-flex flex-column flex-wrap ml-2"><span
                                     class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span>
-                                <span class="text-black-50 time">{{post.data_postagem}}</span>
+                                <span class="text-black-50 time">
+                                    {{specialfunctions.calculaADiferencaEntreDatas(post.data_postagem)}}</span>
                                 <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
                                 <span class="font-weight-bold" style="color: rgb(41, 12, 146);">#{{post.fk_tema.nomeTema}}</span>
 
@@ -68,18 +69,18 @@
                 </div>
                 <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
                 <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  height="400px" width="100%" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span></div>
-                <!--<div class="row mt-2">
-                             <div class="Comentarios">
-                                 <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
-                                 <span class="lblQtdComentarios">10</span>
-                             </div>
-                         </div>-->
             </div>
         </article>
 
 
 
 
+        <!--<div class="row mt-2">
+                     <div class="Comentarios">
+                         <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
+                         <span class="lblQtdComentarios">10</span>
+                     </div>
+                 </div>-->
 
     </div>
 </section>

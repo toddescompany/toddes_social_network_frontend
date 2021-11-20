@@ -8,6 +8,7 @@ import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
+import { SpecialFunctionsService } from '../service/special-functions.service';
 import { TemaService } from '../service/tema.service';
 
 @Component({
@@ -45,7 +46,8 @@ export class PerfilUsuarioComponent implements OnInit {
     private authservice: AuthService,
     private temaService: TemaService,
     private alertas: AlertasService,
-    private broadcast: MainBroadcastService
+    private broadcast: MainBroadcastService,
+    public specialfunctions: SpecialFunctionsService
 
   ) { }
 
