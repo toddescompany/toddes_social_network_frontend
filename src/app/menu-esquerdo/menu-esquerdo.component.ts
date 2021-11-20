@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { MainBroadcastService } from '../broadcast/main-broadcast.service';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
@@ -29,7 +30,8 @@ export class MenuEsquerdoComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authservice: AuthService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private emissor: MainBroadcastService
   ) { }
 
   ngOnInit(): void {
@@ -71,8 +73,12 @@ export class MenuEsquerdoComponent implements OnInit {
 
   this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
     this.postagem = resp
-    this.alertas.showAlertSuccess('Postagem realizada com sucesso! O post será exibido em instantes!')
+    this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
     this.postagem = new Postagem()
+    // atualizar o feed e demais componentes da rede social
+    this.emissor.atualizarRedeToda()
+
+
   })
 
   this.router.navigate(['/feed'])

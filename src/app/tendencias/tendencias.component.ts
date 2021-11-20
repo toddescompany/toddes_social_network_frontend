@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MainBroadcastService } from '../broadcast/main-broadcast.service';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { AuthService } from '../service/auth.service';
@@ -27,17 +28,26 @@ export class TendenciasComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    private authservice: AuthService
+    private authservice: AuthService,
+    private receptor: MainBroadcastService
   ) { }
 
   ngOnInit() {
     this.getAllPostagens()
+
+    // quando algo for postado, atualiza o tendências
+    this.receptor.emissorPrincipal.subscribe(
+      resp=> {
+        this.getAllPostagens()
+      }
+
+    );
   }
 
   getAllPostagens(){
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp.slice(resp.length-3,resp.length)
-     
+
 
     })
 

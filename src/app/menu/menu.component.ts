@@ -2,6 +2,7 @@ import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_c
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { MainBroadcastService } from '../broadcast/main-broadcast.service';
 import { User } from '../model/User';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
@@ -29,7 +30,8 @@ export class MenuComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private broadcast: MainBroadcastService
   ) { }
 
   ngOnInit() {
@@ -108,5 +110,13 @@ tipoUser(event: any){
     environment.foto=''
     environment.id=0
     this.router.navigate(['/entrar'])
+  }
+
+
+  // emitirPesquisa
+  emitirPesquisa(event: any) {
+    this.router.navigate(['/feed'])
+    this.broadcast.emitirPalavrasDaPesquisa(event.target.value)
+
   }
 }

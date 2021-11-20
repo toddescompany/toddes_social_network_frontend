@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { MainBroadcastService } from '../broadcast/main-broadcast.service';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
@@ -43,7 +44,8 @@ export class PerfilUsuarioComponent implements OnInit {
     private postagemService: PostagemService,
     private authservice: AuthService,
     private temaService: TemaService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private broadcast: MainBroadcastService
 
   ) { }
 
@@ -77,6 +79,8 @@ export class PerfilUsuarioComponent implements OnInit {
       this.postagemService.deletePostagem( this.idPostagemASerRemovidaOuEditada).subscribe(()=>{
         this.alertas.showAlertSuccess('Postagem apagada com sucesso')
         this.router.navigate(['/perfil-usuario'])
+        // emite um sinal para atualizar a rede
+        this.broadcast.atualizarRedeToda()
       })
     }
 
@@ -91,6 +95,8 @@ export class PerfilUsuarioComponent implements OnInit {
         this.salvarPostagem = resp
         this.alertas.showAlertSuccess('Postagem atualizada com sucesso!')
         this.router.navigate(['/perfil-usuario'])
+        // emite um sinal para atualizar a rede
+        this.broadcast.atualizarRedeToda()
       })
     }
     findByIdTema(id: number) {

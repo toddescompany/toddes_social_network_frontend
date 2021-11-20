@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { MainBroadcastService } from '../broadcast/main-broadcast.service';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
@@ -38,15 +39,36 @@ export class FeedComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService: TemaService,
     private authservice: AuthService,
-    private alertas: AlertasService
+    private alertas: AlertasService,
+    private receptor: MainBroadcastService
   ) { }
 
   ngOnInit() {
-
     if(environment.token ==''){
       this.alertas.showAlertDanger('sua sessão expirou.')
       this.router.navigate(['/entrar'])
     }
+    this.refreshFeed()
+
+    // quando algo for postado fora do componente, atualiza o feed
+    this.receptor.emissorPrincipal.subscribe(
+      resp => {
+        this.getAllPostagens()
+        window.scrollTo(0,0)
+      }
+    );
+    // algo algo for digitado para pesquisar, executa o método de pesquisa
+    this.receptor.emissorDePesquisa.subscribe(
+      resp => {
+        this.tituloPost = resp
+        this.findByTituloPostagem()
+      }
+    );
+
+  }
+
+  refreshFeed()
+  {
     this.getAllTemas()
     this.getAllPostagens()
     this.findByIdUser()
@@ -91,6 +113,12 @@ export class FeedComponent implements OnInit {
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
+
+      // emite um sinal para atualizar o tendências
+      this.receptor.atualizarRedeToda()
+
+
+
     }, erro=>{
       if (erro.status == 500){
         this.alertas.showAlertInfo('Existem campos vazios, verifique novamente.')
