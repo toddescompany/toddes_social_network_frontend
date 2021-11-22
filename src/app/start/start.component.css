@@ -61,3 +61,42 @@ ul.social-network li{
 .fa-github:hover{
     color: #3b5998;
 }
+
+/* FIXING COLABORADORES */
+.colaboradores .container .row{
+  margin-bottom:120px;
+}
+
+.colaboradores .container .row .social-icon a {
+  font-size:40px;
+  color:#d148bb;
+}
+
+.colaboradores .container .row .social-icon a:hover {
+  color: #f06cda;
+}
+
+.colaboradores .container .row h5 {
+  font-size:40px;
+}
+
+.colaboradores .container .row .card-text{
+  font-size: 20px;
+}
+
+.card-img-top{
+  float:left;
+}
+
+/* FIXING PROBLEMA/SOLUÇÃO */
+.logo-mckinsey{width:100%;}
+
+.about-info .row{margin-bottom:100px;}
+
+.text-problema{font-size:20px;}
+
+
+/* FIXING NAVBAR */
+.navbar {
+  padding: 0 !important;
+}

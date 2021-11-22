@@ -4,7 +4,7 @@
         position:fixed;
         width:20%;
         left:0;
-        top:10%;
+        top:13%;
         background:white;
         border-radius:10px;
         padding-top:10px;
@@ -16,7 +16,7 @@
     #btns-menu-esquerdo {padding:0;list-style-type:none;font-weight:bold;
         color:black;}
     #btns-menu-esquerdo li{padding:0;list-style-type:none;}
-    #btns-menu-esquerdo li a{font-weight:bold;color:black;font-size:15px;}
+    #btns-menu-esquerdo li a{font-weight:bold;color:black;font-size:12px;}
     #btns-menu-esquerdo li a:hover{text-decoration:none;}
     #btns-menu-esquerdo li i {font-size:23px;color:#b633a0;}
     #btns-menu-esquerdo li:hover{cursor:pointer;}
@@ -34,6 +34,7 @@
         text-align:center;
         outline:none;
         width:20px;
+        font-size:15px;
     }
 
     #btnPostar:hover{cursor:pointer;}
@@ -51,11 +52,11 @@
         @media (min-width: 992px) {
             #leftMenu{
                 position:fixed;
-                width:10%;
+                width:13%;
                 left:18%;
-                top:10%;
-
             }
+
+
         }
 
 
@@ -72,3 +73,6 @@
         #btnPostar{padding:10px 15px;}
     }
 
+    .corButao{
+        color:rgb(184, 4, 169)
+        }

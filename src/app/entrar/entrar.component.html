@@ -18,20 +18,22 @@
 
                       <!-- Icon -->
                       <div class="fadeIn first">
-                        <img src="https://i.imgur.com/pBUxvHr.png"   class="imgPerfil rounded-circle mp-2" />
+                        <a href="index.html">
+                        <img src="../../assets/toddes_img/logo_toddes_rosa.png"   class="rounded-circle mp-2" width="170px" height="90px" />
+                      </a>
                       </div>
 
                       <!-- Login Form -->
                       <form>
                         <input [(ngModel)]='userLogin.emailUsuario' type="text" id="login" class="fadeIn second" name="login" placeholder="Seu usuário">
                         <input [(ngModel)]='userLogin.senhaUsuario' type="password" id="password" class="fadeIn third" name="login" placeholder="Sua senha">
-                        <input (click)='entrar()' type="submit" class="fadeIn fourth" value="Entrar">
+                        <input (click)='entrar()' type="submit" class="fadeIn fourth" value="Entrar" style="background-color:#d148bb; color: white;cursor:pointer;">
                       </form>
 
                       <!-- Remind Passowrd -->
                       <div id="formFooter">
                         <p class="text-center">
-                            Não tem uma conta? <a routerLink='/cadastrar'>Cadastre-se</a>
+                            Não tem uma conta? <a routerLink='/cadastrar' style="color:#d148bb;font-weight:bold;text-decoration:underline;" >Cadastre-se</a>
                         </p>
                       </div>
 

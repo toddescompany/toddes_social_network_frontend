@@ -2,7 +2,7 @@
 		#tendencias{
 			position:fixed;
 			width:20%;
-            top:10%;
+            top:13%;
 			left:69.5%;
 			text-align:center;
 		}
@@ -20,8 +20,6 @@
 		}
 		.tendenciaTemaPost{margin-right:5px;}
 		.tendenciaDonoPost{color:#d148bb;}
-
-		#oqueEstaAcontecendo h4 i {color:#b633a0;}
 
 
 		#oqueEstaAcontecendo article{margin-bottom:10px;}

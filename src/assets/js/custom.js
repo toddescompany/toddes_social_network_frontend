@@ -52,6 +52,15 @@
     $(document).scroll(function () {
       var $nav = $(".navbar-fixed-top");
       $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+
+      if($nav.hasClass("scrolled"))
+      {
+        $("#logo_toddes_oficial").attr("src","../../assets/toddes_img/logo_toddes_branco.png");
+      }
+      else
+      {
+        $("#logo_toddes_oficial").attr("src","../../assets/toddes_img/logo_toddes_rosa.png");
+      }
     });
   });
 

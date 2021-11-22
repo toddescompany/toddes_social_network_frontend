@@ -28,14 +28,14 @@
       <input [(ngModel)]='user.foto' class="fadeIn third" type="text" name="foto" id="foto" placeholder="Link da foto de perfil" tabindex="3">
       <input (input)='confirmeSenha($event)' class="fadeIn third" type="password" id="senha" name="senha" placeholder="Senha" tabindex="4">
       <input [(ngModel)]='user.senhaUsuario' class="fadeIn third" type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirmar senha" tabindex="5">
-    
+
       <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="col-md-4">
-                <input type="submit" class="fadeIn fourth" value="Cancelar" routerLink="/entrar">
+                <input type="submit" style="background-color:black; color: white" class="fadeIn fourth" value="Cancelar" routerLink="/entrar">
             </div>
             <div class="col-md-6">
-                <input type="reset" class="fadeIn fourth" value="Cadastrar" (click)='cadastrar()'>
+                <input type="reset" style="background-color:#d148bb; color: white" class="fadeIn fourth" value="Cadastrar" (click)='cadastrar()'>
             </div>
         </div>
       </div>

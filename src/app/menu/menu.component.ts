@@ -109,7 +109,6 @@ tipoUser(event: any){
     environment.nomeUsuario=''
     environment.foto=''
     environment.id=0
-    this.router.navigate(['/entrar'])
   }
 
 

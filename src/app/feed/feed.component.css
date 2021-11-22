@@ -6,7 +6,7 @@
             position:absolute;
             width:80%;
             left:20%;
-            top:10%;
+            top:13%;
             z-index:1;
             background:white;
             border-radius:10px;
@@ -55,7 +55,7 @@
         }
         /* Large devices (desktops, 992px and up)*/
         @media (min-width: 992px) {
-            #feed{width:40%;left:49%;margin-left:-20%;}
+            #feed{width:37%;left:52%;margin-left:-20%;}
         }
         /* Extra large devices (large desktops, 1200px and up)*/
         @media (min-width: 1200px) {
