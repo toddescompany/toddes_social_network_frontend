@@ -31,6 +31,10 @@ export class AuthService {
     return this.http.delete(`https://toddes.herokuapp.com/usuarios/${id}`, this.token)
   }
 
+  getByUserUser(emailUsuario:string): Observable<User[]>{
+    return this.http.get<User[]>('https://toddes.herokuapp.com/usuarios/all')
+  }
+
   logado (){
     let ok :boolean = false
     if (environment.token != '')

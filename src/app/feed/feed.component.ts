@@ -137,10 +137,16 @@ findByTituloPostagem(){
 
   if(this.tituloPost == ''){
     this.getAllPostagens()
+
   }else{
     this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp
+      if(this.listaPostagens.length == 0){
+        this.alertas.showAlertDanger('Não temos publicações com títulos referente ao que foi digitado')
+      }
     })
+
+
   }
 }
 

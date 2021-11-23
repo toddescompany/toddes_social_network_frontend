@@ -22,9 +22,9 @@ export class MenuComponent implements OnInit {
   senha: string
   tipoUsuario: string
   senhaAntiga: string
+  salvarUser: User = new User()
 
   // editar temas
-  salvarUser: User = new User()
 
   constructor(
     private router: Router,
@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.atualizarCamposModal()
-    //this.salvarUser.senhaUsuario=''
+    this.salvarUser.senhaUsuario=''
   }
 
 //////////////////////////////////////////////////// MODAIS
@@ -83,7 +83,7 @@ findByIdUser(id: number){
 // atualizar user
 atualizarCamposModal(){
   this.findByIdUser(this.idUsuario)
-  //this.senhaAntiga =   this.salvarUser.senhaUsuario
+  this.senhaAntiga =   this.salvarUser.senhaUsuario
   //this.salvarUser.senhaUsuario=''
 }
 
@@ -109,11 +109,13 @@ tipoUser(event: any){
     environment.nomeUsuario=''
     environment.foto=''
     environment.id=0
+
   }
 
 
   // emitirPesquisa
   emitirPesquisa(event: any) {
+
     this.router.navigate(['/feed'])
     this.broadcast.emitirPalavrasDaPesquisa(event.target.value)
 
