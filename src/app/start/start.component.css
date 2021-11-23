@@ -30,8 +30,11 @@
 }
 
 .tecnologiasUtilizadas img{
-	width:60px;
-	margin-right:10px;
+  margin:5px 10px;
+}
+
+.tecnologiasUtilizadas img:hover{
+  cursor:pointer;
 }
 
 
@@ -100,3 +103,43 @@ ul.social-network li{
 .navbar {
   padding: 0 !important;
 }
+
+/* RODAPE */
+footer{
+  background:#d148bb;
+  color:white;
+  padding:20px 0;
+  font-size:20px;
+}
+
+footer a{
+  color:white;
+}
+
+footer a:hover{color:yellow;text-decoration:none;}
+
+
+
+     /* Small devices (landscape phones, 576px and up) */
+     @media (min-width: 576px) {
+
+    }
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {
+
+    }
+    /* Large devices (desktops, 992px and up)*/
+    @media (min-width: 992px) {
+        #feed{width:37%;left:52%;margin-left:-20%;}
+    }
+    /* Extra large devices (large desktops, 1200px and up)*/
+    @media (min-width: 1200px) {
+
+
+      .tecnologiasUtilizadas img{
+        width:90px;
+      }
+
+      .tu3imgs img{width:70px;}
+
+    }
