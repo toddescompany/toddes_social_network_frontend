@@ -131,7 +131,7 @@ if($(window).width() <= 567)
 // TABLET
 if($(window).width() >= 567 && $(window).width() <= 992)
 {
-  if(minhaposicao >=1075){
+  if(minhaposicao >=10750){
     btn_subir.fadeIn();
   }
   else{
@@ -140,7 +140,7 @@ if($(window).width() >= 567 && $(window).width() <= 992)
 }
 
 // DESKTOP
-if($(window).width() >= 992)
+if($(window).width() > 992)
 {
   if(minhaposicao >=9000){
     btn_subir.fadeIn();
