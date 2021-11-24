@@ -277,7 +277,7 @@ https://templatemo.com/tm-538-digital-trend
     border: 0;
     padding: 0;
     cursor: pointer;
-    margin: 0 10px 0 0;
+    margin: 0 35px 0 0;
     width: 30px;
     height: 35px;
     outline: none;
@@ -290,6 +290,7 @@ https://templatemo.com/tm-538-digital-trend
   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background: transparent;
   }
+
 
   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
   .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
@@ -308,7 +309,7 @@ https://templatemo.com/tm-538-digital-trend
   }
 
   .navbar-toggler .navbar-toggler-icon {
-    background: var(--white-color);
+    background: #d148bb;
     transition: background 10ms 300ms ease;
     display: block;
     width: 30px;
@@ -328,6 +329,14 @@ https://templatemo.com/tm-538-digital-trend
     width: 30px;
     height: 2px;
     content: '';
+  }
+
+  .navbar-toggler .rolado::before ,
+  .navbar-toggler .rolado::after {
+    background: white;
+  }
+  .navbar-toggler[aria-expanded="true"] .rolado {
+    background: transparent;
   }
 
   .navbar-toggler .navbar-toggler-icon::before {

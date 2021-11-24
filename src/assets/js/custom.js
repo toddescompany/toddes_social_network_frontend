@@ -56,6 +56,7 @@
 
  // menu fixo muda cor dps do scroll
  $(function () {
+
   $(document).scroll(function () {
     var $nav = $(".navbar-fixed-top");
     $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
@@ -63,13 +64,43 @@
     if($nav.hasClass("scrolled"))
     {
       $("#logo_toddes_oficial").attr("src","../../assets/toddes_img/logo_toddes_branco.png");
+      $(".navbar-toggler-icon").addClass(" rolado");
+      $(".navbar-toggler-icon").css("background","white");
+      $(".navbar-toggler").click(function(){
+          if($(".navbar-toggler").attr("aria-expanded") == "false")
+          {
+            $(".navbar-toggler-icon").css("background","#d148bb");
+          }
+          else
+          {
+            $(".navbar-toggler-icon").css("background","white");
+          }
+      });
     }
     else
     {
       $("#logo_toddes_oficial").attr("src","../../assets/toddes_img/logo_toddes_rosa.png");
+      $(".navbar-toggler-icon").removeClass(" rolado");
+      $(".navbar-toggler-icon").css("background","#d148bb");
+      $(".navbar-toggler").click(function(){
+      if($(".navbar-toggler").attr("aria-expanded") == "false")
+          {
+            $(".navbar-toggler-icon").css("background","white");
+          }
+          else
+          {
+            $(".navbar-toggler-icon").css("background","#d148bb");
+          }
+        });
     }
   });
+
+
+
+
 });
+
+
 
 
 // botão voltar para o topo
@@ -77,24 +108,48 @@
 var btn_subir = $("#botao-voltar-ao-topo");
 //Faz a primeira verificacao ao carregar a pagina
 $(document).ready(function(){
-    var minhaposicao = $(this).scrollTop();
-    if(minhaposicao >=100){
-        btn_subir.fadeIn();
-    }
-    else{
-        btn_subir.fadeOut();
-    }
+  btn_subir.hide();
 });
+
 //Fica monitorando a rolagem de pagina
 $(window).scroll(function(){
     var minhaposicao = $(this).scrollTop();
 
-    if(minhaposicao >=7400){
-        btn_subir.fadeIn();
-    }
-    else{
-        btn_subir.fadeOut();
-    }
+
+// MOBILE FIRST
+if($(window).width() <= 567)
+{
+  if(minhaposicao >=11150){
+    btn_subir.fadeIn();
+  }
+  else{
+      btn_subir.fadeOut();
+  }
+}
+
+
+// TABLET
+if($(window).width() >= 567 && $(window).width() <= 992)
+{
+  if(minhaposicao >=1075){
+    btn_subir.fadeIn();
+  }
+  else{
+      btn_subir.fadeOut();
+  }
+}
+
+// DESKTOP
+if($(window).width() >= 992)
+{
+  if(minhaposicao >=9000){
+    btn_subir.fadeIn();
+  }
+  else{
+      btn_subir.fadeOut();
+  }
+}
+
 });
 
 btn_subir.click(function(){

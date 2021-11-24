@@ -19,7 +19,7 @@ export class CadastrarComponent implements OnInit {
   tipoUsuario:string
   listaUsuario: User[]
 
-  nomeUser: string
+
 
   constructor(
     private authService: AuthService,
@@ -30,7 +30,7 @@ export class CadastrarComponent implements OnInit {
 
   ngOnInit() {
     window.scroll (0,0)
-
+    this.findByUser()
 
 
   }
@@ -44,46 +44,53 @@ export class CadastrarComponent implements OnInit {
   }
 
 findByUser(){
-  this.authService.getByUserUser(this.user.emailUsuario)
+  this.authService.getByUserUser(this.user.emailUsuario).subscribe((resp: User[])=>{
+    this.listaUsuario =resp
+  })
 }
+
 
   cadastrar(){
     // verificar se o nome de usuário digitado já existe
+    console.table(this.listaUsuario)
     let jaTemIgual = 0
     for(let i = 0; i < this.listaUsuario.length;i++)
     {
       if (this.listaUsuario[i].emailUsuario ==this.user.emailUsuario){
-      alert('Nome de usuario já cadastrado!')
-
-      }
-
-      else{
-
+        this.alertas.showAlertDanger('Nome de usuario já cadastrado!')
+        jaTemIgual = 1;
+        break;
       }
     }
+
+    if(jaTemIgual == 0)
+    {
+          this.user.tipo = this.tipoUsuario
+          if(this.user.foto=='')
+            this.user.foto='../../assets/toddes_icon/sem_imagem.jpg';
+
+          if(this.user.senhaUsuario != this.confirmSenha){
+            this.alertas.showAlertInfo('senhas diferentes')
+          }
+          else{
+            this.authService.cadastrar(this.user).subscribe((resp: User) => {
+              this.user =resp
+              this.router.navigate(['/entrar'])
+              this.alertas.showAlertSuccess('Usuario cadastrado com sucesso!')
+            }, erro=>{
+              if(erro.status == 500){
+                this.alertas.showAlertInfo('Os campos não foram preenchidos corretamente')
+              }
+          })
+          }
+    }
+
+
+
 
 //this.authService.getByUserUser(this.user.emailUsuario)
 
-    this.user.tipo = this.tipoUsuario
 
-    if(this.user.foto=='')
-      this.user.foto='../../assets/toddes_icon/sem_imagem.jpg';
-
-    if(this.user.senhaUsuario != this.confirmSenha){
-      this.alertas.showAlertInfo('senhas diferentes')
-    }
-    else{
-      this.authService.cadastrar(this.user).subscribe((resp: User) => {
-        this.user =resp
-        this.router.navigate(['/entrar'])
-        this.alertas.showAlertSuccess('Usuario cadastrado com sucesso!')
-      }, erro=>{
-        if(erro.status == 500){
-          this.alertas.showAlertInfo('Os campos não foram preenchidos corretamente')
-        }
-
-    })
-    }
   }
 
 
