@@ -1,0 +1,188 @@
+.btnContactSubmit
+{
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  color: #fff;
+  background-color: #0062cc;
+  border: none;
+  cursor: pointer;
+}
+
+.expand-btn{
+  width:100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5%;
+  background: #dc3545;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  padding:10px 0;
+}
+
+
+
+/* RODAPE */
+footer{
+  background:#d148bb;
+  padding:20px 0;
+  font-size:20px;
+}
+footer p{color:white;}
+
+footer a{
+  color:white;
+  opacity:0.5;
+}
+
+footer a:hover{color:yellow;opacity:1;text-decoration:none;}
+
+
+/* botão voltar para o topo*/
+#botao-voltar-ao-topo {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  border-radius: 10px;
+}
+
+#botao-voltar-ao-topo:hover{
+  cursor:pointer;
+}
+
+/* MODAL EXPANDIR IMAGEM */
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.expandirIMG:hover{cursor:pointer;opacity:0.8;}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+
+
+     /* Small devices (landscape phones, 576px and up) */
+     @media (min-width: 576px) {
+      .colaboradores .container .row{
+        margin-bottom:120px;
+        text-align:left;
+      }
+
+      .tecnologiasUtilizadas{
+        margin-bottom:50px;
+        text-align:left;
+      }
+
+      .concluimos{width:50%;margin:auto;margin-bottom:50px;}
+
+      .contact-image img{
+        border-radius: 6rem;
+        width: 11%;
+        margin-top: -3%;
+      }
+
+      #contatenos{
+        margin-top:0;
+        margin-bottom:0;
+      }
+
+      .contact-form{
+        background: #fff;
+        margin-top: 10%;
+        margin-bottom: 15%;
+      }
+
+      #der {min-height:400px;}
+    }
+    /* Medium devices (tablets, 768px and up)*/
+    @media (min-width: 768px) {
+
+    }
+    /* Large devices (desktops, 992px and up)*/
+    @media (min-width: 992px) {
+        #feed{width:37%;left:52%;margin-left:-20%;}
+    }
+    /* Extra large devices (large desktops, 1200px and up)*/
+    @media (min-width: 1200px) {
+
+
+      .tecnologiasUtilizadas img{
+        width:90px;
+      }
+
+    }
