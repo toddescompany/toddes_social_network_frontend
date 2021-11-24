@@ -138,6 +138,10 @@ footer a:hover{color:yellow;opacity:1;text-decoration:none;}
 
      /* Small devices (landscape phones, 576px and up) */
      @media (min-width: 576px) {
+      .project-info strong{
+        font-size: 36px;
+      }
+
       .colaboradores .container .row{
         margin-bottom:120px;
         text-align:left;
@@ -172,10 +176,14 @@ footer a:hover{color:yellow;opacity:1;text-decoration:none;}
     /* Medium devices (tablets, 768px and up)*/
     @media (min-width: 768px) {
 
+
     }
     /* Large devices (desktops, 992px and up)*/
     @media (min-width: 992px) {
         #feed{width:37%;left:52%;margin-left:-20%;}
+        .project-info strong{
+          font-size: 40px;
+        }
     }
     /* Extra large devices (large desktops, 1200px and up)*/
     @media (min-width: 1200px) {

@@ -388,7 +388,7 @@ https://templatemo.com/tm-538-digital-trend
   }
 
   .project-info {
-    background: var(--white-color);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: var(--border-radius-small);
     position: absolute;
     bottom: 32px;
@@ -396,17 +396,25 @@ https://templatemo.com/tm-538-digital-trend
     left: 32px;
     width: 90%;
     padding: 32px;
+    height:50%;
+    line-height:0;
+    overflow-y: auto;
   }
 
   .project-info small {
     font-family: Plain-Bold;
-    color: var(--gray-color);
+    color: #dc3545;
     position: relative;
     top: 2px;
   }
 
+  .project-info h3{margin-top:20px;}
+
+
+
+
   .project-info a {
-    color: var(--primary-color);
+    text-decoration:underline;
   }
 
   .project-info .project-icon {
