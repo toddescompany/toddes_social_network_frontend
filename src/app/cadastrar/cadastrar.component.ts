@@ -32,7 +32,7 @@ export class CadastrarComponent implements OnInit {
     window.scroll (0,0)
     this.findByUser()
     document.body.classList.remove("normal")
-    document.body.classList.add("bugViewport")
+    document.body.classList.add("bugViewport2")
   }
   confirmeSenha(event: any){
     this.confirmSenha = event.target.value
@@ -93,6 +93,10 @@ findByUser(){
 
   }
 
-
+bugViewport()
+{
+  document.body.classList.remove("bugViewport2")
+  document.body.classList.add("bugViewport")
+}
 
 }
