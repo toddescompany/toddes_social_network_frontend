@@ -31,7 +31,7 @@ export class MenuEsquerdoComponent implements OnInit {
     private temaService: TemaService,
     private authservice: AuthService,
     private alertas: AlertasService,
-    private emissor: MainBroadcastService
+    private broadcast: MainBroadcastService
   ) { }
 
   ngOnInit(): void {
@@ -50,11 +50,24 @@ export class MenuEsquerdoComponent implements OnInit {
         {
           btns[i].classList.remove("leftMenuNavItemAtivo")
         }
-
         // adiciona no clicado
         btns[i].classList.add("leftMenuNavItemAtivo")
       })
     }
+
+    // algo algo for digitado para pesquisar, executa o método de pesquisa
+    this.broadcast.emissorDePesquisa.subscribe(
+      resp => {
+         // limpa a classe
+         for (let i = 0; i < btns.length;i++)
+         {
+           btns[i].classList.remove("leftMenuNavItemAtivo")
+         }
+         const first = document.querySelectorAll(".leftMenuNavItem")[0]
+         first.classList.add("leftMenuNavItemAtivo")
+
+      }
+    );
 
 
   }
@@ -95,7 +108,7 @@ export class MenuEsquerdoComponent implements OnInit {
     this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
     this.postagem = new Postagem()
     // atualizar o feed e demais componentes da rede social
-    this.emissor.atualizarRedeToda()
+    this.broadcast.atualizarRedeToda()
 
 
   })

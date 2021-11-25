@@ -37,6 +37,9 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
     this.atualizarCamposModal()
     this.salvarUser.senhaUsuario=''
+
+    
+
   }
 
 //////////////////////////////////////////////////// MODAIS
