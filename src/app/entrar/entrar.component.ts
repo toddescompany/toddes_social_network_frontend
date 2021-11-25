@@ -23,6 +23,8 @@ export class EntrarComponent implements OnInit {
   ngOnInit() {
     document.body.classList.remove("normal")
     document.body.classList.add("bugViewport")
+
+    this.router.navigate(['/entrar'])
   }
 
   entrar(){

@@ -57,12 +57,28 @@ export class PerfilUsuarioComponent implements OnInit {
       this.alertas.showAlertDanger('sua sessão expirou.')
       this.router.navigate(['/entrar'])
     }
+
+    window.addEventListener('popstate', (event) => {
+      this.sair()
+      this.alertas.showAlertDanger('sua sessão expirou.')
+      document.location.reload();
+    });
+
     this.findByIdUser()
      // pega id na URL
      this.idPostagemASerRemovidaOuEditada = this.route.snapshot.params['id']
      // atualiza os campos do modal editar sempre que a página atualizar
      if (this.idPostagemASerRemovidaOuEditada != undefined)
      this.atualizarCamposModal();
+  }
+
+  sair (){
+    //alert("Usuário atualizado com sucesso, faça o login novamente!")
+    environment.token=''
+    environment.nomeUsuario=''
+    environment.foto=''
+    environment.id=0
+
   }
 
   // exibir pots

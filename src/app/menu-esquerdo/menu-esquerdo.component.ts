@@ -55,7 +55,7 @@ export class MenuEsquerdoComponent implements OnInit {
       })
     }
 
-    // algo algo for digitado para pesquisar, executa o método de pesquisa
+    // algo algo for digitado para pesquisar, muda a cor do botao
     this.broadcast.emissorDePesquisa.subscribe(
       resp => {
          // limpa a classe
@@ -65,7 +65,19 @@ export class MenuEsquerdoComponent implements OnInit {
          }
          const first = document.querySelectorAll(".leftMenuNavItem")[0]
          first.classList.add("leftMenuNavItemAtivo")
+      }
+    );
 
+    // algo algo for digitado para pesquisar, muda a cor do botao
+    this.broadcast.emissorDeTema.subscribe(
+      resp => {
+         // limpa a classe
+         for (let i = 0; i < btns.length;i++)
+         {
+           btns[i].classList.remove("leftMenuNavItemAtivo")
+         }
+         const first = document.querySelectorAll(".leftMenuNavItem")[1]
+         first.classList.add("leftMenuNavItemAtivo")
       }
     );
 

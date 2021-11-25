@@ -7,6 +7,7 @@ export class MainBroadcastService {
 
   emissorPrincipal = new EventEmitter()
   emissorDePesquisa = new EventEmitter()
+  emissorDeTema = new EventEmitter()
 
   constructor() { }
 
@@ -19,4 +20,11 @@ export class MainBroadcastService {
   {
     this.emissorDePesquisa.emit(pesquisa)
   }
+
+  pulaProTemaSelecionado(id: number)
+  {
+    this.emissorDeTema.emit(id)
+  }
+
+
 }

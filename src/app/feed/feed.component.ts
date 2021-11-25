@@ -67,9 +67,21 @@ export class FeedComponent implements OnInit {
       }
     );
 
-
+    window.addEventListener('popstate', (event) => {
+      this.sair()
+      this.alertas.showAlertDanger('sua sessão expirou.')
+      document.location.reload();
+    });
   }
 
+  sair (){
+    //alert("Usuário atualizado com sucesso, faça o login novamente!")
+    environment.token=''
+    environment.nomeUsuario=''
+    environment.foto=''
+    environment.id=0
+
+  }
   refreshFeed()
   {
     this.getAllTemas()
@@ -178,6 +190,11 @@ fecharTelaDePostagemDpsQuePostou()
 
 
 
-
+pulaProTema(event: any)
+{
+  let idTemaClicado = event.target.getAttribute("id")
+  this.receptor.pulaProTemaSelecionado(idTemaClicado)
+  this.router.navigate(['/tema'])
+}
 
 }

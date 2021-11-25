@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { MainBroadcastService } from '../broadcast/main-broadcast.service';
 import { Tema } from '../model/Tema';
 import { AlertasService } from '../service/alertas.service';
 import { SpecialFunctionsService } from '../service/special-functions.service';
@@ -16,6 +17,7 @@ export class TemaComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   tipoUsuario = environment.tipoUsuario
+  idJumpTema = -1
 
   // order by
   key = 'data'
@@ -25,7 +27,8 @@ export class TemaComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private alertas: AlertasService,
-    public specialfunctions: SpecialFunctionsService
+    public specialfunctions: SpecialFunctionsService,
+    private broadcast: MainBroadcastService
     ) { }
 
   ngOnInit() {
@@ -34,21 +37,62 @@ export class TemaComponent implements OnInit {
       this.router.navigate(['/entrar'])
     }
     this.findAllTemas()
-
+    window.addEventListener('popstate', (event) => {
+      this.sair()
+      this.alertas.showAlertDanger('sua sessão expirou.')
+      document.location.reload();
+    });
 
     setTimeout(()=>{
-      const first = document.querySelectorAll(".scrollmenu a")[0]
-      first.classList.add("temaAtivo")
-      this.carregaPostsPorTema(1)
+
+      if(this.idJumpTema == -1)
+      {
+        const first = document.querySelectorAll(".scrollmenu a")[0]
+        first.classList.add("temaAtivo")
+        this.carregaPostsPorTema(0)
+      }
+
     },500)
 
+      // algo algo for digitado para pesquisar, muda a cor do botao
+      this.broadcast.emissorDeTema.subscribe((resp : number)=>{
+        this.idJumpTema = resp
+
+        /*setTimeout(()=>{
+          this.salteParaOTema()
+        },1000)
+*/
+      }
+      );
+
   }
+  sair (){
+    //alert("Usuário atualizado com sucesso, faça o login novamente!")
+    environment.token=''
+    environment.nomeUsuario=''
+    environment.foto=''
+    environment.id=0
+
+  }
+
   findAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[])=> {
       this.listaTemas = resp
 
 
     })
+
+  }
+
+  salteParaOTema( )
+  {
+
+
+    this.limpaTemasAtivos()
+    const el = document.getElementsByClassName("temasItem")[this.idJumpTema - 1]
+    console.log(el)
+    el.classList.add("temaAtivo")
+    this.carregaPostsPorTema(el)
   }
 
   cadastrar(){
@@ -132,10 +176,15 @@ export class TemaComponent implements OnInit {
 btnPostClicado(event: any)
 {
   this.carregaPostsPorTema(event)
-  this.dinamicaCores(event)
+  this.limpaTemasAtivos()
 }
 
 dinamicaCores(event : any){
+  const btns =  document.getElementsByClassName("temaAtivo");
+  for (let i = 0; i < btns.length;i++)
+  btns[i].classList.remove("temaAtivo")
+}
+limpaTemasAtivos(){
   const btns =  document.getElementsByClassName("temaAtivo");
   for (let i = 0; i < btns.length;i++)
   btns[i].classList.remove("temaAtivo")

@@ -1,3 +1,4 @@
+const { getEnvironmentData } = require("worker_threads");
 
   $(function () {
 
@@ -192,8 +193,6 @@ $('.RadioColocarImagemNao').click(function(){
   $('.RadioColocarImagemNao').attr("checked","true");
   $('.RadioColocarImagemSim').attr("checked","false");
 });
-
-
 
 
 
