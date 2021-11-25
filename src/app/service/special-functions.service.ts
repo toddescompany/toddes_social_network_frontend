@@ -39,7 +39,7 @@ export class SpecialFunctionsService {
       }
       else if(dias > 7)
       {   // SE PASSOU DE UMA SEMANA - MOSTRA A DATA E O HORÁRIO
-        saidaDaData = " " + past.toLocaleDateString(navigator.language, {hour:'2-digit', minute:'2-digit'})
+        saidaDaData = " " + past.toLocaleString()
       }
 
 

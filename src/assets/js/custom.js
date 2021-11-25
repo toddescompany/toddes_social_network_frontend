@@ -175,12 +175,26 @@ $(".expandirIMG").click(function(){
 });
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+document.getElementById("btnCloseModalExpandirIMG").addEventListener("click",function() {
   modal.style.display = "none";
-}
+
+});
+
+
+// deseja colocar imagem?
+$('#RadioColocarImagemSim').click(function(){
+  alert()
+  $('.RadioColocarImagemSim').attr("checked","true");
+  $('.RadioColocarImagemNao').attr("checked","false");
+
+});
+$('.RadioColocarImagemNao').click(function(){
+  $('.RadioColocarImagemNao').attr("checked","true");
+  $('.RadioColocarImagemSim').attr("checked","false");
+});
+
+
 
 });
 

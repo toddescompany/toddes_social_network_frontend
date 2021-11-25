@@ -67,6 +67,7 @@ export class FeedComponent implements OnInit {
       }
     );
 
+
   }
 
   refreshFeed()
@@ -90,6 +91,31 @@ export class FeedComponent implements OnInit {
   getAllPostagens(){
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp
+
+      /* deseja colocar uma imagem*/
+
+// radio dynamics
+//const rd1 = document.getElementsByClassName("RadioColocarImagemSim")[0]
+//const rd2 = document.getElementsByClassName("RadioColocarImagemNao")[0]
+//rd1.addEventListener("click",function(){
+//  rd1.setAttribute("checked","true")
+//})
+/*
+var modal = document.getElementById("myModal")
+var modalImg = document.getElementById("img01")
+var captionText = document.getElementById("caption")
+var imgs = document.getElementsByClassName("expandirIMG")
+
+alert(imgs.length)
+for(let i = 0; i < imgs.length;i++)
+{
+  imgs[i].addEventListener("click",function(){
+    //modal.style.display = "block";
+    //modalImg.src = this.src;
+    //captionText.innerHTML = this.alt;
+    alert()
+  });
+}*/
     })
 
   }
@@ -160,5 +186,9 @@ findByNomeTema(){
     })
   }
 }
+
+
+
+
 
 }

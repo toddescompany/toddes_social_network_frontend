@@ -71,11 +71,11 @@ export class TemaComponent implements OnInit {
 
 
 
-      html += '<a class="nav-item nav-link '
+      html += '<div class=" '
       html+= i == 0 ? 'active' : ' '
       html+=' text-secondary fw-bold" id="nav-tema'+this.listaTemas[i].idTema+'-tab" data-toggle="tab" href="#nav-tema'+this.listaTemas[i].idTema+'" role="tab" aria-controls="nav-todasPostagens" aria-selected="'
       html+= i == 0 ? 'true' : 'false'
-      html+='">'+tema+'</a>';
+      html+='">'+tema+'</div>';
     }
     botaoCima.innerHTML+=html
     //tabContents

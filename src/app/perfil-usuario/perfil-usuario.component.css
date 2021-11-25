@@ -1,14 +1,56 @@
 /* CENTER "feed" */
-/* POSTAR */
+
 #feed{
-    position:absolute;
-    width:80%;
-    left:20%;
-    top:10%;
-    z-index:1;
-    background:white;
-    border-radius:10px;
+	position:absolute;
+	width:100%;
+	left:0;
+	top:9.20%;
+	background:white;
+	overflow-y:auto;
+	height:83%;
+	z-index:1;
 }
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	#feed
+	{
+		width:90%;
+		left:10%;
+		height:auto;
+
+	}
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	#feed
+	{
+		width:58.50%;
+		left:26%;
+
+	}
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	#feed
+	{
+		width:48%;
+		left:26%;
+
+	}
+}
+
+#semPostagem
+{
+	text-align:center;
+	padding:30px 0;
+	color:#d148bb;
+}
+#semPostagem i {font-size:50px; margin-bottom:10px;}
 
 #feed #postar{border-top:1px solid #eee;border-bottom:1px solid #eee;padding:8px 0;}
 /* caixa para postar algo*/
@@ -39,22 +81,4 @@
 #posts article .lblPostNomeUsuario{font-size:100%;color:#d148bb;}
 #posts .lblQtdComentarios {position:relative;top:-5px;color:gray;}
 #dropdown-post .dropdown-menu i{color:#d148bb;}
-
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-
-}
-/* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) {
-
-}
-  /* Large devices (desktops, 992px and up)*/
-  @media (min-width: 992px) {
-    #feed{width:40%;left:49%;margin-left:-20%;}
-}
-
-/* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
-
-}
 

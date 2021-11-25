@@ -1,14 +1,10 @@
-<section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
-
-    <div id="posts" class="row">
-
-
+<div id="feed" class="container-fluid">
+<div id="posts" class="row">
+    <div id="semPostagem">
+      <i class="far fa-frown"></i>
+      <h4>Você não possuí nenhuma postagem no momento!</h4>
+    </div>
         <article id="postUsuario" *ngFor='let post of user.postagem | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
-
-
-
-
-
 
             <div class="bg-white border mt-2">
                 <div>
@@ -17,9 +13,9 @@
                                 src="{{minhaFoto}}" width="45" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';">
                             <div class="d-flex flex-column flex-wrap ml-2"><span
                                     class="font-weight-bold">{{meuNome}}</span>
-                                <span class="text-black-50 time">{{specialfunctions.calculaADiferencaEntreDatas(post.data_postagem)}}</span>
-                                <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
-                                <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
+                                <span class="time">{{specialfunctions.calculaADiferencaEntreDatas(post.data_postagem)}}</span>
+                                <span class="font-weight-bold" style="color:#d148bb;">{{post.tituloPostagem}}</span>
+
 
                             </div>
                         </div>
@@ -43,7 +39,9 @@
                     </div>
                 </div>
                 <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
-                <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  height="400px" width="100%" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span></div>
+                <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  height="400px" width="100%" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span>
+                </div>
+                <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
             </div>
 
 
@@ -54,8 +52,6 @@
 
 
     </div>
-</section>
-
 
 
 <!-- MODAL DELETE POST  [routerLink]="['/postagem-delete', post.id_postagem]" -->
@@ -133,4 +129,4 @@
   </div>
 <!-- MODAL EDITAR POST -->
 
-
+</div>

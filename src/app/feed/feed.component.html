@@ -1,131 +1,118 @@
-<section id="feed" class="col-10 col-lg-8 col-xl-7 border-right border-left ">
 
-    <div id="postar" class="">
-
-            <div class="row form-group pt-3 pb-3">
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <div class="row">
-                        <div class="col-12">
-                            <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo"
-                            class="col-12 b-0 form-control mb-4" value="" maxlength="255" tabindex="1" autofocus>
-
-                        <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost"
-                            placeholder="O que você está sentindo?" class="form-control" required maxlength="1000" tabindex="2"></textarea>
-
-                        <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;">Tema da Postagem:</label>
-                        <select name="tema" id="nomeTema" class="form-select form-control" [(ngModel)]='idTema'
-                            (change)='findByIdTema' tabindex="3" required>
-                            <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
-                                {{item.nomeTema}}
-                            </option>
-                        </select>
-
-                        <!--<ul class=" mb-3" id="pills-tab" role="tablist">
-                            <li class="nav-item">
-                              <a class="nav-link active" >Sim</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" >Não</a>
-                            </li>
-                          </ul>-->
-
-                          <div class="nav nav-pills mt-4" id=" pill-tab" role="tablist">
-                            <input type="radio" name="colocarImagem" id="sim" value="sim" href="#pills-home" aria-controls="pills-home"  data-toggle="pill"  role="tab" >  Sim
-
-                            <input type="radio" name="colocarImagem" id="nao" value="nao" href="#pills-profile" aria-controls="pills-profile"  data-toggle="pill"  role="tab"  checked="checked">  Não
-                        </div>
-
-                          <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;"><i class="far fa-image" style="color:#d148bb;"></i> Link da Imagem:</label>
-                                <input [(ngModel)]= 'postagem.imagem' type="text" class="form-control" aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+<div id="feed" class="container-fluid">
 
 
-                            </div>
-                            <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+  <div id="postar" class="d-none d-md-block">
 
-                            </div>
-                          </div>
+    <div style="text-align:center; margin-bottom:10px;">
+    <label for="tema" class="mt-2 " style="color:#d148bb;font-weight:bold;">Deseja fazer uma postagem?  </label>
+      <a class="btn  fas fa-paper-plane mt-2" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="background-color:#d148bb; color: white;margin-left:20px;" >
+      </a>
+    </div>
 
+    <div class="collapse" id="collapseExample">
+      <div class="card card-body">
+        <!-- POSTAGEM -->
+      <div class="row form-group pt-3 pb-3">
+        <div class="col-1"></div>
+        <div class="col-10">
+          <div class="row">
+            <div class="col-12">
+              <input [(ngModel)]='postagem.tituloPostagem' id="tituloPost" type="text" placeholder="Titulo"
+                class="col-12 b-0 form-control mb-4" value="" maxlength="255" tabindex="1" autofocus>
 
+              <textarea [(ngModel)]='postagem.texto_postagem' id="txtPost" placeholder="O que você está sentindo?"
+                class="form-control" required maxlength="1000" tabindex="2"></textarea>
 
+              <label for="tema" class="mt-4" style="color:#d148bb;font-weight:bold;">Tema da Postagem:</label>
+              <select name="tema" id="nomeTema" class="form-select form-control" [(ngModel)]='idTema'
+                (change)='findByIdTema' tabindex="3" required>
+                <option *ngFor='let item of listaTemas' value="{{item.idTema}}">
+                  {{item.nomeTema}}
+                </option>
+              </select>
 
+              <!-- FOTO? -->
+              <p>
+                <a class="btn  btn-secondary mt-4" data-toggle="collapse" href="#collapseFoto" role="button" aria-expanded="false" aria-controls="collapseFoto" style="background-color:#d148bb; color: white" >
+                  Deseja postar com imagem?
+                </a>
+              </p>
+              <div class="collapse" id="collapseFoto">
+                  <label for="tema" class="mt-1" style="color:#d148bb;font-weight:bold;"><i class="far fa-image"
+                      style="color:#d148bb;"></i> Link da Imagem:</label>
+                  <input [(ngModel)]='postagem.imagem' type="text" class="form-control"
+                    aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
 
-
-
-
-
-                        <div class="row justify-content-end">
-                            <button type="button" class="btnPostar2 fas fa-paper-plane mt-4" (click)='publicar()'></button>
-                        </div   >
-
-
-
-
-
-
-
-
-                        </div>
-
-
-
-
-
-
+                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+                  aria-labelledby="pills-profile-tab">
                 </div>
+            </div>
 
-
+              <div class="row justify-content-end">
+                <button type="button" class="btnPostar2 fas fa-paper-plane mt-4" (click)='publicar()'></button>
+              </div>
 
 
             </div>
-                <div class="col-1"></div>
-            </div>
 
+          </div>
+
+        </div>
+        <div class="col-1">
+
+        </div>
+      </div>
+<!-- POSTAGEM FIM-->
+      </div>
     </div>
 
 
+  </div>
+  <div id="posts" class="row">
+    <article *ngFor='let post of listaPostagens | orderBy : key : reverse' class="col-12 pt-2 pb-2">
+      <div class="bg-white border mt-2">
+        <div>
+          <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+            <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle"
+                src="{{post.fk_usuario.foto}}" width="45"
+                onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';">
+              <div class="d-flex flex-column flex-wrap ml-2"><span
+                  class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span>
+                <span class="time">
+                  {{specialfunctions.calculaADiferencaEntreDatas(post.data_postagem)}}</span>
+                <span class="font-weight-bold titulo" style="color:#d148bb;">{{post.tituloPostagem}}</span>
 
 
-    <div id="posts" class="row">
-
-
-        <article *ngFor='let post of listaPostagens | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
-            <div class="bg-white border mt-2">
-                <div>
-                    <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
-                        <div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle"
-                                src="{{post.fk_usuario.foto}}" width="45" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';">
-                            <div class="d-flex flex-column flex-wrap ml-2"><span
-                                    class="font-weight-bold">{{post.fk_usuario.nomeUsuario}}</span>
-                                <span class="text-black-50 time">
-                                    {{specialfunctions.calculaADiferencaEntreDatas(post.data_postagem)}}</span>
-                                <span class="font-weight-bold" style="color:#d148bb;">"{{post.tituloPostagem}}"</span>
-                                <span class="font-weight-bold" style="color: rgb(41, 12, 146);">#{{post.fk_tema.nomeTema}}</span>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
-                <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  height="400px" width="100%" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span></div>
+              </div>
             </div>
-        </article>
+
+          </div>
+        </div>
+        <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
+        <div class="p-2 px-3" *ngIf='post.imagem'>
+
+          <img src="{{post.imagem}}"
+          class="expandirIMG img-post-responsive-size"
+          onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';">
+
+        </div>
+        <span class="tema">#{{post.fk_tema.nomeTema}}</span>
+      </div>
+    </article>
 
 
 
 
-        <!--<div class="row mt-2">
+    <!--<div class="row mt-2">
                      <div class="Comentarios">
                          <button type="button" class="btnComentario"><i class="far fa-comment"></i></button>
                          <span class="lblQtdComentarios">10</span>
                      </div>
                  </div>-->
 
-    </div>
-</section>
+  </div>
+</div>
 
 <!-- MODAL DELETE POST
   <div class="modal fade" id="deletePostModal" tabindex="-1" role="dialog" aria-labelledby="deletePostModalLabel" aria-hidden="true">
@@ -215,5 +202,3 @@
     </div>
   </div>
  END - MODAL EDITAR POST -->
-
-

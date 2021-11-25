@@ -2,15 +2,167 @@
 
 html {
 	scroll-behavior: smooth;
+	overflow:auto;
   }
 
-/* DESIGN LAYOUT */
-.beforeLogin{position:absolute;width:80%;left:40%;margin-left:-40%;}
+  body{
+	  overflow:auto
+  }
 
 /* BASE */
 .img-100{width:100%;}
+
+/* cada post */
+.time{font-size:14px;color:rgb(177, 174, 174);}
+.titulo{}
+.tema{font-size:14px;color:white;background:#d148bb;border-radius:30px;padding:5px 10px;margin:0px 0 10px 15px;display:inline-block;}
+.tema a{color:white;}
+.tema:hover{cursor:pointer;}
+
+.expandirIMG:hover{cursor:pointer;opacity:0.8;}
 
 /* FUNDAMENTAL COLORS */
 .color-login{color:#d148bb;}
 
 
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+  /* Modal Content (Image) */
+  .modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+  }
+
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+  }
+
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+
+  @keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+  }
+
+  /* The Close Button */
+  #btnCloseModalExpandirIMG {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+  }
+
+  #btnCloseModalExpandirIMG:hover,
+  #btnCloseModalExpandirIMG:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+  }
+
+
+
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	.modal-content {
+	  width: 100%;
+	}
+  }
+/****** container-router-outlet-master ********/
+
+
+#btnPostarMobile{
+	background: #b633a0;
+	border:none;
+	border-radius: 100%;
+	color: #FFFFFF;
+	border:none;
+	text-align:center;
+	outline:none;
+	width:50px;
+	position:fixed;
+	bottom:55px;
+	right:10px;
+	padding:15px 20px;
+
+}
+
+#btnPostarMobile i{
+	position:relative;
+	left:-8px;
+	font-size:23px;
+}
+
+#container-router-outlet-master{
+	position:fixed;
+	width:100%;
+	left:0;
+	top:9.20%;
+	background:white;
+	overflow-y:auto;
+	height:83%;
+	z-index:1;
+}
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	#container-router-outlet-master
+	{
+		width:90%;
+		left:10%;
+		height:90%;
+
+	}
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	#container-router-outlet-master
+	{
+		width:58.50%;
+		left:26%;
+
+	}
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	#container-router-outlet-master
+	{
+		width:48%;
+		left:26%;
+
+	}
+}

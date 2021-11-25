@@ -3,16 +3,12 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div id='img-bg'>
+<div id='container-cadastrar-master' class="container-fluid">
+    <div class="row d-flex align-items-center">
+    <div class="col-md-12 mt-cadastrar">
+
 
 <div class="wrapper fadeInDown">
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
   <div id="formContent">
     <!-- Tabs Titles -->
 
@@ -21,28 +17,49 @@
         <h1 class="text-center">Cadastro</h1>
     </div>
 
+    <div class="row">
+
+
     <!-- Login Form -->
-    <form>
+    <div class="col-12">
       <input [(ngModel)]='user.nomeUsuario' class="fadeIn second" type="text" name="nome" id="nome" placeholder="Nome completo" tabindex="1" autofocus>
       <input [(ngModel)]='user.emailUsuario' class="fadeIn third" type="text" name="usuario" id="usuario" placeholder="Nome de Usuário (E-mail/ou/Login)" tabindex="2">
-      <input [(ngModel)]='user.foto' class="fadeIn third" type="text" name="foto" id="foto" placeholder="Link da foto de perfil" tabindex="3">
       <input (input)='confirmeSenha($event)' class="fadeIn third" type="password" id="senha" name="senha" placeholder="Senha" tabindex="4">
       <input [(ngModel)]='user.senhaUsuario' class="fadeIn third" type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirmar senha" tabindex="5">
+        <!-- FOTO? -->
+        <p>
+            <a class="btn  btn-secondary mt-4" data-toggle="collapse" href="#collapseFoto" role="button" aria-expanded="false" aria-controls="collapseFoto" style="background-color:#d148bb; color: white" >
+            Carregar uma foto para o perfil?
+            </a>
+        </p>
+        <div class="collapse" id="collapseFoto">
+            <label for="tema" class="mt-1" style="color:#d148bb;font-weight:bold;"><i class="far fa-image"
+                style="color:#d148bb;"></i> Link da Imagem:</label>
+            <input [(ngModel)]='user.foto' type="text" class="form-control"
+                aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
 
-      <div class="container-fluid">
-        <div class="row d-flex justify-content-center">
-            <div class="col-md-4">
-                <input type="submit" style="background-color:black; color: white" class="fadeIn fourth" value="Cancelar" routerLink="/entrar">
-            </div>
-            <div class="col-md-6">
-                <input type="reset" style="background-color:#d148bb; color: white" class="fadeIn fourth" value="Cadastrar" (click)='cadastrar()'>
+            <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+            aria-labelledby="pills-profile-tab">
             </div>
         </div>
-      </div>
-    </form>
+    </div>
+
+</div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-4 order-2 order-md-1">
+                <input type="submit" style="background-color:black; color: white" class="fadeIn fourth" value="Cancelar" routerLink="/entrar">
+            </div>
+            <div class="col-12 col-md-6 order-1 order-md-2">
+                <input type="reset" style="background-color:#d148bb; color: white" class="fadeIn fourth" value="Cadastrar" (click)='cadastrar()' id="btnCadastrar">
+            </div>
+        </div>
+
+
 
 
   </div>
+</div>
+</div>
 </div>
 </div>
 

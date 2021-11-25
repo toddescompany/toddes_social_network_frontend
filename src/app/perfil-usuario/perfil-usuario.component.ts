@@ -69,6 +69,12 @@ export class PerfilUsuarioComponent implements OnInit {
   findByIdUser(){
     this.authservice.getByIdUser(this.idUsuario).subscribe((resp: User)=>{
       this.user = resp
+      // verifica se tem postagem!
+      if(resp.postagem.length <= 0 || resp.postagem == null)
+      {
+        const posts = <HTMLElement> document.getElementById("semPostagem")
+        posts.style.display="true"
+      }
     })
   }
 

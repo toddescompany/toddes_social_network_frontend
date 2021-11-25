@@ -38,6 +38,25 @@ export class MenuEsquerdoComponent implements OnInit {
 
     this.getAllTemas()
     this.findByIdUser()
+
+
+    // bag
+    const btns =  document.getElementsByClassName("leftMenuNavItem");
+    for (let i = 0; i < btns.length;i++){
+      btns[i].addEventListener("click",()=>{
+
+        // limpa a classe
+        for (let i = 0; i < btns.length;i++)
+        {
+          btns[i].classList.remove("leftMenuNavItemAtivo")
+        }
+
+        // adiciona no clicado
+        btns[i].classList.add("leftMenuNavItemAtivo")
+      })
+    }
+
+
   }
 
 
