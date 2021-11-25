@@ -9,7 +9,12 @@ html {
   }
 
 /* corrigir erro de viewport no teclado */
-.bugViewport{background:url('https://i.imgur.com/yL33AzG.jpg') repeat-y;}
+.bugViewport{
+	background:url('https://i.imgur.com/yL33AzG.jpg');
+	background-position: center;
+    background-repeat: repeat-y;
+    background-size: cover;
+}
 .normal{background:#f2f2f2;}
 
 
