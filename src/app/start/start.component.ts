@@ -12,4 +12,9 @@ export class StartComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  bugViewport()
+  {
+    document.body.classList.remove("normal")
+    document.body.classList.add("bugViewport")
+  }
 }

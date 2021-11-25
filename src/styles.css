@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 html {
 	scroll-behavior: smooth;
 	overflow:auto;
@@ -8,6 +7,12 @@ html {
   body{
 	  overflow:auto
   }
+
+/* corrigir erro de viewport no teclado */
+.bugViewport{background:url('assets/toddes_img/img_login.png');}
+.normal{background:#f2f2f2;}
+
+
 
 /* BASE */
 .img-100{width:100%;}

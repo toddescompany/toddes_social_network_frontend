@@ -15,7 +15,7 @@ export class EntrarComponent implements OnInit {
   userLogin: UserLogin = new UserLogin()
 
   constructor(
-    private auth: AuthService, 
+    private auth: AuthService,
     private router: Router,
     private alertas: AlertasService
     ) { }
@@ -26,6 +26,12 @@ export class EntrarComponent implements OnInit {
   entrar(){
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=> {
       this.userLogin = resp
+      // bugviewport
+      document.body.classList.remove("bugViewport")
+      document.body.classList.add("normal")
+
+
+
       // definindo variáveis globais
         environment.token = this.userLogin.token
         environment.nomeUsuario = this.userLogin.nomeUsuario
@@ -36,8 +42,6 @@ export class EntrarComponent implements OnInit {
         environment.tipoUsuario = this.userLogin.tipo
 
       // mudando o layout depois de logar, para deixar as barras fixas
-
-
       this.router.navigate(['/feed'])
     }, erro=>{
       if(erro.status == 500){
