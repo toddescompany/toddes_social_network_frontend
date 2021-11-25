@@ -93,13 +93,13 @@ export class TemaComponent implements OnInit {
       html+='" id="nav-tema'+this.listaTemas[i].idTema+'" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">'
       for(let p = 0;p < this.listaTemas[i].postagem.length;p++)
       {
-      html += '<article class="col-12 pt-2 pb-2"><div class="bg-white border mt-2"><div><div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom"><div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="'+this.listaTemas[i].postagem[p].fk_usuario.foto+'" width="45" onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"><div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">'+this.listaTemas[i].postagem[p].fk_usuario.nomeUsuario+'</span><span class="text-black-50 time">'+ this.specialfunctions.calculaADiferencaEntreDatas(this.listaTemas[i].postagem[p].data_postagem.toString())+'</span><span class="font-weight-bold" style="color:#d148bb;">"'+this.listaTemas[i].postagem[p].tituloPostagem+'"</span></div></div></div></div><div class="p-2 px-3"><span>'+this.listaTemas[i].postagem[p].texto_postagem+'</span></div>'
+      html += '<article class="col-12 pt-2 pb-2"><div class="bg-white border mt-2"><div><div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom"><div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="'+this.listaTemas[i].postagem[p].fk_usuario.foto+'" width="45" onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"><div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">'+this.listaTemas[i].postagem[p].fk_usuario.nomeUsuario+'</span><span class="time">'+ this.specialfunctions.calculaADiferencaEntreDatas(this.listaTemas[i].postagem[p].data_postagem.toString())+'</span><span class="font-weight-bold titulo">'+this.listaTemas[i].postagem[p].tituloPostagem+'</span></div></div></div></div><div class="p-2 px-3"><span>'+this.listaTemas[i].postagem[p].texto_postagem+'</span></div>'
 
       if (this.listaTemas[i].postagem[p].imagem)
       {
-      html += '<div class="p-2 px-3"><span><img src="'+this.listaTemas[i].postagem[p].imagem+'"  height="400px" width="100%" onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"> </span></div>'
+      html += '<div class="p-2 px-3"><span><img src="'+this.listaTemas[i].postagem[p].imagem+'" class="img-post-responsive-size"  onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"> </span></div>'
       }
-
+      html+= '<span class="tema">'+this.listaTemas[i].nomeTema+'</span>'
       html += '</div></article>'
       }
       html+="</div>"

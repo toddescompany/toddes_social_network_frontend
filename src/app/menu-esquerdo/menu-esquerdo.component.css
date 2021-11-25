@@ -10,7 +10,7 @@
         top:93%;
     }
     .leftMenuNavItem:hover{cursor:pointer;}
-    .leftMenuNavItem a{font-size:20px;color:#d5459e;}
+    .leftMenuNavItem a{font-size:30px;color:#d5459e;}
     .leftMenuNavItem a:hover{text-decoration:none;}
     .leftMenuNavItem i{color:#d5459e;}
 
@@ -69,7 +69,7 @@
     }
     /* Extra large devices (large desktops, 1200px and up)*/
     @media (min-width: 1200px) {
-
+        .leftMenuNavItem a{font-size:22px;}
     }
 
     .corButao{

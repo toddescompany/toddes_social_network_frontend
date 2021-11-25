@@ -4,7 +4,7 @@
 	<router-outlet></router-outlet>
 	<app-tendencias *ngIf="auth.logado()"></app-tendencias>
 </div>
-<div id="btnPostarMobile" class="dropdown-item d-md-none"  data-toggle="modal"  data-target="#postModal"><i class="fas fa-paper-plane"></i>
+<div id="btnPostarMobile" *ngIf="auth.logado()" class="dropdown-item d-md-none"  data-toggle="modal"  data-target="#postModal"><i class="fas fa-paper-plane"></i>
 </div>
 
 

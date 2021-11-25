@@ -1,9 +1,16 @@
 <div id="feed" class="container-fluid">
 <div id="posts" class="row">
-    <div id="semPostagem">
+    <div id="semPostagem" class="d-none col-12">
       <i class="far fa-frown"></i>
       <h4>Você não possuí nenhuma postagem no momento!</h4>
     </div>
+
+    <div class="col-12 minhasPostagens">
+      <h4>Minhas Postagens</h4>
+    </div>
+
+
+
         <article id="postUsuario" *ngFor='let post of user.postagem | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
 
             <div class="bg-white border mt-2">
@@ -39,9 +46,9 @@
                     </div>
                 </div>
                 <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
-                <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  height="400px" width="100%" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span>
+                <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  class="img-post-responsive-size" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span>
                 </div>
-                <span class="" style="color:blue;">#{{post.fk_tema.nomeTema}}</span>
+                <span class="tema">#{{post.fk_tema.nomeTema}}</span>
             </div>
 
 

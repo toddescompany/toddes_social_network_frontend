@@ -30,6 +30,7 @@
     padding-left: 2.375rem;
     background:white;
     border-radius:30px;
+    font-size:8pt;
 }
 
 .has-search .form-control-feedback {
@@ -53,12 +54,16 @@
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-
+    .has-search .form-control{
+        font-size:12pt;
+    }
 }
 /* Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
-    
 
+    .has-search .form-control{
+        font-size:14pt;
+    }
 
 }
 /* Large devices (desktops, 992px and up)*/

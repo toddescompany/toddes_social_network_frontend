@@ -70,6 +70,9 @@
     font-size:20px;
 }
 /* POSTS */
+.minhasPostagens{color:#d148bb;text-align:center;}
+.minhasPostagens h4{margin-bottom:5px;}
+
 #feed .imgPerfil {width:75px;height:70px;border-radius:100%;margin:auto;}
 #posts article{border-top:1px solid #eee;border-bottom:1px solid #eee;}
 #posts article h1{font-size:20px;}
