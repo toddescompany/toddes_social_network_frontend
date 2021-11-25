@@ -31,8 +31,8 @@ export class CadastrarComponent implements OnInit {
   ngOnInit() {
     window.scroll (0,0)
     this.findByUser()
-
-
+    document.body.classList.remove("normal")
+    document.body.classList.add("bugViewport")
   }
   confirmeSenha(event: any){
     this.confirmSenha = event.target.value

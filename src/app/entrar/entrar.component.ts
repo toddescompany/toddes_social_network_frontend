@@ -21,15 +21,16 @@ export class EntrarComponent implements OnInit {
     ) { }
 
   ngOnInit() {
+    document.body.classList.remove("normal")
+    document.body.classList.add("bugViewport")
   }
 
   entrar(){
     this.auth.entrar(this.userLogin).subscribe((resp: UserLogin)=> {
       this.userLogin = resp
-      // bugviewport
+
       document.body.classList.remove("bugViewport")
       document.body.classList.add("normal")
-
 
 
       // definindo variáveis globais
