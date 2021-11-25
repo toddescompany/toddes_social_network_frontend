@@ -1,5 +1,3 @@
-const { getEnvironmentData } = require("worker_threads");
-
   $(function () {
 
     // ativa os tooltips do start

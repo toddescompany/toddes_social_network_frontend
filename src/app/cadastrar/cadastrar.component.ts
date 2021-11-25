@@ -18,6 +18,7 @@ export class CadastrarComponent implements OnInit {
   confirmSenha: string
   tipoUsuario:string
   listaUsuario: User[]
+  previaFotoDePerfil = '../../assets/toddes_icons/no_photo.jpg'
 
 
 
@@ -33,6 +34,9 @@ export class CadastrarComponent implements OnInit {
     this.findByUser()
     document.body.classList.remove("normal")
     document.body.classList.add("bugViewport2")
+
+    // add os eventos de click e toggle das preIMG
+    this.prepararPreIMGParaFuncionar()
   }
   confirmeSenha(event: any){
     this.confirmSenha = event.target.value
@@ -52,7 +56,7 @@ findByUser(){
 
   cadastrar(){
     // verificar se o nome de usuário digitado já existe
-    console.table(this.listaUsuario)
+    //console.table(this.listaUsuario)
     let jaTemIgual = 0
     for(let i = 0; i < this.listaUsuario.length;i++)
     {
@@ -66,8 +70,7 @@ findByUser(){
     if(jaTemIgual == 0)
     {
           this.user.tipo = this.tipoUsuario
-          if(this.user.foto=='')
-            this.user.foto='../../assets/toddes_icon/sem_imagem.jpg';
+          this.user.foto = this.previaFotoDePerfil
 
           if(this.user.senhaUsuario != this.confirmSenha){
             this.alertas.showAlertInfo('senhas diferentes')
@@ -89,8 +92,6 @@ findByUser(){
 
 
 //this.authService.getByUserUser(this.user.emailUsuario)
-
-
   }
 
 bugViewport()
@@ -98,5 +99,80 @@ bugViewport()
   document.body.classList.remove("bugViewport2")
   document.body.classList.add("bugViewport")
 }
+
+// Trabalha a foto para ser enviada
+
+// carregar por link
+checaOLink(event: any)
+{
+  this.previaFotoDePerfil = event.target.value
+  const previa = document.querySelector("#previaDaImagemCarregada img")
+  //console.log(this.previaFotoDePerfil)
+  previa?.setAttribute("src",this.previaFotoDePerfil)
+  const txtResultadoImagem = <HTMLElement>document.getElementById('resultadoCarregamentoImagem')
+  txtResultadoImagem.innerHTML = "Imagem Válida!"
+}
+
+// carregar pré-definidas
+prepararPreIMGParaFuncionar()
+{
+  const preIMG = document.querySelectorAll(".preIMG")
+  for(let i = 0; i < preIMG.length;i++)
+  {
+    preIMG[i].addEventListener("click",()=>{
+
+      // limpa outras seleções
+      this.limpaPreIMG()
+      // seleciona a imagem clicada
+      preIMG[i].classList.add("preIMGActive")
+      // exibe a imagem de perfil
+        const previa = <HTMLImageElement>document.querySelector("#previaDaImagemCarregada img")
+        const preIMGActive = <HTMLImageElement>preIMG[i]
+        this.previaFotoDePerfil = preIMGActive.src
+        previa.src = this.previaFotoDePerfil
+
+    })
+  }
+}
+
+limpaPreIMG(){
+  const preIMG = document.querySelectorAll(".preIMGActive")
+  for(let i = 0; i < preIMG.length;i++)
+  {
+    preIMG[i].classList.remove("preIMGActive")
+  }
+}
+
+
+
+
+//
+
+
+
+zeraCarregamentoDeImagem(){
+  // zera link
+  const txtLink = <HTMLInputElement>document.getElementById('linkImagem')
+  txtLink.value=""
+
+
+  // zera seleção pré-definida
+
+  // zera upload
+
+  // volta pra imagem prévia padrão
+  const previa = document.querySelector("#previaDaImagemCarregada img")
+  previa?.setAttribute("src","../../assets/toddes_icons/no_photo.jpg")
+
+    // zera o textinho de validação
+    const txtResultadoImagem = <HTMLElement>document.getElementById('resultadoCarregamentoImagem')
+    txtResultadoImagem.innerHTML = ""
+
+
+}
+
+
+
+
 
 }

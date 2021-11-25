@@ -20,6 +20,13 @@
   }
 }
 
+@media only screen and (min-width: 1200px){
+  .mt-entrar
+  {
+    margin-top:12%;
+  }
+}
+
 
 html {
     background-color: #56baed;

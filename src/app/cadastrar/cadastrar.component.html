@@ -27,23 +27,75 @@
       <input (input)='confirmeSenha($event)' class="fadeIn third" type="password" id="senha" name="senha" placeholder="Senha" tabindex="4">
       <input [(ngModel)]='user.senhaUsuario' class="fadeIn third" type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirmar senha" tabindex="5">
         <!-- FOTO? -->
-        <p>
-            <a class="btn  btn-secondary mt-4" data-toggle="collapse" href="#collapseFoto" role="button" aria-expanded="false" aria-controls="collapseFoto" style="background-color:#d148bb; color: white" >
-            Carregar uma foto para o perfil?
-            </a>
-        </p>
-        <div class="collapse" id="collapseFoto">
-            <label for="tema" class="mt-1" style="color:#d148bb;font-weight:bold;"><i class="far fa-image"
-                style="color:#d148bb;"></i> Link da Imagem:</label>
-            <input [(ngModel)]='user.foto' type="text" class="form-control"
-                aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+            <a class="btn  btn-secondary mt-2" data-toggle="collapse" href="#collapseFoto" role="button" aria-expanded="false" aria-controls="collapseFoto" style="background-color:#d148bb; color: white;width:85%;margin:auto;" >Carregar uma foto para o perfil?</a>
 
-            <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
-            aria-labelledby="pills-profile-tab">
+
+
+
+
+        <div class="collapse" id="collapseFoto">
+
+            <div id="previaDaImagemCarregada" class="mt-4"><img src="../../assets/toddes_icons/no_photo.jpg" alt="" onerror="this.src='../../assets/toddes_icons/no_photo.jpg';document.getElementById('resultadoCarregamentoImagem').innerHTML='Imagem inválida!';"></div>
+
+        <div class="container-fluid" id="container-carregar-img">
+
+
+            <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <a (click)="zeraCarregamentoDeImagem()" class="nav-item nav-link active text-secondary fw-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#nav-todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true" hidden>Carregar Imagem</a>
+
+                  <a (click)="zeraCarregamentoDeImagem()"  class="nav-item nav-link text-secondary fw-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Pré-Definidas</a>
+
+                  <a (click)="zeraCarregamentoDeImagem()" class="nav-item nav-link text-secondary fw-bold" id="nav-postagensPorTema-tab" data-toggle="tab" href="#nav-postagensPorTema" role="tab" aria-controls="nav-postagensPorTema" aria-selected="false">Por Link</a>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+
+                    <div class="input-group mb-3" hidden>
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" id="inputGroupFile02">
+                          <label class="custom-file-label" for="inputGroupFile02">Escolha uma imagem</label>
+                        </div>
+                      </div>
+                </div >
+                <div class="tab-pane fade" id="nav-postagensPorTema" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+                    <label for="tema" class="mt-1" style="color:#d148bb;font-weight:bold;"><i class="far fa-image"
+                        style="color:#d148bb;"></i> Link da Imagem:</label>
+                        <input  id="linkImagem" type="text" class="form-control"
+                        aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default" (keyup)='checaOLink($event)'>
+
+                        <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+                        aria-labelledby="pills-profile-tab">
+                </div>
+                </div>
+
+                <p id="resultadoCarregamentoImagem"></p>
+                <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+                    <p style="color:#d148bb;font-weight:bold;">Marvel</p>
+                    <hr>
+                   <div id="preDefinidas">
+                        <div class="row">
+                        <div class="col-4"><img id="1" src="../../assets/users_img_profile/pre/1.jpg" alt="" class="preIMG"></div>
+                        <div class="col-4"><img id="2" src="../../assets/users_img_profile/pre/2.jpg" alt="" class="preIMG"></div>
+                        <div class="col-4"><img id="3" src="../../assets/users_img_profile/pre/3.jpg" alt="" class="preIMG"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4"><img id="4" src="../../assets/users_img_profile/pre/4.png" alt="" class="preIMG"></div>
+                        <div class="col-4"><img id="5" src="../../assets/users_img_profile/pre/5.jpg" alt="" class="preIMG"></div>
+                        <div class="col-4"><img id="6" src="../../assets/users_img_profile/pre/6.png" alt="" class="preIMG"></div>
+                    </div>
+                </div>
+
+                </div>
             </div>
-        </div>
     </div>
 
+
+
+    </div>
 </div>
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-4 order-2 order-md-1">
