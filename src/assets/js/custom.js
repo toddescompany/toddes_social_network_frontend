@@ -162,7 +162,6 @@ btn_subir.click(function(){
 /* EXPANDIR IMAGEM AO CLICAR */
 // Get the modal
 var modal = document.getElementById("myModal");
-
 // Get the image and insert it inside the modal - use its "alt" text as a caption
 var img = document.getElementById("der");
 var modalImg = document.getElementById("img01");
@@ -193,6 +192,8 @@ $('.RadioColocarImagemNao').click(function(){
   $('.RadioColocarImagemNao').attr("checked","true");
   $('.RadioColocarImagemSim').attr("checked","false");
 });
+
+
 
 
 

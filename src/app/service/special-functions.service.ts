@@ -45,4 +45,15 @@ export class SpecialFunctionsService {
 
     return (saidaDaData)
   }
+
+  expandirIMG(event: any)
+  {
+      var modal = <HTMLElement> document.getElementById("myModal");
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    const modalImg = <HTMLElement> document.getElementById("img01");
+    const captionText = <HTMLElement> document.getElementById("caption");
+    modal.style.display = "block";
+    modalImg.setAttribute("src", event.src)
+    captionText.innerHTML = event.alt;
+  }
 }

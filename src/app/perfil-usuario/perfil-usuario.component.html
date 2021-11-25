@@ -1,6 +1,6 @@
 <div id="feed" class="container-fluid">
 <div id="posts" class="row">
-    <div id="semPostagem" class="d-none col-12">
+    <div class="semPostagem d-none col-12">
       <i class="far fa-frown"></i>
       <h4>Você não possuí nenhuma postagem no momento!</h4>
     </div>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
-                <div class="p-2 px-3" *ngIf='post.imagem'><span><img src="{{post.imagem}}"  class="img-post-responsive-size" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span>
+                <div class="p-2 px-3" *ngIf='post.imagem'><span><img (click)='specialfunctions.expandirIMG($event.target)' src="{{post.imagem}}"  class="expandirIMG img-post-responsive-size" alt="{{post.tituloPostagem}}" onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';"> </span>
                 </div>
                 <span class="tema">#{{post.fk_tema.nomeTema}}</span>
             </div>

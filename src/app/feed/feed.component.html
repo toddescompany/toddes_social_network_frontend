@@ -4,13 +4,14 @@
 
   <div id="postar" class="d-none d-md-block">
 
+    <!-- JANELA QUE DESCE OU SOBE PARA FAZER UMA POSTAGEM -->
     <div style="text-align:center; margin-bottom:10px;">
     <label for="tema" class="mt-2 " style="color:#d148bb;font-weight:bold;">Deseja fazer uma postagem?  </label>
-      <a class="btn  fas fa-paper-plane mt-2" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="background-color:#d148bb; color: white;margin-left:20px;" >
+      <a class="btn  fas fa-paper-plane mt-2" data-toggle="collapse" href="#collapseNovaPostagem" role="button" aria-expanded="false" aria-controls="collapseNovaPostagem" style="background-color:#d148bb; color: white;margin-left:20px;" >
       </a>
     </div>
 
-    <div class="collapse" id="collapseExample">
+    <div class="collapse" id="collapseNovaPostagem">
       <div class="card card-body">
         <!-- POSTAGEM -->
       <div class="row form-group pt-3 pb-3">
@@ -92,8 +93,8 @@
         <div class="p-2 px-3"><span>{{post.texto_postagem}}</span></div>
         <div class="p-2 px-3" *ngIf='post.imagem'>
 
-          <img src="{{post.imagem}}"
-          class="expandirIMG img-post-responsive-size"
+          <img (click)='specialfunctions.expandirIMG($event.target)'src="{{post.imagem}}"
+          class="expandirIMG img-post-responsive-size" alt="{{post.tituloPostagem}}"
           onerror="this.src='../../assets/toddes_icons/sem_imagem.jpg';">
 
         </div>

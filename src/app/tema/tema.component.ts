@@ -33,13 +33,21 @@ export class TemaComponent implements OnInit {
       this.alertas.showAlertDanger('sua sessão expirou.')
       this.router.navigate(['/entrar'])
     }
-
     this.findAllTemas()
+
+
+    setTimeout(()=>{
+      const first = document.querySelectorAll(".scrollmenu a")[0]
+      first.classList.add("temaAtivo")
+      this.carregaPostsPorTema(1)
+    },500)
+
   }
   findAllTemas(){
     this.temaService.getAllTema().subscribe((resp: Tema[])=> {
       this.listaTemas = resp
-      this.preencherNav()
+
+
     })
   }
 
@@ -58,9 +66,10 @@ export class TemaComponent implements OnInit {
     var escapedFind=find.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
     return str.replace(new RegExp(escapedFind, 'g'), replace);
   }
-  preencherNav(){
+  carregaPostsPorTema(event: any){
+    /*
     //btnCima
-    const botaoCima = <HTMLElement> document.getElementById("nav-tab")
+    const botaoCima = <HTMLElement> document.getElementById("temasParaFiltrar")
     botaoCima.innerHTML='';
     let html = ""
     console.log(this.listaTemas)
@@ -71,45 +80,65 @@ export class TemaComponent implements OnInit {
 
 
 
-      html += '<div class=" '
+      html += '<a class=" '
       html+= i == 0 ? 'active' : ' '
-      html+=' text-secondary fw-bold" id="nav-tema'+this.listaTemas[i].idTema+'-tab" data-toggle="tab" href="#nav-tema'+this.listaTemas[i].idTema+'" role="tab" aria-controls="nav-todasPostagens" aria-selected="'
-      html+= i == 0 ? 'true' : 'false'
-      html+='">'+tema+'</div>';
+      html+=' " id="nav-tema'+this.listaTemas[i].idTema+'-tab"  href="#nav-tema'+this.listaTemas[i].idTema+'"'
+      html+='">'+tema+'</a>';
     }
     botaoCima.innerHTML+=html
-    //tabContents
-    const tabContents = <HTMLElement> document.getElementById("nav-tabContent")
-    tabContents.innerHTML='';
-    html = ""
-    len = this.listaTemas.length
-    for(let i = 0; i < len;i++)
+*/
+    // carrega posts ao clicar
+    const postsPorTema = <HTMLElement> document.getElementById("postsPorTema")
+    postsPorTema.innerHTML='';
+    let html = ""
+    let len = this.listaTemas.length
+    let temaClicado = typeof event == "number" ? event : event.target.name
+    let i = temaClicado
+
+    if(this.listaTemas[i].postagem.length == 0)
     {
-
-
-
-      html +='<div class="tab-pane fade '
-      html+= i == 0 ? 'active show' : ' '
-      html+='" id="nav-tema'+this.listaTemas[i].idTema+'" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">'
-      for(let p = 0;p < this.listaTemas[i].postagem.length;p++)
-      {
-      html += '<article class="col-12 pt-2 pb-2"><div class="bg-white border mt-2"><div><div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom"><div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="'+this.listaTemas[i].postagem[p].fk_usuario.foto+'" width="45" onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"><div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">'+this.listaTemas[i].postagem[p].fk_usuario.nomeUsuario+'</span><span class="time">'+ this.specialfunctions.calculaADiferencaEntreDatas(this.listaTemas[i].postagem[p].data_postagem.toString())+'</span><span class="font-weight-bold titulo">'+this.listaTemas[i].postagem[p].tituloPostagem+'</span></div></div></div></div><div class="p-2 px-3"><span>'+this.listaTemas[i].postagem[p].texto_postagem+'</span></div>'
-
-      if (this.listaTemas[i].postagem[p].imagem)
-      {
-      html += '<div class="p-2 px-3"><span><img src="'+this.listaTemas[i].postagem[p].imagem+'" class="img-post-responsive-size"  onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"> </span></div>'
-      }
-      html+= '<span class="tema">'+this.listaTemas[i].nomeTema+'</span>'
-      html += '</div></article>'
-      }
-      html+="</div>"
-
-
+      html='<div class="semPostagem" class="col-12"><i class="far fa-frown"></i><h4>Nenhuma postagem cadastrada nessa Hashtag ainda!</h4></div>'
+      postsPorTema.innerHTML=html
     }
-    tabContents.innerHTML+=html
+    else
+    {
+          for(let p = 0;p < this.listaTemas[i].postagem.length;p++)
+          {
+              html += '<article class="col-12 pt-2 pb-2"><div class="bg-white border mt-2"><div><div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom"><div class="d-flex flex-row align-items-center feed-text px-2"><img class="rounded-circle" src="'+this.listaTemas[i].postagem[p].fk_usuario.foto+'" width="45" onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"><div class="d-flex flex-column flex-wrap ml-2"><span class="font-weight-bold">'+this.listaTemas[i].postagem[p].fk_usuario.nomeUsuario+'</span><span class="time">'+ this.specialfunctions.calculaADiferencaEntreDatas(this.listaTemas[i].postagem[p].data_postagem.toString())+'</span><span class="font-weight-bold titulo">'+this.listaTemas[i].postagem[p].tituloPostagem+'</span></div></div></div></div><div class="p-2 px-3"><span>'+this.listaTemas[i].postagem[p].texto_postagem+'</span></div>'
 
+              if (this.listaTemas[i].postagem[p].imagem)
+              {
+              html += '<div class="p-2 px-3"><span><img src="'+this.listaTemas[i].postagem[p].imagem+'" class="expandirIMG img-post-responsive-size" alt="'+this.listaTemas[i].postagem[p].tituloPostagem+'"  onerror="this.src=\'../../assets/toddes_icons/sem_imagem.jpg\';"> </span></div>'
+              }
+              html+= '<span class="tema">'+this.listaTemas[i].nomeTema+'</span>'
+              html += '</div></article>'
+          }
+          html+="</div>"
+
+        postsPorTema.innerHTML+=html
+
+        // eventlistener
+        var imgs = document.getElementsByClassName("expandirIMG")
+        for(let i = 0; i < imgs.length;i++)
+        {
+          imgs[i].addEventListener("click",() =>
+          {
+            this.specialfunctions.expandirIMG(imgs[i])
+          })
+        }
   }
+}
 
+btnPostClicado(event: any)
+{
+  this.carregaPostsPorTema(event)
+  this.dinamicaCores(event)
+}
 
+dinamicaCores(event : any){
+  const btns =  document.getElementsByClassName("temaAtivo");
+  for (let i = 0; i < btns.length;i++)
+  btns[i].classList.remove("temaAtivo")
+}
 
 }

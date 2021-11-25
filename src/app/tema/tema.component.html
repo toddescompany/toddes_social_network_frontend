@@ -2,20 +2,24 @@
 	<div class="row">
 		<button class="btn btn-danger mt-3 ml-3" routerLink='/tema-admin' *ngIf="tipoUsuario=='Administrador' || tipoUsuario=='adm' ">Configurações de Admin</button>
 	</div>
-	<div class="col-12 postagensPorTema">
-		<h4>Postagens por Tema!</h4>
-	  </div>
-
-	<div class="row">
-		<div class="nav nav-tabs navTemas" id="nav-tab" role="tablist">
-
+	<div class="row postagensPorTema ">
+		<div class="col-12 text-center">
+			<h4>Postagens por Tema!</h4>
 		</div>
 	</div>
 
+	<div class="row">
+
+			<div class="scrollmenu">
+				<a (click)='btnPostClicado($event)' class=" temasItem " href="javascript::void(0);" *ngFor='let temas of listaTemas;let i = index' name='{{i}}'>{{temas.nomeTema}}</a>
+			</div>
+
+	</div>
 
 
 <div class="row">
-	<div class="tab-content" id="nav-tabContent">
+	<div id="postsPorTema">
+
 	</div>
 </div>
 

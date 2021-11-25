@@ -45,3 +45,29 @@
 
 .postagensPorTema{color:#d148bb;text-align:center;}
 .postagensPorTema h4{margin-bottom:5px;}
+
+/* HORIZONTAL SCROOLING MENU */
+div.scrollmenu {
+	background-color: white;
+	overflow: auto;
+	white-space: nowrap;
+  }
+
+  div.scrollmenu a {
+	display: inline-block;
+	color: #777;
+	text-align: center;
+	padding: 14px 14px 5px 14px;
+	text-decoration: none;
+	font-weight:bold;
+  }
+
+  div.scrollmenu a:hover {
+	border-bottom:4px solid #d148bb;
+	color:black;
+  }
+
+ .temaAtivo{
+	  border-bottom:4px solid #d148bb;
+	  color:black !important;
+  }

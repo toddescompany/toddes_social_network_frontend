@@ -12,6 +12,13 @@ html {
 /* BASE */
 .img-100{width:100%;}
 .img-post-responsive-size{width:100%;height:250px;}
+.semPostagem
+{
+	text-align:center;
+	padding:30px 0;
+	color:#d148bb;
+}
+.semPostagem i {font-size:50px; margin-bottom:10px;}
 
 /* cada post */
 .time{font-size:14px;color:rgb(177, 174, 174);}
@@ -115,6 +122,7 @@ html {
 	bottom:55px;
 	right:10px;
 	padding:15px 20px;
+	z-index:999;
 
 }
 

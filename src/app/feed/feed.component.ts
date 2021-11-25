@@ -92,30 +92,9 @@ export class FeedComponent implements OnInit {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp
 
-      /* deseja colocar uma imagem*/
 
-// radio dynamics
-//const rd1 = document.getElementsByClassName("RadioColocarImagemSim")[0]
-//const rd2 = document.getElementsByClassName("RadioColocarImagemNao")[0]
-//rd1.addEventListener("click",function(){
-//  rd1.setAttribute("checked","true")
-//})
-/*
-var modal = document.getElementById("myModal")
-var modalImg = document.getElementById("img01")
-var captionText = document.getElementById("caption")
-var imgs = document.getElementsByClassName("expandirIMG")
 
-alert(imgs.length)
-for(let i = 0; i < imgs.length;i++)
-{
-  imgs[i].addEventListener("click",function(){
-    //modal.style.display = "block";
-    //modalImg.src = this.src;
-    //captionText.innerHTML = this.alt;
-    alert()
-  });
-}*/
+
     })
 
   }
@@ -130,6 +109,7 @@ for(let i = 0; i < imgs.length;i++)
 
   publicar(){
 
+    // VALIDA
     this.postagem.anonimo_postagem = false
     //this.postagem.tituloPostagem =' '
     this.tema.idTema = this.idTema
@@ -137,7 +117,7 @@ for(let i = 0; i < imgs.length;i++)
     this.user.id = this.idUsuario
     this.postagem.fk_usuario = this.user
 
-
+    // FAZ A REQUISIÇÃO
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem)=>{
       this.postagem = resp
       this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
@@ -147,6 +127,8 @@ for(let i = 0; i < imgs.length;i++)
       // emite um sinal para atualizar o tendências
       this.receptor.atualizarRedeToda()
 
+    // SE FUNCIONOU, SOBE A JANELINHA
+    this.fecharTelaDePostagemDpsQuePostou()
 
 
     }, erro=>{
@@ -185,6 +167,13 @@ findByNomeTema(){
       this.listaTemas = resp
     })
   }
+}
+
+
+fecharTelaDePostagemDpsQuePostou()
+{
+  const tela = <HTMLElement> document.getElementById("collapseNovaPostagem")
+  tela.classList.remove("show")
 }
 
 

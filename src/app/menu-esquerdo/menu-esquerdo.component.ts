@@ -40,7 +40,7 @@ export class MenuEsquerdoComponent implements OnInit {
     this.findByIdUser()
 
 
-    // bag
+    // mudança de estado
     const btns =  document.getElementsByClassName("leftMenuNavItem");
     for (let i = 0; i < btns.length;i++){
       btns[i].addEventListener("click",()=>{
