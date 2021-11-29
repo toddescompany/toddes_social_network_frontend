@@ -55,7 +55,7 @@
             height:90%;
             top:9%;
         }
-
+        .leftMenuNavItem a{font-size:22px;}
 
     }
     /* Large devices (desktops, 992px and up)*/
@@ -69,7 +69,7 @@
     }
     /* Extra large devices (large desktops, 1200px and up)*/
     @media (min-width: 1200px) {
-        .leftMenuNavItem a{font-size:22px;}
+
     }
 
     .corButao{

@@ -5,10 +5,44 @@
 	top:10%;
 	z-index:1;
 	background:white;
-	border-radius:10px;
 }
 
-  /* Large devices (desktops, 992px and up)*/
-  @media (min-width: 992px) {
-	#tema-admin{width:40%;left:49%;margin-left:-20%;}
+
+#tema-admin{
+	position:absolute;
+	width:100%;
+	left:0;
+	top:9.20%;
+	background:white;
+	overflow-y:auto;
+	height:83%;
+	z-index:1;
+}
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {
+
+}
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+	#tema-admin
+	{
+		width:90%;
+		left:10%;
+		height:auto;
+
+	}
+}
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+	#tema-admin
+	{
+		width:58.50%;
+		left:26%;
+
+	}
+
+}
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+
 }

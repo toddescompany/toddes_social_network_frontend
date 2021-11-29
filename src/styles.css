@@ -16,7 +16,7 @@ html {
     background-size: cover;
 }
 .bugViewport2{
-	background:url('https://i.imgur.com/PbriF4W.jpg');
+	background-image: url('/assets/toddes_img/img_cadastrar.png');
 	background-position: center;
     background-repeat: repeat-y;
     background-size: cover;
@@ -135,7 +135,7 @@ html {
 	outline:none;
 	width:50px;
 	position:fixed;
-	bottom:55px;
+	bottom:70px;
 	right:10px;
 	padding:15px 20px;
 	z-index:999;
@@ -171,6 +171,7 @@ html {
 		height:90%;
 
 	}
+	.img-post-responsive-size{height:350px;}
 }
 /* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
@@ -181,6 +182,7 @@ html {
 
 	}
 
+	.img-post-responsive-size{height:500px;}
 }
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {

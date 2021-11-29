@@ -16,9 +16,12 @@
 
                       <!-- Login Form -->
                       <form>
-                        <input [(ngModel)]='userLogin.emailUsuario' type="text" id="login" class="fadeIn second" name="login" placeholder="Seu usuário">
-                        <input [(ngModel)]='userLogin.senhaUsuario' type="password" id="password" class="fadeIn third" name="login" placeholder="Sua senha">
-                        <input (click)='entrar()' type="submit" class="fadeIn fourth" value="Entrar" style="background-color:#d148bb; color: white;cursor:pointer;">
+                        <input [(ngModel)]='userLogin.emailUsuario' type="text" id="login" class="fadeIn second" name="login" placeholder="Seu usuário" maxlength="30" tabindex="1" autofocus>
+
+                        <input [(ngModel)]='userLogin.senhaUsuario' type="password" id="password" class="fadeIn third" name="login" placeholder="Sua senha" tabindex="2" maxlength="8">
+
+
+                        <input (click)='entrar()' type="submit" class="fadeIn fourth" value="Entrar" style="background-color:#d148bb; color: white;cursor:pointer;" >
                       </form>
 
                       <!-- Remind Passowrd -->

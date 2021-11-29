@@ -14,6 +14,14 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
+        <div class="row mt-2 mb-2">
+            <div class="col-12 text-center">
+                <a href="index.html">
+                    <img src="../../assets/toddes_img/logo_toddes_rosa.png"   class="rounded-circle mp-2" width="170px" height="90px" />
+                  </a>
+            </div>
+
+          </div>
         <h1 class="text-center">Cadastro</h1>
     </div>
 
@@ -21,13 +29,13 @@
 
 
     <!-- Login Form -->
-    <div class="col-12">
-      <input [(ngModel)]='user.nomeUsuario' class="fadeIn second" type="text" name="nome" id="nome" placeholder="Nome completo" tabindex="1" autofocus>
-      <input [(ngModel)]='user.emailUsuario' class="fadeIn third" type="text" name="usuario" id="usuario" placeholder="Nome de Usuário (E-mail/ou/Login)" tabindex="2">
-      <input (input)='confirmeSenha($event)' class="fadeIn third" type="password" id="senha" name="senha" placeholder="Senha" tabindex="4">
-      <input [(ngModel)]='user.senhaUsuario' class="fadeIn third" type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirmar senha" tabindex="5">
+    <div class="col-12 form-cadastrar">
+      <input [(ngModel)]='user.nomeUsuario' class="fadeIn second" type="text" name="nome" id="nome" placeholder="Nome completo" tabindex="1" autofocus data-toggle="tooltip" data-placement="top" title="Digite seu nome completo, esse nome será exibido para os usuários do Toddes, então coloque um bem bonitão, ok? XD" maxlength="50">
+      <input [(ngModel)]='user.emailUsuario' class="fadeIn third" type="text" name="usuario" id="usuario" placeholder="E-mail/ou/ nome de usuário!" tabindex="2" data-toggle="tooltip" data-placement="top" title="Atenção, evite utilizar espaços em branco! Você utilizará esse nome de usuário, ou email, sempre que for acessar o Toddes, então, atenção! " maxlength="30">
+      <input (input)='confirmeSenha($event)' class="fadeIn third" type="password" id="senha" name="senha" placeholder="Senha" tabindex="4" data-toggle="tooltip" data-placement="top" title="Sua senha deve ter no mínimo de 8 caracteres! Seja criative e crie uma senha forte, para evitar problemas de segurança com os seus dados!" maxlength="8">
+      <input [(ngModel)]='user.senhaUsuario' class="fadeIn third" type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme a senha" tabindex="5" data-toggle="tooltip" data-placement="top" title="Digite novamente a senha que você criou no campo acima! Só pra garantir!" maxlength="8">
         <!-- FOTO? -->
-            <a class="btn  btn-secondary mt-2" data-toggle="collapse" href="#collapseFoto" role="button" aria-expanded="false" aria-controls="collapseFoto" style="background-color:#d148bb; color: white;width:85%;margin:auto;" >Carregar uma foto para o perfil?</a>
+            <a class="btn  btn-secondary mt-2" data-toggle="collapse" href="#collapseFoto" role="button" aria-expanded="false" aria-controls="collapseFoto" style="background-color:#d148bb; color: white;width:85%;margin:auto;font-size:14px;" >Carregar uma foto para o perfil?</a>
 
 
 
@@ -42,11 +50,14 @@
 
             <nav>
                 <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                  <a (click)="zeraCarregamentoDeImagem()" class="nav-item nav-link active text-secondary fw-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#nav-todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true" hidden>Carregar Imagem</a>
 
-                  <a (click)="zeraCarregamentoDeImagem()"  class="nav-item nav-link text-secondary fw-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Pré-Definidas</a>
+                <!--    <a (click)="zeraCarregamentoDeImagem()" class="nav-item nav-link active text-secondary fw-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#nav-todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true" hidden>Carregar Imagem</a>-->
 
-                  <a (click)="zeraCarregamentoDeImagem()" class="nav-item nav-link text-secondary fw-bold" id="nav-postagensPorTema-tab" data-toggle="tab" href="#nav-postagensPorTema" role="tab" aria-controls="nav-postagensPorTema" aria-selected="false">Por Link</a>
+                  <a (click)="zeraCarregamentoDeImagem()" class=" text-secondary fw-bold" id="nav-postagensPorTema-tab" data-toggle="tab" href="#nav-postagensPorTema" role="tab" aria-controls="nav-postagensPorTema" aria-selected="false">Por Link</a>
+
+                  <a (click)="zeraCarregamentoDeImagem()"  class=" text-secondary fw-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Pré-Definidas</a>
+
+
                 </div>
               </nav>
               <div class="tab-content" id="nav-tabContent">
@@ -60,7 +71,7 @@
                         </div>
                       </div>
                 </div >
-                <div class="tab-pane fade" id="nav-postagensPorTema" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="tab-pane fade mt-2" id="nav-postagensPorTema" role="tabpanel" aria-labelledby="nav-contact-tab">
 
                     <label for="tema" class="mt-1" style="color:#d148bb;font-weight:bold;"><i class="far fa-image"
                         style="color:#d148bb;"></i> Link da Imagem:</label>
@@ -78,33 +89,44 @@
                     <hr>
                    <div id="preDefinidas">
                         <div class="row">
-                        <div class="col-4"><img id="1" src="../../assets/users_img_profile/pre/1.jpg" alt="" class="preIMG"></div>
-                        <div class="col-4"><img id="2" src="../../assets/users_img_profile/pre/2.jpg" alt="" class="preIMG"></div>
-                        <div class="col-4"><img id="3" src="../../assets/users_img_profile/pre/3.jpg" alt="" class="preIMG"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-4"><img id="4" src="../../assets/users_img_profile/pre/4.png" alt="" class="preIMG"></div>
-                        <div class="col-4"><img id="5" src="../../assets/users_img_profile/pre/5.jpg" alt="" class="preIMG"></div>
-                        <div class="col-4"><img id="6" src="../../assets/users_img_profile/pre/6.png" alt="" class="preIMG"></div>
-                    </div>
+                            <div class="col-6"><img id="1" src="../../assets/users_img_profile/pre/1.jpg" alt="" class="preIMG"></div>
+                            <div class="col-6"><img id="2" src="../../assets/users_img_profile/pre/2.jpg" alt="" class="preIMG"></div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-6"><img id="3" src="../../assets/users_img_profile/pre/3.jpg" alt="" class="preIMG"></div>
+                            <div class="col-6"><img id="4" src="../../assets/users_img_profile/pre/4.png" alt="" class="preIMG"></div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col-6"><img id="5" src="../../assets/users_img_profile/pre/5.jpg" alt="" class="preIMG"></div>
+                            <div class="col-6"><img id="6" src="../../assets/users_img_profile/pre/6.png" alt="" class="preIMG"></div>
+                        </div>
                 </div>
 
                 </div>
             </div>
     </div>
+    </div>
 
 
+    <br>
+    <br>
+    <br>
+    <div class="row container-btns">
 
+        <div class=" col-12 col-md-6 order-2 order-md-1">
+
+            <input (click)="bugViewport()" type="button" style="background-color:black; color: white" class="fadeIn btn btn-success" value="Cancelar" routerLink="/entrar">
+
+        </div>
+
+        <div class="col-12 col-md-6 order-1 order-md-2">
+
+            <input type="button" style="background-color:#d148bb; color: white" class="fadeIn btn btn-success" value="Cadastrar" (click)='cadastrar()' id="btnCadastrar">
+
+        </div>
     </div>
 </div>
-        <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-4 order-2 order-md-1">
-                <input (click)="bugViewport()" type="submit" style="background-color:black; color: white" class="fadeIn fourth" value="Cancelar" routerLink="/entrar">
-            </div>
-            <div class="col-12 col-md-6 order-1 order-md-2">
-                <input type="reset" style="background-color:#d148bb; color: white" class="fadeIn fourth" value="Cadastrar" (click)='cadastrar()' id="btnCadastrar">
-            </div>
-        </div>
+
 
 
 

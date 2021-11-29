@@ -15,7 +15,7 @@ import { TemaAdminComponent } from './tema-admin/tema-admin.component';
 import { TemaComponent } from './tema/tema.component';
 import { TesteComponent } from './teste/teste.component';
 
-const routes: Routes = [{path:'', redirectTo: 'cadastrar', pathMatch:'full'},
+const routes: Routes = [{path:'', redirectTo: 'start', pathMatch:'full'},
 {path:'entrar', component: EntrarComponent},
 {path:'cadastrar', component: CadastrarComponent},
 {path:'feed', component: FeedComponent},

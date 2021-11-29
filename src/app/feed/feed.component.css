@@ -37,8 +37,7 @@
 @media (min-width: 1200px) {
 	#feed
 	{
-		width:48%;
-		left:26%;
+
 
 	}
 }
@@ -99,7 +98,7 @@
         /* Large devices (desktops, 992px and up)*/
         @media (min-width: 992px) {
 
-
+            .img-post-responsive-size{height:500px;}
            /*
             #feed{
                 position:absolute;

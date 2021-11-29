@@ -1,15 +1,15 @@
 <div id="feed" class="container-fluid">
 <div id="posts" class="row">
-    <div class="semPostagem d-none col-12">
-      <i class="far fa-frown"></i>
-      <h4>Você não possuí nenhuma postagem no momento!</h4>
-    </div>
+
 
     <div class="col-12 minhasPostagens">
       <h4>Minhas Postagens</h4>
     </div>
 
-
+    <div id="semPostagem" class="semPostagem col-12" style="display:none;">
+      <i class="far fa-frown"></i>
+      <h4>Você não possuí nenhuma postagem no momento!</h4>
+    </div>
 
         <article id="postUsuario" *ngFor='let post of user.postagem | orderBy : key : reverse'  class="col-12 pt-2 pb-2">
 
@@ -59,6 +59,7 @@
 
 
     </div>
+  </div>
 
 
 <!-- MODAL DELETE POST  [routerLink]="['/postagem-delete', post.id_postagem]" -->
@@ -136,4 +137,3 @@
   </div>
 <!-- MODAL EDITAR POST -->
 
-</div>

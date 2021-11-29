@@ -25,7 +25,7 @@
                   <div class="has-search">
                     <span class="fa fa-search form-control-feedback"></span>
                     <input type="text" class="form-control" placeholder="Busque postagens por título..." value="" (keyup)="
-                    emitirPesquisa($event)">
+                    emitirPesquisa($event)" maxlength="30">
                   </div>
 
                 </div>
@@ -95,7 +95,7 @@
           Tem certeza que deseja desativar a sua conta ? Você terá que se cadastrar novamente! Pense bem!
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" style="background-color:black; color: white">Não</button>
+          <button type="button" class="btn " data-dismiss="modal" style="background-color:black; color: white">Não</button>
           <button (click)="apagarUser()" type="button"  class="btn " data-dismiss="modal" style="background-color:#d148bb; color: white">Sim</button>
         </div>
       </div>
@@ -123,6 +123,69 @@
 
 
                               <div class="form-group">
+                                <div id="previaDaImagemCarregada" class="mt-4"><img src="{{this.salvarUser.foto}}" alt="" onerror="this.src='../../assets/toddes_icons/no_photo.jpg';document.getElementById('resultadoCarregamentoImagem').innerHTML='Imagem inválida!';"></div>
+
+                                <div class="container-fluid" id="container-carregar-img">
+
+
+                                    <nav>
+                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+
+                                        <!--    <a (click)="zeraCarregamentoDeImagem()" class="nav-item nav-link active text-secondary fw-bold" id="nav-todasPostagens-tab" data-toggle="tab" href="#nav-todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true" hidden>Carregar Imagem</a>-->
+
+                                          <a (click)="zeraCarregamentoDeImagem()" class=" text-secondary fw-bold" id="nav-postagensPorTema-tab" data-toggle="tab" href="#nav-postagensPorTema" role="tab" aria-controls="nav-postagensPorTema" aria-selected="false">Por Link</a>
+
+                                          <a (click)="zeraCarregamentoDeImagem()"  class=" text-secondary fw-bold" id="nav-minhasPostagens-tab" data-toggle="tab" href="#nav-minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Pré-Definidas</a>
+
+
+                                        </div>
+                                      </nav>
+                                      <div class="tab-content" id="nav-tabContent">
+
+                                        <div class="tab-pane fade show active" id="nav-todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+
+                                            <div class="input-group mb-3" hidden>
+                                                <div class="custom-file">
+                                                  <input type="file" class="custom-file-input" id="inputGroupFile02">
+                                                  <label class="custom-file-label" for="inputGroupFile02">Escolha uma imagem</label>
+                                                </div>
+                                              </div>
+                                        </div >
+                                        <div class="tab-pane fade mt-2" id="nav-postagensPorTema" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+                                            <label for="tema" class="mt-1" style="color:#d148bb;font-weight:bold;"><i class="far fa-image"
+                                                style="color:#d148bb;"></i> Link da Imagem:</label>
+                                                <input  id="linkImagem" type="text" class="form-control"
+                                                aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default" (keyup)='checaOLink($event)'>
+
+                                                <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+                                                aria-labelledby="pills-profile-tab">
+                                        </div>
+                                        </div>
+
+                                        <p id="resultadoCarregamentoImagem"></p>
+                                        <div class="tab-pane fade" id="nav-minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
+                                            <p style="color:#d148bb;font-weight:bold;">Marvel</p>
+                                            <hr>
+                                           <div id="preDefinidas">
+                                                <div class="row">
+                                                    <div class="col-6"><img id="1" src="../../assets/users_img_profile/pre/1.jpg" alt="" class="preIMG"></div>
+                                                    <div class="col-6"><img id="2" src="../../assets/users_img_profile/pre/2.jpg" alt="" class="preIMG"></div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-6"><img id="3" src="../../assets/users_img_profile/pre/3.jpg" alt="" class="preIMG"></div>
+                                                    <div class="col-6"><img id="4" src="../../assets/users_img_profile/pre/4.png" alt="" class="preIMG"></div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-6"><img id="5" src="../../assets/users_img_profile/pre/5.jpg" alt="" class="preIMG"></div>
+                                                    <div class="col-6"><img id="6" src="../../assets/users_img_profile/pre/6.png" alt="" class="preIMG"></div>
+                                                </div>
+                                        </div>
+
+                                        </div>
+                                    </div>
+                            </div>
+
                                   <label for="nome">Nome Completo: </label>
                                   <input [(ngModel)]='salvarUser.nomeUsuario' class="form-control mb-2" type="text" name="nome" id="nome" placeholder="Seu nome" tabindex="1">
 
@@ -131,21 +194,16 @@
                                   <label for="usuario">Nome de Usuário (E-mail/ou/Login) :</label>
                                   <input [(ngModel)]='salvarUser.emailUsuario' class="form-control mb-2" type="text" name="usuario" id="usuario" placeholder="Seu usuário" tabindex="2" >
 
-
-
-                                  <label for="foto">Link da foto:</label>
-                                  <input [(ngModel)]='salvarUser.foto' class="form-control mb-2" type="text" name="foto" id="foto" placeholder="Link da sua foto" tabindex="3" >
-
-
-
-                                  <label for="senha">Senha:</label>
-                                  <input (input)='confirmeSenha($event)' class="form-control mb-2" type="password" name="senha" id="senha" placeholder="Seu senha" tabindex="4" autofocus>
+                                  <label for="senha">Nova senha:</label>
+                                  <input (input)='confirmeSenha($event)' class="form-control mb-2" type="password" name="senha" id="txtSenhaNormal" placeholder="Seu senha" tabindex="4" autofocus maxlength="8">
 
 
 
                                   <label for="confirmSenha">Confirmar senha:</label>
-                                  <input [(ngModel)]='salvarUser.senhaUsuario' class="form-control mb-2" type="password" name="confirmSenha" id="confirmSenha"
-                                      placeholder="Confirme sua senha" tabindex="5" >
+                                  <input id="txtConfirmarSenha" [(ngModel)]='salvarUser.senhaUsuario' class="form-control mb-2" type="password" name="confirmSenha"
+                                      placeholder="Confirme sua senha" tabindex="5" maxlength="8" autofocus>
+
+
                               </div>
 
                     </div>

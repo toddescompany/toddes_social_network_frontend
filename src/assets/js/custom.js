@@ -192,6 +192,8 @@ $('.RadioColocarImagemNao').click(function(){
   $('.RadioColocarImagemSim').attr("checked","false");
 });
 
+$(".form-cadastrar input[type='text']").tooltip({'trigger':'focus'});
+$(".form-cadastrar input[type='password']").tooltip({'trigger':'focus'});
 
 
 });

@@ -69,8 +69,21 @@
                             {{item.nomeTema}}
                         </option>
                     </select>
-                    <label for="imagemPost">Link de uma imagem para o Post: </label>
-                    <input  [(ngModel)]='postagem.imagem' id="imagemPost" type="text" placeholder="Sem Imagem por enquanto" class="col-12 b-0 form-control mb-2" required>
+                    <p>
+                      <a class="btn  btn-secondary mt-4" data-toggle="collapse" href="#collapseFoto" role="button" aria-expanded="false" aria-controls="collapseFoto" style="background-color:#d148bb; color: white" >
+                        Deseja postar com imagem?
+                      </a>
+                    </p>
+                    <div class="collapse" id="collapseFoto">
+                        <label for="tema" class="mt-1" style="color:#d148bb;font-weight:bold;"><i class="far fa-image"
+                            style="color:#d148bb;"></i> Link da Imagem:</label>
+                        <input [(ngModel)]='postagem.imagem' type="text" class="form-control"
+                          aria-label="Exemplo do tamanho do input" aria-describedby="inputGroup-sizing-default">
+
+                      <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+                        aria-labelledby="pills-profile-tab">
+                      </div>
+                  </div>
 
 
                 </div>

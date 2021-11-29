@@ -83,17 +83,21 @@ export class PerfilUsuarioComponent implements OnInit {
 
   // exibir pots
   findByIdUser(){
+
+    // verifica se tem postagem!
+    const posts = <HTMLElement> document.getElementById("semPostagem")
+
     this.authservice.getByIdUser(this.idUsuario).subscribe((resp: User)=>{
       this.user = resp
-      // verifica se tem postagem!
-      const posts = <HTMLElement> document.getElementById("semPostagem")
-      if(resp.postagem.length <= 0 || resp.postagem == null)
+
+
+      if(this.user.postagem.length == 0)
       {
-        posts.style.display="true"
+        posts.style.display="block"
       }
       else
       {
-        posts.style.display="false"
+        posts.style.display="none"
       }
 
 

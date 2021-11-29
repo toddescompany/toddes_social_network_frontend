@@ -55,6 +55,12 @@ findByUser(){
 
 
   cadastrar(){
+    if(!this.user.emailUsuario || !this.user.nomeUsuario || !this.user.senhaUsuario || !this.confirmSenha)
+    {
+      this.alertas.showAlertInfo('Por favor preencha todos os campos antes de prosseguir!')
+      return;
+    }
+
     // verificar se o nome de usuário digitado já existe
     //console.table(this.listaUsuario)
     let jaTemIgual = 0
@@ -63,29 +69,42 @@ findByUser(){
       if (this.listaUsuario[i].emailUsuario ==this.user.emailUsuario){
         this.alertas.showAlertDanger('Nome de usuario já cadastrado!')
         jaTemIgual = 1;
-        break;
+        return;
       }
     }
+
+
+    if(this.user.senhaUsuario.toString().length < 8)
+    {
+      this.alertas.showAlertDanger('Senha deve ter no mínimo 8 caracteres!')
+      return;
+    }
+
+    if(this.user.senhaUsuario != this.confirmSenha){
+      this.alertas.showAlertDanger('senhas diferentes')
+      return;
+    }
+
 
     if(jaTemIgual == 0)
     {
           this.user.tipo = this.tipoUsuario
           this.user.foto = this.previaFotoDePerfil
 
-          if(this.user.senhaUsuario != this.confirmSenha){
-            this.alertas.showAlertInfo('senhas diferentes')
-          }
-          else{
+
+
+
             this.authService.cadastrar(this.user).subscribe((resp: User) => {
               this.user =resp
               this.router.navigate(['/entrar'])
               this.alertas.showAlertSuccess('Usuario cadastrado com sucesso!')
             }, erro=>{
               if(erro.status == 500){
-                this.alertas.showAlertInfo('Os campos não foram preenchidos corretamente')
+                this.alertas.showAlertDanger('Erro durante o cadastro! Por favor verifique os campos digitados e tente novamente!')
               }
           })
-          }
+
+
     }
 
 
@@ -171,7 +190,11 @@ zeraCarregamentoDeImagem(){
 
 }
 
+removerEspacos(event: any){
+  const input = <HTMLInputElement> event.target
+  this.user.emailUsuario = input.value.replace(' ','')
 
+}
 
 
 

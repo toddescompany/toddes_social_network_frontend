@@ -154,16 +154,22 @@ export class FeedComponent implements OnInit {
 
 
 findByTituloPostagem(){
-
+  const semPostagem = <HTMLElement>document.getElementById("semPostagem")
   if(this.tituloPost == ''){
     this.getAllPostagens()
+    semPostagem.style.display="none"
+
 
   }else{
     this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=>{
       this.listaPostagens = resp
-      if(this.listaPostagens.length == 0){
-        this.alertas.showAlertDanger('Não temos publicações com títulos referente ao que foi digitado')
-      }
+
+        if(this.listaPostagens.length == 0){
+          semPostagem.style.display="block"
+        }
+
+
+
     })
 
 

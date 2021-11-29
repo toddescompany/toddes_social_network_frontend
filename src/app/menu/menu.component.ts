@@ -23,6 +23,9 @@ export class MenuComponent implements OnInit {
   tipoUsuario: string
   senhaAntiga: string
   salvarUser: User = new User()
+  tempUser: User = new User()
+  // img personalizado
+  previaFotoDePerfil: string
 
   // editar temas
 
@@ -34,13 +37,25 @@ export class MenuComponent implements OnInit {
     private broadcast: MainBroadcastService
   ) { }
 
+
   ngOnInit() {
     this.atualizarCamposModal()
-    this.salvarUser.senhaUsuario=''
 
-    
+// zera o campo de repita a senha
+  this.tempUser = this.salvarUser
 
-  }
+ // add os eventos de click e toggle das preIMG
+ this.prepararPreIMGParaFuncionar()
+
+
+ const txtConfirmarSenha = <HTMLInputElement> document.getElementById("txtConfirmarSenha")
+      txtConfirmarSenha.addEventListener("click",()=>{
+      txtConfirmarSenha.value=""
+ })
+
+
+
+}
 
 //////////////////////////////////////////////////// MODAIS
 // apagar temas
@@ -55,39 +70,46 @@ apagarUser()
 
 // editar user
 atualizarUser(){
+  const txtSenhaNormal = <HTMLInputElement> document.getElementById("txtSenhaNormal")
+  const txtConfirmarSenha = <HTMLInputElement> document.getElementById("txtConfirmarSenha")
+
+
 
     if(this.salvarUser.foto=='')
-    this.salvarUser.foto='../../assets/toddes_icon/sem_imagem.jpg';
+    this.salvarUser.foto='../../assets/toddes_icon/sem_imagem.jpg'
+
+    this.salvarUser.foto = this.previaFotoDePerfil
 
     // verificar senha
-
-
-
-
-    if(this.salvarUser.senhaUsuario != this.confirmSenha){
-      this.alertas.showAlertDanger('As senhas digitadas são inválidas, ou não correspondem')
+    if(this.confirmSenha != this.salvarUser.senhaUsuario)
+    {
+            this.alertas.showAlertDanger('As senhas digitadas são inválidas, ou não correspondem')
+            return;
     }
 
-  else
-  {
+
     this.authService.cadastrar(this.salvarUser).subscribe((resp: User) => {
       this.salvarUser = resp
       this.alertas.showAlertSuccess('Usuário atualizado com sucesso! Você tem que logar novamente!')
       this.sair()
+      this.router.navigate(['/entrar'])
     })
-  }
+
+
+
+
 }
 findByIdUser(id: number){
   this.authService.getByIdUser(id).subscribe((resp: User) =>{
+
     this.salvarUser = resp
+
   })
 }
 
 // atualizar user
 atualizarCamposModal(){
   this.findByIdUser(this.idUsuario)
-  this.senhaAntiga =   this.salvarUser.senhaUsuario
-  //this.salvarUser.senhaUsuario=''
 }
 
 // extra user
@@ -123,4 +145,75 @@ tipoUser(event: any){
     this.broadcast.emitirPalavrasDaPesquisa(event.target.value)
 
   }
+
+// imgs personalizado
+// carregar por link
+checaOLink(event: any)
+{
+  this.previaFotoDePerfil = event.target.value
+  const previa = document.querySelector("#previaDaImagemCarregada img")
+  //console.log(this.previaFotoDePerfil)
+  previa?.setAttribute("src",this.previaFotoDePerfil)
+  const txtResultadoImagem = <HTMLElement>document.getElementById('resultadoCarregamentoImagem')
+  txtResultadoImagem.innerHTML = "Imagem Válida!"
+}
+
+// carregar pré-definidas
+prepararPreIMGParaFuncionar()
+{
+  const preIMG = document.querySelectorAll(".preIMG")
+  for(let i = 0; i < preIMG.length;i++)
+  {
+    preIMG[i].addEventListener("click",()=>{
+
+      // limpa outras seleções
+      this.limpaPreIMG()
+      // seleciona a imagem clicada
+      preIMG[i].classList.add("preIMGActive")
+      // exibe a imagem de perfil
+        const previa = <HTMLImageElement>document.querySelector("#previaDaImagemCarregada img")
+        const preIMGActive = <HTMLImageElement>preIMG[i]
+        this.previaFotoDePerfil = preIMGActive.src
+        previa.src = this.previaFotoDePerfil
+
+    })
+  }
+}
+
+limpaPreIMG(){
+  const preIMG = document.querySelectorAll(".preIMGActive")
+  for(let i = 0; i < preIMG.length;i++)
+  {
+    preIMG[i].classList.remove("preIMGActive")
+  }
+}
+
+zeraCarregamentoDeImagem(){
+  // zera link
+  const txtLink = <HTMLInputElement>document.getElementById('linkImagem')
+  txtLink.value=""
+
+
+  // zera seleção pré-definida
+
+  // zera upload
+
+  // volta pra imagem prévia padrão
+  const previa = document.querySelector("#previaDaImagemCarregada img")
+  previa?.setAttribute("src","../../assets/toddes_icons/no_photo.jpg")
+
+    // zera o textinho de validação
+    const txtResultadoImagem = <HTMLElement>document.getElementById('resultadoCarregamentoImagem')
+    txtResultadoImagem.innerHTML = ""
+
+
+}
+
+removerEspacos(event: any){
+  const input = <HTMLInputElement> event.target
+  this.salvarUser.emailUsuario = input.value.replace(' ','')
+
+}
+
+
 }
