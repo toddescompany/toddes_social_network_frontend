@@ -14,24 +14,20 @@
 
 .mt-cadastrar
   {
-    margin-top:5%;
+    position:relative;
+    top:50%;
+    margin-top: 190px;
   }
 
 .form-cadastrar input{font-size:12px;}
 
 @media only screen and (min-width: 576px){
-  .mt-cadastrar
-  {
-    margin-top:5%;
-  }
+
 
 }
 
 @media only screen and (min-width: 768px){
-  .mt-cadastrar
-  {
-    margin-top:5%;
-  }
+
   .form-cadastrar input{font-size:18px;}
   #preDefinidas img{border-radius:100%;margin:5px;width:80%;height:80%;}
 }
