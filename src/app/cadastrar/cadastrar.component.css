@@ -12,14 +12,6 @@
     background-size: cover;
 }
 
-.mt-cadastrar
-  {
-    position:relative;
-    top:50%;
-    margin-top: 190px;
-  }
-
-
 .form-cadastrar input{font-size:12px;}
 
 @media only screen and (min-width: 576px){

@@ -93,6 +93,7 @@ atualizarUser(){
       this.alertas.showAlertSuccess('Usuário atualizado com sucesso! Você tem que logar novamente!')
       this.sair()
       this.router.navigate(['/entrar'])
+      window.location.reload()
     })
 
 

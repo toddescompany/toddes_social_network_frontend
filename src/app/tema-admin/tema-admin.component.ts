@@ -78,7 +78,7 @@ export class TemaAdminComponent implements OnInit {
     this.idTemaASerRemovidaOuEditada = this.route.snapshot.params['id']
     // deleta a tema
     this.temaService.deleteTema( this.idTemaASerRemovidaOuEditada).subscribe(()=>{
-      alert('Tema apagada com sucesso')
+      this.alertas.showAlertSuccess ('Tema apagada com sucesso')
       this.router.navigate(['/tema-admin'])
     })
   }
@@ -92,7 +92,7 @@ export class TemaAdminComponent implements OnInit {
     console.log(this.salvarTema)
     this.temaService.putTema(this.salvarTema).subscribe((resp: Tema) => {
       this.salvarTema = resp
-      alert('Tema atualizado com sucesso')
+      this.alertas.showAlertSuccess ('Tema atualizado com sucesso')
       this.router.navigate(['/tema-admin'])
     })
   }
