@@ -10,22 +10,10 @@
 
 .mt-entrar
   {
-    margin-top:15%;
+    position:relative;
+    top:50%;
+    margin-top: 190px;
   }
-
-@media only screen and (min-width: 576px){
-  .mt-entrar
-  {
-    margin-top:5%;
-  }
-}
-
-@media only screen and (min-width: 1200px){
-  .mt-entrar
-  {
-    margin-top:12%;
-  }
-}
 
 
 html {
