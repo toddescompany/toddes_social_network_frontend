@@ -11,7 +11,7 @@ import { MainBroadcastService } from '../broadcast/main-broadcast.service';
 @Component({
   selector: 'app-cadastrar',
   templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  styleUrls: ['./cadastrar.component.css','./cadastrar2.component.css']
 })
 export class CadastrarComponent implements OnInit {
   user: User =new User

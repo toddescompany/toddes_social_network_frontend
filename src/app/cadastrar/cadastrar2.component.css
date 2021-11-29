@@ -1,165 +1,17 @@
-#container-cadastrar-master{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
 
-
-   background-image: url('/assets/toddes_img/img_cadastrar.png');
-    background-position: center;
-    background-repeat: repeat-y;
-    background-size: cover;
-}
-
-.mt-cadastrar
-  {
-    margin-top:5%;
-  }
-
-.form-cadastrar input{font-size:12px;}
-
-@media only screen and (min-width: 576px){
-  .mt-cadastrar
-  {
-    margin-top:5%;
-  }
-
-}
-
-@media only screen and (min-width: 768px){
-  .mt-cadastrar
-  {
-    margin-top:5%;
-  }
-  .form-cadastrar input{font-size:18px;}
-  #preDefinidas img{border-radius:100%;margin:5px;width:80%;height:80%;}
-}
-
-@media only screen and (min-width: 1200px){
-  .mt-cadastrar
-  {
-    margin-top:5%;
-  }
-}
-
-/* janelas de carregar imagem */
-a{color:black;}
-.nav a{margin:0;font-weight:bold;margin-right:7px;color:black;}
-.nav a:hover{text-decoration:none;}
-a.active{color:black;margin-bottom:4px solid #d148bb;}
-
-#container-carregar-img{width:90%;margin:auto;}
-
-#previaDaImagemCarregada {width:40%;height:40%;margin:auto;}
-#previaDaImagemCarregada img{width:100px;height:100px;border-radius:100%;margin:auto;margin-bottom:15px;}
-
-/* janela para selecionar imagens pré-definidas*/
-#preDefinidas .col-4{text-align:center;}
-#preDefinidas img{border-radius:100%;margin:5px;width:100%;height:100%;}
-#preDefinidas img:hover{cursor:pointer;}
-.preIMG:hover{opacity:0.8;cursor:pointer;}
-.preIMGActive{
-  border:3px solid #d148bb;
-}
-
-a[aria-selected='true']{
-  border-bottom:4px solid #d148bb;
-}
-
-
-
-/* BASIC */
-
-html {
-    background-color: #56baed;
-  }
-
-  body {
-    font-family: "Poppins", sans-serif;
-    height: 100vh;
-  }
-
-  a {
-    color: #92badd;
-    display:inline-block;
-    text-decoration: none;
-    font-weight: 400;
-  }
-
-  h2 {
-    text-align: center;
-    font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-    display:inline-block;
-    color: #cccccc;
+  input[type=submit]:hover  {
+    background-color: #c70d0d;
+    cursor:pointer;
   }
 
 
 
-  /* STRUCTURE */
-
-  .wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    min-height: 100%;
-    padding: 20px;
-  }
-
-  #formContent {
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
-    background: #fff;
-    padding: 30px;
-    width: 90%;
-    max-width: 450px;
-    position: relative;
-    padding: 0px;
-    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-    text-align: center;
-  }
-
-  #formFooter {
-    background-color: #f6f6f6;
-    border-top: 1px solid #dce8f1;
-    padding: 25px;
-    text-align: center;
-    -webkit-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
-  }
-
-
-
-  /* TABS */
-
-  h2.inactive {
-    color: #cccccc;
-  }
-
-  h2.active {
-    color: #0d0d0d;
-    border-bottom: 2px solid #5fbae9;
-  }
-
-
-
-  /* FORM TYPOGRAPHY*/
-  .container-btns{
-    width:92%;
-    margin:auto;
-    margin-bottom:20px;
-  }
-  .container-btns input{
-    width:100%;
-    margin-top:10px;
-    outline:none;
-
-<<<<<<< HEAD
+  input[type=button]:active, input[type=submit]:active,  input[type=reset]:active  {
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
   }
 
 
@@ -223,6 +75,8 @@ html {
   input[type=password]:placeholder {
     color: #cccccc;
   }
+
+
 
   /* ANIMATIONS */
 
