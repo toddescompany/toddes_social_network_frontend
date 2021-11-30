@@ -14,6 +14,11 @@
 <br>
 <br>
 
+## :soon: Implementação futura
+* REDE DE AMIGOS
+* CHAT
+* OPORTUNIDADES
+
 ## :wrench: Tecnologias Utilizadas
 <div style="display: inline_block"><br>
     <img align="center" alt="gel-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
