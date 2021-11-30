@@ -3,13 +3,14 @@
     <h1>Toddes</h1>
 </div>
 
-<div align="center">Rede social voltada para empresas disponibilizarem para seus funcionaries relatar experiências desconfortáveis que vão contra a diversidade, fazendo assim, uma concientização entre os colaboradores.</div>
+<div align="center">O Toddes é uma rede social que cria um networking entre profissionais diversos e potenciais empregadores.</div>
 <br>
 <br>
 
 
 ## :books: Funcionalidades
-<b> :see_no_evil: Em desenvolvimento</b>
+* CRUD TEMAS/POSTAGENS/USUÁRIOS
+* LAYOUT RESPONSIVO DO COMEÇO AO FIM
 <br>
 <br>
 
@@ -84,4 +85,4 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
 <br>
 
 ## :dart: Status do projeto
-:technologist: Concluído em fase beta.
+:technologist: Concluído em fase beta v1.0
