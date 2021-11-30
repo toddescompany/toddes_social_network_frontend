@@ -1,5 +1,5 @@
 
-<div align="center" style="font-size:30px;"><img style="width:250px;height:250px;" src="https://github.com/toddescompany/toddes_social_network_backend/blob/main/Documentation/blackhand.png?raw=true" alt="logo_toddes">
+<div align="center" style="font-size:30px;"><img style="width:400px;height:250px;" src="https://toddes.netlify.app/assets/toddes_img/logo_toddes_branco.png" alt="logo_toddes">
     <h1>Toddes (Frontend)</h1>
 </div>
 
