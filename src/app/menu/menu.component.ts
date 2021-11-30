@@ -66,6 +66,9 @@ apagarUser()
     this.alertas.showAlertSuccess('Conta desativada com sucesso')
     this.sair()
   })
+  this.sair()
+  this.router.navigate(['/entrar'])
+
 }
 
 // editar user
