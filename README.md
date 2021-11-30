@@ -1,6 +1,6 @@
 
 <div align="center" style="font-size:30px;"><img style="width:250px;height:250px;" src="https://github.com/toddescompany/toddes_social_network_backend/blob/main/blackhand.png" alt="logo_toddes">
-    <h1>Toddes</h1>
+    <h1>Toddes (Frontend)</h1>
 </div>
 
 <div align="center">O Toddes é uma rede social que cria um networking entre profissionais diversos e potenciais empregadores.</div>
