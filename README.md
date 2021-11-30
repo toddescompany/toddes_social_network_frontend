@@ -84,4 +84,4 @@ Para rodar o repositório é necessário clonar o mesmo, dar o seguinte comando 
 <br>
 
 ## :dart: Status do projeto
-:technologist: Em Desenvolvimento (Task 7)
+:technologist: Concluído em fase beta.
